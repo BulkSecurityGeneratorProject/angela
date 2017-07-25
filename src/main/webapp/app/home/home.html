@@ -1,41 +1,340 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
+    <div class="page-wrapper">
+        <!--header-->
+
+        <!--main-banner-->
+        <div>
+          <div style="height: 305px">
+            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+              <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                <img ng-src="{{slide.image}}" style="margin:auto;">
+                <div class="carousel-caption">
+                  <h4>Slide {{slide.id}}</h4>
+                  <p>{{slide.text}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="row">
+            <div class="col-md-6">
+              <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>
+              <button type="button" class="btn btn-info" ng-click="randomize()">Randomize slides</button>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" ng-model="noWrapSlides">
+                  Disable Slide Looping
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              Interval, in milliseconds: <input type="number" class="form-control" ng-model="myInterval">
+              <br />Enter a negative number or 0 to stop the interval.
+            </div>
+          </div> -->
         </div>
-        <div class="col-md-8">
-            <h1 data-translate="home.title">Welcome, Java Hipster!</h1>
-            <p class="lead" data-translate="home.subtitle">This is your homepage</p>
-
-            <div ng-switch="vm.isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" data-translate="home.logged.message" translate-values="{username: '{{vm.account.login}}'}">
-                    You are logged in as user "{{vm.account.login}}".
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" data-translate="global.messages.info.authenticated" translate-compile>
-                    If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-                </div>
-
-                <div class="alert alert-warning" ng-switch-when="false" data-translate="global.messages.info.register" translate-compile>
-                    You don't have an account yet? <a class="alert-link" ui-sref="register">Register a new account</a>
+        <!--main-cases-->
+        <div class="main-cases">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2> Cases & Factories</h2>
                 </div>
             </div>
-
-            <p data-translate="home.question">
-                If you have any question on JHipster:
-            </p>
-
-            <ul>
-                <li><a href="https://jhipster.github.io/" target="_blank" rel="noopener" data-translate="home.link.homepage">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener" data-translate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener" data-translate="home.link.bugtracker">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener" data-translate="home.link.chat">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener" data-translate="home.link.follow">follow @java_hipster on Twitter</a></li>
-            </ul>
-
-            <p>
-             <span data-translate="home.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" data-translate="home.github">GitHub</a>!
-            </p>
+            <div class="row">
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="cases-list">
+                        <h3>Cases 3</h3>
+                        <h4>Heading</h4>
+                        <p>They have learned the lessons of business management theory, and put them into action</p>
+                        <a href="#" class="btn-detail">Detail</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="cases-list">
+                        <h3>Cases 3</h3>
+                        <h4>Heading</h4>
+                        <p>They have learned the lessons of business management theory, and put them into action</p>
+                        <a href="#" class="btn-detail">Detail</a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4 col-lg-4">
+                    <div class="cases-list">
+                        <h3>Cases 3</h3>
+                        <h4>Heading</h4>
+                        <p>They have learned the lessons of business management theory, and put them into action</p>
+                        <a href="#" class="btn-detail">Detail</a>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!--main-content-->
+        <div class="main-content">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2> Hot Recommend</h2>
+                    <p class="hot-text">NEWEST TRENDS FROM TOP BRANDS</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hot-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">New Arrvial</a></li>
+                        <li>|</li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Top100</a></li>
+                        <li>|</li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Hot Sales</a></li>
+                    </ul>
+                      <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                    <div class="thumbnails">
+                                        <img src="content/images/mathwork.jpg">
+                                        <div class="caption">
+                                            <h4>Heading</h4>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p class="hot-color">
+                                                Color：<span class="label-warning"></span>
+                                                <span class="label-info"></span>
+                                                <span class="label-primary"></span>
+                                            </p>
+                                            <p class="hot-r">
+                                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                    <div class="thumbnails">
+                                        <img src="content/images/mathwork.jpg">
+                                        <div class="caption">
+                                            <h4>Heading</h4>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p class="hot-color">
+                                                Color：<span class="label-warning"></span>
+                                                <span class="label-info"></span>
+                                                <span class="label-primary"></span>
+                                            </p>
+                                            <p class="hot-r">
+                                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                    <div class="thumbnails">
+                                        <img src="content/images/mathwork.jpg">
+                                        <div class="caption">
+                                            <h4>Heading</h4>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p class="hot-color">
+                                                Color：<span class="label-warning"></span>
+                                                <span class="label-info"></span>
+                                                <span class="label-primary"></span>
+                                            </p>
+                                            <p class="hot-r">
+                                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                                    <div class="thumbnails">
+                                        <img src="content/images/mathwork.jpg">
+                                        <div class="caption">
+                                            <h4>Heading</h4>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p class="hot-color">
+                                                Color：<span class="label-warning"></span>
+                                                <span class="label-info"></span>
+                                                <span class="label-primary"></span>
+                                            </p>
+                                            <p class="hot-r">
+                                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="profile">222222</div>
+                        <div role="tabpanel" class="tab-pane" id="messages">33333</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <a href="#" class="btn-see">See More</a>
+                </div>
+            </div>
+        </div>
+        <!--main-cases-->
+        <div class="main-event">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="event-list">
+                        <img src="content/images/industry_manufacture.svg">
+                        <h3>By Industy</h3>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the lessons</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="event-list">
+                        <img src="content/images/events.svg">
+                        <h3>By Event</h3>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the lessons</p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="event-list">
+                        <img src="content/images/Business_Catalogue.svg">
+                        <h3>By Catalog</h3>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the </p>
+                        <p>They have learned the lessons</p>
+                        <p>They have learned the lessons</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--main-rollImg-->
+        <div class="container main-rollImg">
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <a class="roll-content/images">
+                        <img src="content/images/soll-img1.png"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <a class="roll-content/images">
+                        <img src="content/images/soll-img1.png"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <a class="roll-content/images">
+                        <img src="content/images/soll-img1.png"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <a class="roll-content/images">
+                        <img src="content/images/soll-img1.png"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <a class="roll-content/images">
+                        <img src="content/images/soll-img1.png"/>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <a class="roll-content/images">
+                        <img src="content/images/soll-img1.png"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--main-content-->
+        <div class="main-cooperator">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2> Cooperate Partners</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="partners">
+                        <img src="content/images/tencent.svg"/>
+                        <div class="caption">
+                            <h5>tencent</h5>
+                            <p>Cras justo</p>
+                            <p>odio, dapibus</p>
+                            <p>vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="partners">
+                        <img src="content/images/tencent.svg"/>
+                        <div class="caption">
+                            <h5>tencent</h5>
+                            <p>Cras justo</p>
+                            <p>odio, dapibus</p>
+                            <p>vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="partners">
+                        <img src="content/images/tencent.svg"/>
+                        <div class="caption">
+                            <h5>tencent</h5>
+                            <p>Cras justo</p>
+                            <p>odio, dapibus</p>
+                            <p>vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="partners">
+                        <img src="content/images/tencent.svg"/>
+                        <div class="caption">
+                            <h5>tencent</h5>
+                            <p>Cras justo</p>
+                            <p>odio, dapibus</p>
+                            <p>vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="partners">
+                        <img src="content/images/tencent.svg"/>
+                        <div class="caption">
+                            <h5>tencent</h5>
+                            <p>Cras justo</p>
+                            <p>odio, dapibus</p>
+                            <p>vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
+                    <div class="partners">
+                        <img src="content/images/tencent.svg"/>
+                        <div class="caption">
+                            <h5>tencent</h5>
+                            <p>Cras justo</p>
+                            <p>odio, dapibus</p>
+                            <p>vehicula ut id elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <footer class="footer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="Copyright"> Copyright © 2013-2017 All Rights Reserved.</div>
+                </div>
+            </div>
+        </footer>
     </div>
 </div>

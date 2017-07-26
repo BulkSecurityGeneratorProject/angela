@@ -27,6 +27,26 @@
                     $translatePartialLoader.addPart('global');
                 }]
             }
-        });
+        })
+        .state('full-login', {
+            parent: 'app',
+            url: '/login',
+            data: {
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/components/full-login/login.html'
+                    // controller: 'gcExceptionController',
+                    // controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                stateParams: ['$stateParams', function($stateParams){
+
+                    // console.log('systemSingleIndex.getData',systemSingleIndex.getData());
+                    return $stateParams;
+                }]
+            }
+        })
     }
 })();

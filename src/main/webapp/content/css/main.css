@@ -515,6 +515,131 @@ body{
 /* .col-xs-1:not(:first-child), .col-sm-1:not(:first-child), .col-md-1:not(:first-child), .col-lg-1:not(:first-child), .col-xs-2:not(:first-child), .col-sm-2:not(:first-child), .col-md-2:not(:first-child), .col-lg-2:not(:first-child), .col-xs-3:not(:first-child), .col-sm-3:not(:first-child), .col-md-3:not(:first-child), .col-lg-3:not(:first-child), .col-xs-4:not(:first-child), .col-sm-4:not(:first-child), .col-md-4:not(:first-child), .col-lg-4:not(:first-child), .col-xs-5:not(:first-child), .col-sm-5:not(:first-child), .col-md-5:not(:first-child), .col-lg-5:not(:first-child), .col-xs-6:not(:first-child), .col-sm-6:not(:first-child), .col-md-6:not(:first-child), .col-lg-6:not(:first-child), .col-xs-7:not(:first-child), .col-sm-7:not(:first-child), .col-md-7:not(:first-child), .col-lg-7:not(:first-child), .col-xs-8:not(:first-child), .col-sm-8:not(:first-child), .col-md-8:not(:first-child), .col-lg-8:not(:first-child), .col-xs-9:not(:first-child), .col-sm-9:not(:first-child), .col-md-9:not(:first-child), .col-lg-9:not(:first-child), .col-xs-10:not(:first-child), .col-sm-10:not(:first-child), .col-md-10:not(:first-child), .col-lg-10:not(:first-child), .col-xs-11:not(:first-child), .col-sm-11:not(:first-child), .col-md-11:not(:first-child), .col-lg-11:not(:first-child), .col-xs-12:not(:first-child), .col-sm-12:not(:first-child), .col-md-12:not(:first-child), .col-lg-12:not(:first-child) {
     padding-left: 0;
 } */
+.main-register{
+    padding:10px;
+}
+.login-images{
+   background:url(../images/login-bg.jpg) no-repeat center center;
+}
+.welcome{
+    padding:80px 0;
+}
+.welcome h1{
+    color:#fff;
+    font-size:4em;
+}
+.login-brand{
+    margin:50px 0;
+    padding:30px;
+    background:#333;
+    /* filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;   */
+    background:url(../images/form-bg.png) repeat;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+}
+.login-form h3{
+    color:#fff;
+    margin-bottom: 20px;
+}
+.login-form .progress {
+    height: 4px;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: #c8c8c8;
+}
+.login-form .control-group{
+    margin-bottom: 20px;
+}
+.login-form .form-control{
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+    font-size: 12px;
+}
+.login-form .control-label{
+    color:#fff;
+    font-weight: normal;
+    font-size: 13px;
+}
+.pw-strength .control-label{
+    font-size: 12px;
+    -webkit-text-size-adjust:none
+}
+.control-group .help-small{
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 12px;
+    color:#f03d3d;
+}
+.login-btn{
+    text-align: center;
+}
+.login-btn a{
+    display:block;
+    width:130px;
+    height:30px;
+    margin:10px auto;
+    line-height: 30px;
+    color:#fff;
+    cursor:pointer;
+}
+.login-btn a:hover{
+    text-decoration: none;
+}
+.login-btn .btn-register{
+    display:block;
+    width:130px;
+    height:30px;
+    margin:10px auto;
+    line-height: 30px;
+    background:#005297;
+    color:#fff;
+}
+.login-btn .btn-register:hover{
+    background:#275b89;
+}
+.login-btn .btn-login{
+    border:1px solid #fff;
+}
+.login-btn .btn-login:hover{
+    color:#ddd;
+    border:1px solid #ddd;
+}
+.verificationCode{
+    margin-right: 100px;
+}
+.graphcode{
+    float:right;
+    width:95px;
+    height:30px;
+    line-height: 30px;
+    background:#d8d8d8;
+}
+.sign-up{
+    display:block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.sign-up li{
+    float:right;
+    list-style: none;
+}
+.sign-up li a,.sign-up li span{
+    display:block;
+    padding:20px 10px;
+    color:#fff;
+}
+.forgot-psw{
+    color:#999;
+}
+.forgot-psw:hover{
+    color:#666;
+}
 .page-wrapper{
 /*     padding: 0 15px; */
     position: relative;
@@ -848,6 +973,7 @@ body{
 .main-header{
     display:block;
     padding:0 15px;
+    background:#fff;
 }
 /*--main-banner--*/
 .main-banner{
@@ -872,6 +998,12 @@ body{
 .footer{
     padding:0 15px;
     background:#2d2d2d;
+}
+.footer-flexed{
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
 }
 .Copyright{
     height:40px;

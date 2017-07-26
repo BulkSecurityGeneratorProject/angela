@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Business_Catalogue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-6" transform="translate(-1162.000000, -2290.000000)" fill-rule="nonzero">
+            <g id="Group-9" transform="translate(0.000000, 2217.000000)">
+                <g id="Product-Copy-2" transform="translate(973.000000, 0.000000)">
+                    <g id="Business_Catalogue" transform="translate(189.000000, 73.000000)">
+                        <path d="M11.25,45 L78.75,45 L78.75,48.75 L11.25,48.75 L11.25,45 Z M11.25,33.75 L78.75,33.75 L78.75,37.5 L11.25,37.5 L11.25,33.75 Z M11.25,22.5 L78.75,22.5 L78.75,26.25 L11.25,26.25 L11.25,22.5 Z M11.25,11.25 L78.75,11.25 L78.75,15 L11.25,15 L11.25,11.25 Z" id="Shape" fill="#005297"></path>
+                        <path d="M86.25,0 L3.75000003,0 C1.50000003,0 0,1.50000003 0,3.75000003 L0,86.25 C0,88.5 1.50000003,90 3.75000003,90 L86.25,90 C88.5,90 90,88.5 90,86.25 L90,33.75 L86.25,33.75 L86.25,56.25 L63.75,56.25 C63.75,66.75 55.4999999,75 45,75 C34.5000001,75 26.25,66.7499999 26.25,56.25 L3.75000003,56.25 L3.75000003,3.75000003 L86.25,3.75000003 L86.25,11.25 L90,11.25 L90,3.75000003 C90,1.50000003 88.5,0 86.25,0 Z M22.875,60 C23.625,64.5 25.875,68.625 29.25,72 C33.375,76.5 39,78.75 45,78.75 C56.25,78.75 65.25,70.5 67.125,60 L86.25,60 L86.25,86.25 L3.75000003,86.25 L3.75000003,60 L22.875,60 Z" id="Shape" fill="#005297"></path>
+                        <polygon id="Shape" fill="#D1382D" points="86.25 18.75 90 18.75 90 26.25 86.25 26.25"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

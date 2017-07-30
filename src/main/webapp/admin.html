@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>angela</title>
+    <title>demo</title>
     <meta name="description" content="">
     <meta name="google" value="notranslate">
     <meta name="theme-color" content="#000000">
@@ -11,9 +11,9 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css content/css/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <!-- endinject -->
-    <link rel="stylesheet" href="content/css/vendor.css">
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
@@ -26,19 +26,14 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <page-ribbon></page-ribbon>
-    <div ui-view="navbar" ng-cloak></div>
-    <div >
+    <div ui-view="adminNavbar" ng-cloak></div>
+    <div class="container">
         <div class="well" ui-view="content">
             <!-- Angular views -->
         </div>
 
         <div class="footer" ng-cloak>
-            <!-- <p data-translate="footer">This is your footer</p> -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="Copyright"> Copyright © 2013-2017 All Rights Reserved.</div>
-                </div>
-            </div>
+            <p data-translate="footer">This is your footer</p>
         </div>
     </div>
     <noscript>
@@ -109,8 +104,6 @@
     <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/layouts/navbar/active-menu.directive.js"></script>
     <script src="app/layouts/error/error.state.js"></script>
-    <script src="app/home/home.state.js"></script>
-    <script src="app/home/home.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
@@ -176,21 +169,6 @@
     <script src="app/admin/audits/audits.service.js"></script>
     <script src="app/admin/audits/audits.controller.js"></script>
     <script src="app/admin/admin.state.js"></script>
-
-    <script src="app/angela/angela.state.js"></script>
-    <script src="app/angela/product/product-list.controller.js"></script>
-    <script src="app/angela/product/product-detail.controller.js"></script>
-    <script src="app/angela/product/product.state.js"></script>
-    <script src="app/angela/case/case-list.controller.js"></script>
-    <script src="app/angela/case/case.state.js"></script>
-    <script src="app/angela/ourservice/ourservice-list.controller.js"></script>
-    <script src="app/angela/ourservice/ourservice.state.js"></script>
-
-    <script src="app/account/social/social-register.controller.js"></script>
-    <script src="app/account/social/social-auth.controller.js"></script>
-    <script src="app/account/social/social.state.js"></script>
-    <script src="app/account/social/social.service.js"></script>
-    <script src="app/account/social/directive/social.directive.js"></script>
     <script src="app/account/settings/settings.state.js"></script>
     <script src="app/account/settings/settings.controller.js"></script>
     <script src="app/account/reset/request/reset.request.state.js"></script>
@@ -205,7 +183,13 @@
     <script src="app/account/activate/activate.state.js"></script>
     <script src="app/account/activate/activate.controller.js"></script>
     <script src="app/account/account.state.js"></script>
+    <!--  admin -->
+    <script src="app/admin/home/home.state.js"></script>
+    <script src="app/admin/home/home.controller.js"></script>
 
+    <script src="app/admin/navbar/navbar.controller.js"></script>
+    <script src="app/admin/navbar/active-menu.directive.js"></script>
+    <!--  admin end  -->
     <!-- endinject -->
     <!-- endbuild -->
 

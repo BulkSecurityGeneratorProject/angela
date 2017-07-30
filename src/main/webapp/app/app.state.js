@@ -15,6 +15,11 @@
                     templateUrl: 'app/layouts/navbar/navbar.html',
                     controller: 'NavbarController',
                     controllerAs: 'vm'
+                },
+                'adminNavbar@': {
+                    templateUrl: 'app/admin/navbar/navbar.html',
+                    controller: 'AdminNavbarController',
+                    controllerAs: 'vm'
                 }
             },
             resolve: {
@@ -29,6 +34,7 @@
             }
         })
         .state('full-login', {
+            //  全屏登陆
             parent: 'app',
             url: '/login',
             data: {

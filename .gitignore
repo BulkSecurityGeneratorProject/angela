@@ -141,3 +141,6 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+# dev
+/src/main/resources/config/application-dev.yml
+bower_components

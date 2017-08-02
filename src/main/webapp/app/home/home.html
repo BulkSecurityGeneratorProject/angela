@@ -45,7 +45,7 @@
                         <h3>Cases 3</h3>
                         <h4>Heading</h4>
                         <p>They have learned the lessons of business management theory, and put them into action</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a ui-sref="ourservice-list" class="btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 col-lg-4">
@@ -53,7 +53,7 @@
                         <h3>Cases 3</h3>
                         <h4>Heading</h4>
                         <p>They have learned the lessons of business management theory, and put them into action</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a ui-sref="ourservice-list" class="btn-detail">Detail</a>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-4 col-lg-4">
@@ -61,7 +61,7 @@
                         <h3>Cases 3</h3>
                         <h4>Heading</h4>
                         <p>They have learned the lessons of business management theory, and put them into action</p>
-                        <a href="#" class="btn-detail">Detail</a>
+                        <a ui-sref="ourservice-list" class="btn-detail">Detail</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                         <div role="tabpanel" class="tab-pane active" id="home">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                    <div class="thumbnails">
+                                    <div class="thumbnails" ui-sref="product-detail">
                                         <img src="content/images/mathwork.jpg">
                                         <div class="caption">
                                             <h4>Heading</h4>
@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                    <div class="thumbnails">
+                                    <div class="thumbnails" ui-sref="product-detail">
                                         <img src="content/images/mathwork.jpg">
                                         <div class="caption">
                                             <h4>Heading</h4>
@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                    <div class="thumbnails">
+                                    <div class="thumbnails" ui-sref="product-detail">
                                         <img src="content/images/mathwork.jpg">
                                         <div class="caption">
                                             <h4>Heading</h4>
@@ -145,7 +145,7 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                    <div class="thumbnails">
+                                    <div class="thumbnails" ui-sref="product-detail">
                                         <img src="content/images/mathwork.jpg">
                                         <div class="caption">
                                             <h4>Heading</h4>
@@ -171,53 +171,51 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="#" class="btn-see">See More</a>
+                    <a ui-sref="product-list" class="btn-see">See More</a>
                 </div>
             </div>
         </div>
         <!--main-cases-->
-        <div class="main-event">
+        <div class="main-events">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="event-list">
+                    <div class="event-list event-hover">
                         <img src="content/images/industry_manufacture.svg">
                         <h3>By Industy</h3>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the lessons</p>
+                        <div class="event-cover">
+                            <p><a ui-sref="product-list">Educational</a></p>
+                            <p><a ui-sref="product-list">Financial</a></p>
+                            <p><a ui-sref="product-list">Healthcare</a></p>
+                            <p><a ui-sref="product-list">Electronic</a> </p>
+                            <p><a ui-sref="product-list">Not-for-profit</a></p>
+                            <p><a ui-sref="product-list">Casino</a></p>
+                            <p><a ui-sref="product-list">Hospitality</a></p>
+                            <p><a ui-sref="product-list">Real Estate</a></p>
+                            <p><a ui-sref="product-list">Restaurant</a></p>
+                            <p><a ui-sref="product-list">Auto Industry</a></p>
+                            <p><a ui-sref="product-list">Bar</a></p>
+                            <p><a ui-sref="product-list">Super Market</a></p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="event-list">
+                    <div class="event-list event-hover">
                         <img src="content/images/events.svg">
                         <h3>By Event</h3>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the lessons</p>
+                        <div class="event-cover">
+                            <p><a ui-sref="product-list">Holiday</a></p>
+                            <p><a ui-sref="product-list">Corporate events</a></p>
+                            <p><a ui-sref="product-list">Themed Event</a></p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                    <div class="event-list">
+                    <div class="event-list event-hover">
                         <img src="content/images/Business_Catalogue.svg">
                         <h3>By Catalog</h3>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the </p>
-                        <p>They have learned the lessons</p>
-                        <p>They have learned the lessons</p>
+                        <div class="event-cover">
+                            <p><a ui-sref="product-list"></a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -226,32 +224,32 @@
         <div class="container main-rollImg">
             <div class="row">
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
-                    <a class="roll-content/images">
+                    <a class="roll-images">
                         <img src="content/images/soll-img1.png"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
-                    <a class="roll-content/images">
+                    <a class="roll-images">
                         <img src="content/images/soll-img1.png"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
-                    <a class="roll-content/images">
+                    <a class="roll-images">
                         <img src="content/images/soll-img1.png"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
-                    <a class="roll-content/images">
+                    <a class="roll-images">
                         <img src="content/images/soll-img1.png"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
-                    <a class="roll-content/images">
+                    <a class="roll-images">
                         <img src="content/images/soll-img1.png"/>
                     </a>
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2">
-                    <a class="roll-content/images">
+                    <a class="roll-images">
                         <img src="content/images/soll-img1.png"/>
                     </a>
                 </div>

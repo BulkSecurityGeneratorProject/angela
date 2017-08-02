@@ -1120,7 +1120,7 @@ body{
     color: #fff;
     background-color: #d9534f;
 }
-.thumbnails-xs{
+.thumbnails-xs,.mycartthumb-xs{
     display: block;
     margin-bottom: 20px;
     line-height: 1.42857143;
@@ -1144,11 +1144,18 @@ body{
     width:150px;
     height:100%;
 }
-.thumbnails-xs .caption{
+.mycartthumb-xs img{
+    width:100px;
+    height:100%;
+}
+.thumbnails-xs .caption,.mycartthumb-xs .caption{
     padding:10px;
 }
 .thumbnails-xs .caption h4{
     margin:20px 0;
+}
+.mycartthumb-xs .caption h5{
+    margin:5px 0;
 }
 .panel-navlist p{
     line-height: 20px;
@@ -1550,7 +1557,7 @@ body{
     color: #999;
 }
 /*--testerminal--*/
-.testerminalviews{
+.testerminalviews,.mycart{
     padding:20px;
     background:#fff;
 }
@@ -1559,8 +1566,17 @@ body{
     margin:0 15px;
     border-bottom: 1px solid #ccc;
 }
+.mycart h1{
+    padding:15px 0;
+    border-bottom: 1px solid #ccc;
+}
 .testerminalviews h4{
     padding:15px;
+    line-height: 25px;
+    color:#666;
+}
+.mycart h4{
+    padding:15px 0;
     line-height: 25px;
     color:#666;
 }
@@ -1608,6 +1624,19 @@ body{
 .rating input:checked~label {
     color: #f4ea2a;
 }
+.mycart-table{
+    width:100%;
+}
+.mycart-action{
+    display:inline-block;
+}
+.mycart-action .btn{
+    display:block;
+    width:80px;
+    margin:5px 0;
+    text-align: center;
+    padding:3px 12px;
+}
 @media ( max-width : 767px){
     .main-cases .col-xs-4:first-child,.main-cases .col-sm-4:first-child,.main-cases .col-md-4:first-child,.main-cases .col-lg-4:first-child,.main-event .col-xs-4:first-child,.main-event .col-sm-4:first-child,.main-event .col-md-4:first-child,.main-event .col-lg-4:first-child{
         padding-left: 15px;
@@ -1624,5 +1653,41 @@ body{
     .navbar-special{
         display:block;
         vertical-align:middle;
+    }
+    .mycart-table tr {
+        padding:5px;
+        margin-bottom: 10px;
+        display: block;
+        border:1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+    .mycart-table thead {
+        display: none;
+    }
+    .mycart-table td {
+        display: block;
+        text-align: right;
+        padding: 10px;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+    .mycart-table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .mycartthumb-xs{
+        display: block;
+        margin-bottom: 20px;
+        line-height: 1.42857143;
+        background-color: #fff;
+        display: -webkit-flex; /* Safari */
+        display: flex;
+        flex-direction:row;
+        flex-wrap: nowrap;
+        justify-content:flex-end;
+        align-items:center;
+        padding-left: 10px;
     }
 }

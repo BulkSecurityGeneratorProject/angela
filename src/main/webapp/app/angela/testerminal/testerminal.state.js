@@ -12,7 +12,7 @@
             abstract: true,
             parent: 'angela'
         })
-        .state('testerminal', {
+        .state('testerminal-detail', {
             parent: 'testerminal',
             url: '/Testerminal',
             data: {

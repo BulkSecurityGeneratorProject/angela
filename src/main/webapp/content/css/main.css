@@ -750,9 +750,9 @@ body{
     top: 0;
     text-align: center;
     color: #ffffff;
-    transform-origin:bottom;      /*旋转中心位置*/
-    -webkit-transform-origin: bottom; 
-    -moz-transform-origin: bottom; 
+    transform-origin:left bottom;      /*旋转中心位置*/
+    -webkit-transform-origin:left bottom; 
+    -moz-transform-origin: left bottom; 
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -1186,18 +1186,60 @@ body{
     color: #fff;
     background-color: #d9534f;
 }
-.thumbnails-xs,.mycartthumb-xs{
+.thumbnails-xs{
     display: block;
     margin-bottom: 20px;
     line-height: 1.42857143;
     background-color: #fff;
-    /* display: -webkit-flex; Safari
+    padding-left: 10px;
+}
+.mycartthumb-xs{
+    display: block;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    display: -webkit-flex; Safari
     display: flex;
     flex-direction:row;
     flex-wrap: nowrap;
     justify-content:flex-start;
-    align-items:center; */
+    align-items:center;
     padding-left: 10px;
+}
+.userinfo-list{
+    display: -webkit-flex; Safari
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom: 1px solid #ddd;
+}
+.ordernumber{
+    display: -webkit-flex; Safari
+    display: flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content:flex-start;
+    align-items:center;
+}
+.ordernumber p{
+    margin-right: 40px;
+    color:#999;
+}
+.ordernumber p span,.ordernumber p i{
+    color:#333;
+}
+.user-total{
+    color:#999;
+    padding:5px 0;
+    border-bottom: 1px solid #ddd;
+}
+.user-total:last-child{
+    border-bottom: 0;
+}
+.userinfo-list:last-child{
+    border-bottom: 0;
 }
 .thumbnails-xs{
     padding:0;
@@ -1701,13 +1743,25 @@ body{
 .rating input:checked~label {
     color: #f4ea2a;
 }
-.mycart-table{
+.mycart-table,.userinfo-table{
     width:100%;
 }
 .mycart-table tr th,.mycart-table tr td{
     text-align: center;
+    padding:2px 5px;
 }
-.mycart-table tr th:first-child,.mycart-table tr:last-child td{
+.userinfo-table tr th,.userinfo-table tr td{
+    padding:5px;
+    text-align: center;
+    border:1px solid #ddd;
+}
+.userinfo-table tr td{
+    vertical-align: top;
+}
+.userinfo-table tr th{
+    padding:10px 5px;
+}
+.mycart-table tr th:first-child,.mycart-table tr th:nth-child(2),.mycart-table tr:last-child td{
     text-align: left;
 }
 .mycart-action{
@@ -1733,47 +1787,45 @@ body{
 }
 /*side-toolbar*/
 .toolbar-item {
-  position: relative;
+    position: relative;
 }
-
- .toolbar-item, .toolbar-btn, .toolbar-icon, .toolbar-text {
-  width: 52px;
-  height: 52px;
+.toolbar-item, .toolbar-btn, .toolbar-icon, .toolbar-text {
+    width: 52px;
+    height: 52px;
 }
-
 .toolbar {
-  position: fixed;
-  top:40%;
-  right: 20px;
-  z-index: 1000;
+    position: fixed;
+    top:40%;
+    right: 20px;
+    z-index: 1000;
 }
 
 .toolbar-item {
-  position: relative;
-  display: block;
-  margin-top: 1px;
+    position: relative;
+    display: block;
+    margin-top: 1px;
 }
 .toolbar-item:hover .toolbar-icon {
-  top: -52px;
+    top: -52px;
 }
 .toolbar-item:hover .toolbar-text {
-  top: 0;
+    top: 0;
 }
 .toolbar-item:hover .toolbar-layer {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
 }
 
 .toolbar-btn {
-  position: absolute;
-  left: 0;
-  top: 0;
-  overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
 }
 
 .toolbar-icon, .toolbar-text {
@@ -1782,19 +1834,17 @@ body{
     color: #fff;
     text-align: center;
     -webkit-transition: top 0.3s;
-  -moz-transition: top 0.3s;
-  -ms-transition: top 0.3s;
-  -o-transition: top 0.3s;
-  transition: top 0.3s;
+    -moz-transition: top 0.3s;
+    -ms-transition: top 0.3s;
+    -o-transition: top 0.3s;
+    transition: top 0.3s;
 }
-
 .toolbar-icon {
     top: 0;
     background: rgba(49,47,48,0.8);
     font-size: 30px;
     line-height: 52px;
 }
-
 .toolbar-text {
     top: 52px;
     background-color: rgba(49,47,48,0.8);  

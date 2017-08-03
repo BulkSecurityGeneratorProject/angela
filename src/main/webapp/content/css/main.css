@@ -750,9 +750,9 @@ body{
     top: 0;
     text-align: center;
     color: #ffffff;
-    transform-origin:bottom;      /*旋转中心位置*/
-    -webkit-transform-origin: bottom; 
-    -moz-transform-origin: bottom; 
+    transform-origin:left bottom;      /*旋转中心位置*/
+    -webkit-transform-origin: left bottom; 
+    -moz-transform-origin:left bottom; 
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);

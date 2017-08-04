@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="angelaApp.t_review.home.title">T Reviews</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="t-review.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="angelaApp.t_review.home.createLabel">
+                        Create new T Review
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="angelaApp.t_review.userId">User Id</span></th>
+                    <th><span data-translate="angelaApp.t_review.productId">Product Id</span></th>
+                    <th><span data-translate="angelaApp.t_review.content">Content</span></th>
+                    <th><span data-translate="angelaApp.t_review.createdate">Createdate</span></th>
+                    <th><span data-translate="angelaApp.t_review.isUseful">Is Useful</span></th>
+                    <th><span data-translate="angelaApp.t_review.remarks">Remarks</span></th>
+                    <th><span data-translate="angelaApp.t_review.isDelete">Is Delete</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t_review in vm.t_reviews track by t_review.id">
+                    <td><a ui-sref="t-review-detail({id:t_review.id})">{{t_review.id}}</a></td>
+                    <td>{{t_review.userId}}</td>
+                    <td>{{t_review.productId}}</td>
+                    <td>{{t_review.content}}</td>
+                    <td>{{t_review.createdate | date:'medium'}}</td>
+                    <td>{{t_review.isUseful}}</td>
+                    <td>{{t_review.remarks}}</td>
+                    <td>{{t_review.isDelete}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="t-review-detail({id:t_review.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-review.edit({id:t_review.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-review.delete({id:t_review.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

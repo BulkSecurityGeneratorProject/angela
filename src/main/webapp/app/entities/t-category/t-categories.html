@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="angelaApp.t_category.home.title">T Categories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="t-category.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="angelaApp.t_category.home.createLabel">
+                        Create new T Category
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="angelaApp.t_category.catName">Cat Name</span></th>
+                    <th><span data-translate="angelaApp.t_category.parentId">Parent Id</span></th>
+                    <th><span data-translate="angelaApp.t_category.depth">Depth</span></th>
+                    <th><span data-translate="angelaApp.t_category.status">Status</span></th>
+                    <th><span data-translate="angelaApp.t_category.priority">Priority</span></th>
+                    <th><span data-translate="angelaApp.t_category.isDelete">Is Delete</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t_category in vm.t_categories track by t_category.id">
+                    <td><a ui-sref="t-category-detail({id:t_category.id})">{{t_category.id}}</a></td>
+                    <td>{{t_category.catName}}</td>
+                    <td>{{t_category.parentId}}</td>
+                    <td>{{t_category.depth}}</td>
+                    <td>{{t_category.status}}</td>
+                    <td>{{t_category.priority}}</td>
+                    <td>{{t_category.isDelete}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="t-category-detail({id:t_category.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-category.edit({id:t_category.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-category.delete({id:t_category.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

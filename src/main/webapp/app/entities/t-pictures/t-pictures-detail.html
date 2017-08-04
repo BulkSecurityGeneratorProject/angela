@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="angelaApp.t_pictures.detail.title">T Pictures</span> {{vm.t_pictures.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="angelaApp.t_pictures.productId">Product Id</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.productId}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_pictures.imageUrl">Image Url</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.imageUrl}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_pictures.imageUrlSmall">Image Url Small</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.imageUrlSmall}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_pictures.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.createDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_pictures.createUser">Create User</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.createUser}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_pictures.imageType">Image Type</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.imageType}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_pictures.isDelete">Is Delete</span></dt>
+        <dd>
+            <span>{{vm.t_pictures.isDelete}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-pictures-detail.edit({id:vm.t_pictures.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

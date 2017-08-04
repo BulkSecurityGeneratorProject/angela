@@ -1,0 +1,115 @@
+
+<div>
+    <h2><span data-translate="angelaApp.t_product.detail.title">T Product</span> {{vm.t_product.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="angelaApp.t_product.productSn">Product Sn</span></dt>
+        <dd>
+            <span>{{vm.t_product.productSn}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.categoryId">Category Id</span></dt>
+        <dd>
+            <span>{{vm.t_product.categoryId}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productName">Product Name</span></dt>
+        <dd>
+            <span>{{vm.t_product.productName}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.clickCount">Click Count</span></dt>
+        <dd>
+            <span>{{vm.t_product.clickCount}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.marketPrice">Market Price</span></dt>
+        <dd>
+            <span>{{vm.t_product.marketPrice}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productPrice">Product Price</span></dt>
+        <dd>
+            <span>{{vm.t_product.productPrice}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.brief">Brief</span></dt>
+        <dd>
+            <span>{{vm.t_product.brief}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productDetails">Product Details</span></dt>
+        <dd>
+            <span>{{vm.t_product.productDetails}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.isONSale">Is ON Sale</span></dt>
+        <dd>
+            <span>{{vm.t_product.isONSale}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.isHot">Is Hot</span></dt>
+        <dd>
+            <span>{{vm.t_product.isHot}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.sortOrder">Sort Order</span></dt>
+        <dd>
+            <span>{{vm.t_product.sortOrder}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productUnit">Product Unit</span></dt>
+        <dd>
+            <span>{{vm.t_product.productUnit}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.stock">Stock</span></dt>
+        <dd>
+            <span>{{vm.t_product.stock}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productColor">Product Color</span></dt>
+        <dd>
+            <span>{{vm.t_product.productColor}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productArea">Product Area</span></dt>
+        <dd>
+            <span>{{vm.t_product.productArea}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.material">Material</span></dt>
+        <dd>
+            <span>{{vm.t_product.material}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.proTag">Pro Tag</span></dt>
+        <dd>
+            <span>{{vm.t_product.proTag}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.size">Size</span></dt>
+        <dd>
+            <span>{{vm.t_product.size}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.sellCount">Sell Count</span></dt>
+        <dd>
+            <span>{{vm.t_product.sellCount}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.createUser">Create User</span></dt>
+        <dd>
+            <span>{{vm.t_product.createUser}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{vm.t_product.createDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.lastUpdate">Last Update</span></dt>
+        <dd>
+            <span>{{vm.t_product.lastUpdate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.productStatus">Product Status</span></dt>
+        <dd>
+            <span>{{vm.t_product.productStatus}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_product.isDelete">Is Delete</span></dt>
+        <dd>
+            <span>{{vm.t_product.isDelete}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-product-detail.edit({id:vm.t_product.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

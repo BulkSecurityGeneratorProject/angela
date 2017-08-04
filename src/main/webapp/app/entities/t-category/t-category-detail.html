@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="angelaApp.t_category.detail.title">T Category</span> {{vm.t_category.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="angelaApp.t_category.catName">Cat Name</span></dt>
+        <dd>
+            <span>{{vm.t_category.catName}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_category.parentId">Parent Id</span></dt>
+        <dd>
+            <span>{{vm.t_category.parentId}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_category.depth">Depth</span></dt>
+        <dd>
+            <span>{{vm.t_category.depth}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_category.status">Status</span></dt>
+        <dd>
+            <span>{{vm.t_category.status}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_category.priority">Priority</span></dt>
+        <dd>
+            <span>{{vm.t_category.priority}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_category.isDelete">Is Delete</span></dt>
+        <dd>
+            <span>{{vm.t_category.isDelete}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-category-detail.edit({id:vm.t_category.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

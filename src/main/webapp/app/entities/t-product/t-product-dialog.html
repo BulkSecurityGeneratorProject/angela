@@ -1,0 +1,178 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myT_productLabel" data-translate="angelaApp.t_product.home.createOrEditLabel">Create or edit a T Product</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.t_product.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.t_product.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productSn" for="field_productSn">Product Sn</label>
+            <input type="text" class="form-control" name="productSn" id="field_productSn"
+                    ng-model="vm.t_product.productSn"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.categoryId" for="field_categoryId">Category Id</label>
+            <input type="number" class="form-control" name="categoryId" id="field_categoryId"
+                    ng-model="vm.t_product.categoryId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productName" for="field_productName">Product Name</label>
+            <input type="text" class="form-control" name="productName" id="field_productName"
+                    ng-model="vm.t_product.productName"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.clickCount" for="field_clickCount">Click Count</label>
+            <input type="number" class="form-control" name="clickCount" id="field_clickCount"
+                    ng-model="vm.t_product.clickCount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.marketPrice" for="field_marketPrice">Market Price</label>
+            <input type="number" class="form-control" name="marketPrice" id="field_marketPrice"
+                    ng-model="vm.t_product.marketPrice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productPrice" for="field_productPrice">Product Price</label>
+            <input type="number" class="form-control" name="productPrice" id="field_productPrice"
+                    ng-model="vm.t_product.productPrice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.brief" for="field_brief">Brief</label>
+            <input type="text" class="form-control" name="brief" id="field_brief"
+                    ng-model="vm.t_product.brief"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productDetails" for="field_productDetails">Product Details</label>
+            <input type="text" class="form-control" name="productDetails" id="field_productDetails"
+                    ng-model="vm.t_product.productDetails"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.isONSale" for="field_isONSale">Is ON Sale</label>
+            <input type="number" class="form-control" name="isONSale" id="field_isONSale"
+                    ng-model="vm.t_product.isONSale"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.isHot" for="field_isHot">Is Hot</label>
+            <input type="number" class="form-control" name="isHot" id="field_isHot"
+                    ng-model="vm.t_product.isHot"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.sortOrder" for="field_sortOrder">Sort Order</label>
+            <input type="number" class="form-control" name="sortOrder" id="field_sortOrder"
+                    ng-model="vm.t_product.sortOrder"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productUnit" for="field_productUnit">Product Unit</label>
+            <input type="text" class="form-control" name="productUnit" id="field_productUnit"
+                    ng-model="vm.t_product.productUnit"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.stock" for="field_stock">Stock</label>
+            <input type="number" class="form-control" name="stock" id="field_stock"
+                    ng-model="vm.t_product.stock"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productColor" for="field_productColor">Product Color</label>
+            <input type="number" class="form-control" name="productColor" id="field_productColor"
+                    ng-model="vm.t_product.productColor"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productArea" for="field_productArea">Product Area</label>
+            <input type="number" class="form-control" name="productArea" id="field_productArea"
+                    ng-model="vm.t_product.productArea"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.material" for="field_material">Material</label>
+            <input type="number" class="form-control" name="material" id="field_material"
+                    ng-model="vm.t_product.material"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.proTag" for="field_proTag">Pro Tag</label>
+            <input type="text" class="form-control" name="proTag" id="field_proTag"
+                    ng-model="vm.t_product.proTag"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.size" for="field_size">Size</label>
+            <input type="text" class="form-control" name="size" id="field_size"
+                    ng-model="vm.t_product.size"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.sellCount" for="field_sellCount">Sell Count</label>
+            <input type="number" class="form-control" name="sellCount" id="field_sellCount"
+                    ng-model="vm.t_product.sellCount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.createUser" for="field_createUser">Create User</label>
+            <input type="text" class="form-control" name="createUser" id="field_createUser"
+                    ng-model="vm.t_product.createUser"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.createDate" for="field_createDate">Create Date</label>
+                <div class="input-group">
+                    <input id="field_createDate" type="text" class="form-control" name="createDate" datetime-picker="{{dateformat}}" ng-model="vm.t_product.createDate" is-open="vm.datePickerOpenStatus.createDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.lastUpdate" for="field_lastUpdate">Last Update</label>
+                <div class="input-group">
+                    <input id="field_lastUpdate" type="text" class="form-control" name="lastUpdate" datetime-picker="{{dateformat}}" ng-model="vm.t_product.lastUpdate" is-open="vm.datePickerOpenStatus.lastUpdate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastUpdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.productStatus" for="field_productStatus">Product Status</label>
+            <input type="number" class="form-control" name="productStatus" id="field_productStatus"
+                    ng-model="vm.t_product.productStatus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_product.isDelete" for="field_isDelete">Is Delete</label>
+            <input type="number" class="form-control" name="isDelete" id="field_isDelete"
+                    ng-model="vm.t_product.isDelete"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

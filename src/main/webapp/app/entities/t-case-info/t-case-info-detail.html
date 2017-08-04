@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="angelaApp.t_case_info.detail.title">T Case Info</span> {{vm.t_case_info.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="angelaApp.t_case_info.title">Title</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.title}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.brief">Brief</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.brief}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.description">Description</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.description}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.createdate">Createdate</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.createdate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.isUseful">Is Useful</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.isUseful}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.remarks">Remarks</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.remarks}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.isDelete">Is Delete</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.isDelete}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.createDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_case_info.createUser">Create User</span></dt>
+        <dd>
+            <span>{{vm.t_case_info.createUser}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-case-info-detail.edit({id:vm.t_case_info.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

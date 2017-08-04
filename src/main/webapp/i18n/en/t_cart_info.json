@@ -1,0 +1,28 @@
+{
+    "angelaApp": {
+        "t_cart_info" : {
+            "home": {
+                "title": "T Cart Infos",
+                "createLabel": "Create a new T Cart Info",
+                "createOrEditLabel": "Create or edit a T Cart Info"
+            },
+            "created": "A new T Cart Info is created with identifier {{ param }}",
+            "updated": "A T Cart Info is updated with identifier {{ param }}",
+            "deleted": "A T Cart Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Cart Info {{ id }}?"
+            },
+            "detail": {
+                "title": "T Cart Info"
+            },
+            "productId": "Product Id",
+            "productCount": "Product Count",
+            "deliveryDate": "Delivery Date",
+            "createdate": "Createdate",
+            "message": "Message",
+            "asiSageNo": "Asi Sage No",
+            "createDate": "Create Date",
+            "createUser": "Create User"
+        }
+    }
+}

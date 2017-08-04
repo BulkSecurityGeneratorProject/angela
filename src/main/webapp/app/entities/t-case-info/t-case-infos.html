@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="angelaApp.t_case_info.home.title">T Case Infos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="t-case-info.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="angelaApp.t_case_info.home.createLabel">
+                        Create new T Case Info
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.title">Title</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.brief">Brief</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.description">Description</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.createdate">Createdate</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.isUseful">Is Useful</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.remarks">Remarks</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.isDelete">Is Delete</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.createDate">Create Date</span></th>
+                    <th><span data-translate="angelaApp.t_case_info.createUser">Create User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t_case_info in vm.t_case_infos track by t_case_info.id">
+                    <td><a ui-sref="t-case-info-detail({id:t_case_info.id})">{{t_case_info.id}}</a></td>
+                    <td>{{t_case_info.title}}</td>
+                    <td>{{t_case_info.brief}}</td>
+                    <td>{{t_case_info.description}}</td>
+                    <td>{{t_case_info.createdate | date:'medium'}}</td>
+                    <td>{{t_case_info.isUseful}}</td>
+                    <td>{{t_case_info.remarks}}</td>
+                    <td>{{t_case_info.isDelete}}</td>
+                    <td>{{t_case_info.createDate | date:'medium'}}</td>
+                    <td>{{t_case_info.createUser}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="t-case-info-detail({id:t_case_info.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-case-info.edit({id:t_case_info.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-case-info.delete({id:t_case_info.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

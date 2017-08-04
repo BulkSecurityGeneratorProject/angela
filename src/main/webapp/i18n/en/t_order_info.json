@@ -1,0 +1,27 @@
+{
+    "angelaApp": {
+        "t_order_info" : {
+            "home": {
+                "title": "T Order Infos",
+                "createLabel": "Create a new T Order Info",
+                "createOrEditLabel": "Create or edit a T Order Info"
+            },
+            "created": "A new T Order Info is created with identifier {{ param }}",
+            "updated": "A T Order Info is updated with identifier {{ param }}",
+            "deleted": "A T Order Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Order Info {{ id }}?"
+            },
+            "detail": {
+                "title": "T Order Info"
+            },
+            "orderId": "Order Id",
+            "productId": "Product Id",
+            "productCount": "Product Count",
+            "status": "Status",
+            "connectStatus": "Connect Status",
+            "createDate": "Create Date",
+            "createUser": "Create User"
+        }
+    }
+}

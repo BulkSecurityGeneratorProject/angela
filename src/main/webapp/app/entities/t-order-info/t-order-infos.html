@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="angelaApp.t_order_info.home.title">T Order Infos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="t-order-info.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="angelaApp.t_order_info.home.createLabel">
+                        Create new T Order Info
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.orderId">Order Id</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.productId">Product Id</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.productCount">Product Count</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.status">Status</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.connectStatus">Connect Status</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.createDate">Create Date</span></th>
+                    <th><span data-translate="angelaApp.t_order_info.createUser">Create User</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t_order_info in vm.t_order_infos track by t_order_info.id">
+                    <td><a ui-sref="t-order-info-detail({id:t_order_info.id})">{{t_order_info.id}}</a></td>
+                    <td>{{t_order_info.orderId}}</td>
+                    <td>{{t_order_info.productId}}</td>
+                    <td>{{t_order_info.productCount}}</td>
+                    <td>{{t_order_info.status}}</td>
+                    <td>{{t_order_info.connectStatus}}</td>
+                    <td>{{t_order_info.createDate | date:'medium'}}</td>
+                    <td>{{t_order_info.createUser}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="t-order-info-detail({id:t_order_info.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-order-info.edit({id:t_order_info.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-order-info.delete({id:t_order_info.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

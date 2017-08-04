@@ -11,6 +11,9 @@
                 "tPictures": "T Pictures",
                 "tCategory": "T Category",
                 "tReview": "T Review",
+                "tCaseInfo": "T Case Info",
+                "tCartInfo": "T Cart Info",
+                "tOrderInfo": "T Order Info",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

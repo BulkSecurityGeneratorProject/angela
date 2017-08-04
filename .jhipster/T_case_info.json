@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "brief",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isUseful",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "remarks",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isDelete",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170804145215",
+    "entityTableName": "t_case_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "orderId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productCount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "connectStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170804145217",
+    "entityTableName": "t_order_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

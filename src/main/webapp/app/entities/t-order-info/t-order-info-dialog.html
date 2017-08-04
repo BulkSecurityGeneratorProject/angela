@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myT_order_infoLabel" data-translate="angelaApp.t_order_info.home.createOrEditLabel">Create or edit a T Order Info</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.t_order_info.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.t_order_info.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.orderId" for="field_orderId">Order Id</label>
+            <input type="text" class="form-control" name="orderId" id="field_orderId"
+                    ng-model="vm.t_order_info.orderId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.productId" for="field_productId">Product Id</label>
+            <input type="text" class="form-control" name="productId" id="field_productId"
+                    ng-model="vm.t_order_info.productId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.productCount" for="field_productCount">Product Count</label>
+            <input type="text" class="form-control" name="productCount" id="field_productCount"
+                    ng-model="vm.t_order_info.productCount"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.status" for="field_status">Status</label>
+            <input type="number" class="form-control" name="status" id="field_status"
+                    ng-model="vm.t_order_info.status"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.connectStatus" for="field_connectStatus">Connect Status</label>
+            <input type="text" class="form-control" name="connectStatus" id="field_connectStatus"
+                    ng-model="vm.t_order_info.connectStatus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.createDate" for="field_createDate">Create Date</label>
+                <div class="input-group">
+                    <input id="field_createDate" type="text" class="form-control" name="createDate" datetime-picker="{{dateformat}}" ng-model="vm.t_order_info.createDate" is-open="vm.datePickerOpenStatus.createDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="angelaApp.t_order_info.createUser" for="field_createUser">Create User</label>
+            <input type="text" class="form-control" name="createUser" id="field_createUser"
+                    ng-model="vm.t_order_info.createUser"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,107 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "productSn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "categoryId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clickCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "marketPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "productPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "brief",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productDetails",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isONSale",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isHot",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "sortOrder",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productUnit",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stock",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productColor",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "productArea",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "material",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "proTag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sellCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "productStatus",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isDelete",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170804132604",
+    "entityTableName": "t_product",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

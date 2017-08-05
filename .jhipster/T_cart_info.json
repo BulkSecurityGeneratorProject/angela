@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "productId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "productCount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryDate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "message",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "asiSageNo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170804145216",
+    "entityTableName": "t_cart_info",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

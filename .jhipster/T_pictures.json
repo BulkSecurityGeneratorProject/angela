@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "productId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageUrlSmall",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "createUser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "imageType",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isDelete",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170804132605",
+    "entityTableName": "t_pictures",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

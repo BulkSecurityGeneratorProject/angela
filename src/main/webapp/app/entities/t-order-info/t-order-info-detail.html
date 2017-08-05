@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="angelaApp.t_order_info.detail.title">T Order Info</span> {{vm.t_order_info.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="angelaApp.t_order_info.orderId">Order Id</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.orderId}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_order_info.productId">Product Id</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.productId}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_order_info.productCount">Product Count</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.productCount}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_order_info.status">Status</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.status}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_order_info.connectStatus">Connect Status</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.connectStatus}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_order_info.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.createDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_order_info.createUser">Create User</span></dt>
+        <dd>
+            <span>{{vm.t_order_info.createUser}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-order-info-detail.edit({id:vm.t_order_info.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

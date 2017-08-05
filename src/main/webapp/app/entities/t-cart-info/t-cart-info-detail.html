@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="angelaApp.t_cart_info.detail.title">T Cart Info</span> {{vm.t_cart_info.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="angelaApp.t_cart_info.productId">Product Id</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.productId}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.productCount">Product Count</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.productCount}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.deliveryDate">Delivery Date</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.deliveryDate}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.createdate">Createdate</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.createdate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.message">Message</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.message}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.asiSageNo">Asi Sage No</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.asiSageNo}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.createDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="angelaApp.t_cart_info.createUser">Create User</span></dt>
+        <dd>
+            <span>{{vm.t_cart_info.createUser}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-cart-info-detail.edit({id:vm.t_cart_info.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

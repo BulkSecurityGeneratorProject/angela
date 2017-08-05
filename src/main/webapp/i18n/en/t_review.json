@@ -1,0 +1,27 @@
+{
+    "angelaApp": {
+        "t_review" : {
+            "home": {
+                "title": "T Reviews",
+                "createLabel": "Create a new T Review",
+                "createOrEditLabel": "Create or edit a T Review"
+            },
+            "created": "A new T Review is created with identifier {{ param }}",
+            "updated": "A T Review is updated with identifier {{ param }}",
+            "deleted": "A T Review is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Review {{ id }}?"
+            },
+            "detail": {
+                "title": "T Review"
+            },
+            "userId": "User Id",
+            "productId": "Product Id",
+            "content": "Content",
+            "createdate": "Createdate",
+            "isUseful": "Is Useful",
+            "remarks": "Remarks",
+            "isDelete": "Is Delete"
+        }
+    }
+}

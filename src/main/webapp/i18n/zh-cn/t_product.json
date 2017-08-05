@@ -1,0 +1,44 @@
+{
+    "angelaApp": {
+        "t_product" : {
+            "home": {
+                "title": "T Products",
+                "createLabel": "Create a new T Product",
+                "createOrEditLabel": "Create or edit a T Product"
+            },
+            "created": "A new T Product is created with identifier {{ param }}",
+            "updated": "A T Product is updated with identifier {{ param }}",
+            "deleted": "A T Product is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Product {{ id }}?"
+            },
+            "detail": {
+                "title": "T Product"
+            },
+            "productSn": "Product Sn",
+            "categoryId": "Category Id",
+            "productName": "Product Name",
+            "clickCount": "Click Count",
+            "marketPrice": "Market Price",
+            "productPrice": "Product Price",
+            "brief": "Brief",
+            "productDetails": "Product Details",
+            "isONSale": "Is ON Sale",
+            "isHot": "Is Hot",
+            "sortOrder": "Sort Order",
+            "productUnit": "Product Unit",
+            "stock": "Stock",
+            "productColor": "Product Color",
+            "productArea": "Product Area",
+            "material": "Material",
+            "proTag": "Pro Tag",
+            "size": "Size",
+            "sellCount": "Sell Count",
+            "createUser": "Create User",
+            "createDate": "Create Date",
+            "lastUpdate": "Last Update",
+            "productStatus": "Product Status",
+            "isDelete": "Is Delete"
+        }
+    }
+}

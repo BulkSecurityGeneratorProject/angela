@@ -1,0 +1,100 @@
+entity T_product {
+    productSn	String,// 商品SN码	varchar
+    categoryId	Integer,// 商品分类	int
+    productName	String,// 商品名称	varchar
+    clickCount	Integer,// 点击数	int
+    marketPrice	Double,// 市场价	Decimal
+    productPrice Double,// 本店售价	Decimal
+    brief	String,// 简短描述	varchar
+    productDetails	String,// 详细描述	varchar
+    isONSale	Integer,// 是否上架	int
+    isHot	Integer,// 是否是热销 	int
+    sortOrder	Integer,// 排序号	int
+    productUnit	String,// 计量单位	varchar
+    stock	Integer,// 库存	int
+    productColor	Integer,// 颜色	int
+    productArea	Integer,// 产地	int
+    material	Integer,// 材质	int
+    proTag String,
+    size String,
+    sellCount	Integer,// 卖出数量	int
+    createUser	String,// 创建者	varchar
+    createDate	ZonedDateTime,// 创建时间	datetime
+    lastUpdate	ZonedDateTime,// 最后修改时间	datetime
+    productStatus	Integer,// 产品状态	int
+    isDelete	Integer// 是否删除	int
+}
+entity T_pictures {
+    productId	 String, // 商品ID	varchar
+    imageUrl 	 String, // 图片地址	varchar
+    imageUrlSmall	 String, // 小图地址	varchar
+    createDate	 ZonedDateTime, // 创建时间	datetime
+    createUser	 String, // 创建者	varchar
+    imageType	 Integer, // 图片类型	int
+    isDelete	 Integer // 是否删除	int
+}
+
+entity T_category {
+    catName	String,// 分类类别名称	varchar	100
+    parentId	Integer,// 父级分类Id	int	2
+    depth	Integer,// 深度	int	2
+    status	Integer,// 状态	int	2
+    priority	Integer,// 优先级	int	2
+    isDelete	Integer// 是否删除	int	2
+}
+
+entity T_review {
+    userId	String,// 用户ID	varchar
+    productId	String,// 商品ID	varchar
+    content	String,// 评论内容	varchar
+    create_date	ZonedDateTime,// 评论时间	datetime
+    isUseful	Integer,// 是否有效	int
+    remarks	String,// 备注信息	varchar
+    isDelete	Integer // 是否删除	int
+}
+
+entity T_case_info {
+    title	String,  // 标题	varchar
+    brief	String,  // 简介	varchar
+    description	String,  // 详细描述	varchar
+    create_date	ZonedDateTime,  // 评论时间	datetime
+    isUseful	Integer,  // 是否有效	int
+    remarks	String,  // 备注信息	varchar
+    isDelete	Integer,  // 是否删除	int
+    createDate	ZonedDateTime,  // 创建时间	datetime
+    createUser	String  // 创建者	varchar
+}
+
+entity T_cart_info {
+    productId	String, // 产品ID	int
+    productCount	String, // 产品数量	varchar
+    deliveryDate	String, // 期望发货时间	varchar
+    create_date	ZonedDateTime, // 下单时间	datetime
+    message	String, // 备注信息	varchar
+    asiSageNo	Integer, // 贸易号	int
+    createDate	ZonedDateTime, // 创建时间	datetime
+    createUser	String // 创建者	varchar
+}
+
+entity T_order_info{
+    orderId	String, //订单编号	varchar
+    productId	String, //产品id	varchar
+    productCount	String, //数量	varchar
+    status	Integer, //当前状态	int
+    connectStatus	String, //联系状态	varchar
+    createDate	ZonedDateTime, //创建时间	datetime
+    createUser	String //创建者	varchar
+}
+
+entity T_dictionary{
+    dictName	String, //字典名称	varchar
+    dictKey	String, //字典键	varchar
+    dictVal	String, //字典值	varchar
+    dictDes	String, //字典描述	varchar
+    createDate	ZonedDateTime, //创建时间	datetime
+    isDelete	Integer //是否删除	int
+}
+
+
+
+

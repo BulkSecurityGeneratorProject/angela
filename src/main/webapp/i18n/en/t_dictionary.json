@@ -1,0 +1,26 @@
+{
+    "angelaApp": {
+        "t_dictionary" : {
+            "home": {
+                "title": "T Dictionaries",
+                "createLabel": "Create a new T Dictionary",
+                "createOrEditLabel": "Create or edit a T Dictionary"
+            },
+            "created": "A new T Dictionary is created with identifier {{ param }}",
+            "updated": "A T Dictionary is updated with identifier {{ param }}",
+            "deleted": "A T Dictionary is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Dictionary {{ id }}?"
+            },
+            "detail": {
+                "title": "T Dictionary"
+            },
+            "dictName": "Dict Name",
+            "dictKey": "Dict Key",
+            "dictVal": "Dict Val",
+            "dictDes": "Dict Des",
+            "createDate": "Create Date",
+            "isDelete": "Is Delete"
+        }
+    }
+}

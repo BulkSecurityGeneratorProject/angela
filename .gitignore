@@ -144,3 +144,5 @@ Desktop.ini
 # dev
 src/main/resources/config/application-dev.yml
 bower_components
+
+src/main/resources/config/application-dev.yml

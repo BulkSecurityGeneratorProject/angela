@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="angelaApp.t_dictionary.home.title">T Dictionaries</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="t-dictionary.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="angelaApp.t_dictionary.home.createLabel">
+                        Create new T Dictionary
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.dictId">Dict Id</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.dictName">Dict Name</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.dictKey">Dict Key</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.dictVal">Dict Val</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.dictDes">Dict Des</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.createDate">Create Date</span></th>
+                    <th><span data-translate="angelaApp.t_dictionary.isDelete">Is Delete</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="t_dictionary in vm.t_dictionaries track by t_dictionary.id">
+                    <td><a ui-sref="t-dictionary-detail({id:t_dictionary.id})">{{t_dictionary.id}}</a></td>
+                    <td>{{t_dictionary.dictId}}</td>
+                    <td>{{t_dictionary.dictName}}</td>
+                    <td>{{t_dictionary.dictKey}}</td>
+                    <td>{{t_dictionary.dictVal}}</td>
+                    <td>{{t_dictionary.dictDes}}</td>
+                    <td>{{t_dictionary.createDate | date:'medium'}}</td>
+                    <td>{{t_dictionary.isDelete}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="t-dictionary-detail({id:t_dictionary.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-dictionary.edit({id:t_dictionary.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-dictionary.delete({id:t_dictionary.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

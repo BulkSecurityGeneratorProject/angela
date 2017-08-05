@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dictId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dictName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dictKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dictVal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dictDes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "isDelete",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170805062143",
+    "entityTableName": "t_dictionary",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

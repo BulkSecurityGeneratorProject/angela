@@ -48,6 +48,7 @@ public class CacheConfiguration {
             cm.createCache(com.web.app.domain.T_case_info.class.getName(), jcacheConfiguration);
             cm.createCache(com.web.app.domain.T_cart_info.class.getName(), jcacheConfiguration);
             cm.createCache(com.web.app.domain.T_order_info.class.getName(), jcacheConfiguration);
+            cm.createCache(com.web.app.domain.T_dictionary.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -87,7 +87,6 @@ entity T_order_info{
 }
 
 entity T_dictionary{
-    dictId	String, //主键ID	varchar
     dictName	String, //字典名称	varchar
     dictKey	String, //字典键	varchar
     dictVal	String, //字典值	varchar

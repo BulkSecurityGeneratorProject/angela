@@ -22,9 +22,6 @@ public class T_dictionary implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "dict_id")
-    private String dictId;
-
     @Column(name = "dict_name")
     private String dictName;
 
@@ -49,19 +46,6 @@ public class T_dictionary implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getDictId() {
-        return dictId;
-    }
-
-    public T_dictionary dictId(String dictId) {
-        this.dictId = dictId;
-        return this;
-    }
-
-    public void setDictId(String dictId) {
-        this.dictId = dictId;
     }
 
     public String getDictName() {
@@ -166,7 +150,6 @@ public class T_dictionary implements Serializable {
     public String toString() {
         return "T_dictionary{" +
             "id=" + getId() +
-            ", dictId='" + getDictId() + "'" +
             ", dictName='" + getDictName() + "'" +
             ", dictKey='" + getDictKey() + "'" +
             ", dictVal='" + getDictVal() + "'" +

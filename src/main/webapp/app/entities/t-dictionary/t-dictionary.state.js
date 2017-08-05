@@ -104,7 +104,6 @@
                     resolve: {
                         entity: function () {
                             return {
-                                dictId: null,
                                 dictName: null,
                                 dictKey: null,
                                 dictVal: null,

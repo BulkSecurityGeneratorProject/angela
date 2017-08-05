@@ -3,10 +3,6 @@
     "relationships": [],
     "fields": [
         {
-            "fieldName": "dictId",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "dictName",
             "fieldType": "String"
         },

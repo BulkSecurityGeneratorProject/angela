@@ -42,9 +42,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = AngelaApp.class)
 public class T_dictionaryResourceIntTest {
 
-    private static final String DEFAULT_DICT_ID = "AAAAAAAAAA";
-    private static final String UPDATED_DICT_ID = "BBBBBBBBBB";
-
     private static final String DEFAULT_DICT_NAME = "AAAAAAAAAA";
     private static final String UPDATED_DICT_NAME = "BBBBBBBBBB";
 
@@ -100,7 +97,6 @@ public class T_dictionaryResourceIntTest {
      */
     public static T_dictionary createEntity(EntityManager em) {
         T_dictionary t_dictionary = new T_dictionary()
-            .dictId(DEFAULT_DICT_ID)
             .dictName(DEFAULT_DICT_NAME)
             .dictKey(DEFAULT_DICT_KEY)
             .dictVal(DEFAULT_DICT_VAL)
@@ -130,7 +126,6 @@ public class T_dictionaryResourceIntTest {
         List<T_dictionary> t_dictionaryList = t_dictionaryRepository.findAll();
         assertThat(t_dictionaryList).hasSize(databaseSizeBeforeCreate + 1);
         T_dictionary testT_dictionary = t_dictionaryList.get(t_dictionaryList.size() - 1);
-        assertThat(testT_dictionary.getDictId()).isEqualTo(DEFAULT_DICT_ID);
         assertThat(testT_dictionary.getDictName()).isEqualTo(DEFAULT_DICT_NAME);
         assertThat(testT_dictionary.getDictKey()).isEqualTo(DEFAULT_DICT_KEY);
         assertThat(testT_dictionary.getDictVal()).isEqualTo(DEFAULT_DICT_VAL);
@@ -169,7 +164,6 @@ public class T_dictionaryResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(t_dictionary.getId().intValue())))
-            .andExpect(jsonPath("$.[*].dictId").value(hasItem(DEFAULT_DICT_ID.toString())))
             .andExpect(jsonPath("$.[*].dictName").value(hasItem(DEFAULT_DICT_NAME.toString())))
             .andExpect(jsonPath("$.[*].dictKey").value(hasItem(DEFAULT_DICT_KEY.toString())))
             .andExpect(jsonPath("$.[*].dictVal").value(hasItem(DEFAULT_DICT_VAL.toString())))
@@ -189,7 +183,6 @@ public class T_dictionaryResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(t_dictionary.getId().intValue()))
-            .andExpect(jsonPath("$.dictId").value(DEFAULT_DICT_ID.toString()))
             .andExpect(jsonPath("$.dictName").value(DEFAULT_DICT_NAME.toString()))
             .andExpect(jsonPath("$.dictKey").value(DEFAULT_DICT_KEY.toString()))
             .andExpect(jsonPath("$.dictVal").value(DEFAULT_DICT_VAL.toString()))
@@ -216,7 +209,6 @@ public class T_dictionaryResourceIntTest {
         // Update the t_dictionary
         T_dictionary updatedT_dictionary = t_dictionaryRepository.findOne(t_dictionary.getId());
         updatedT_dictionary
-            .dictId(UPDATED_DICT_ID)
             .dictName(UPDATED_DICT_NAME)
             .dictKey(UPDATED_DICT_KEY)
             .dictVal(UPDATED_DICT_VAL)
@@ -233,7 +225,6 @@ public class T_dictionaryResourceIntTest {
         List<T_dictionary> t_dictionaryList = t_dictionaryRepository.findAll();
         assertThat(t_dictionaryList).hasSize(databaseSizeBeforeUpdate);
         T_dictionary testT_dictionary = t_dictionaryList.get(t_dictionaryList.size() - 1);
-        assertThat(testT_dictionary.getDictId()).isEqualTo(UPDATED_DICT_ID);
         assertThat(testT_dictionary.getDictName()).isEqualTo(UPDATED_DICT_NAME);
         assertThat(testT_dictionary.getDictKey()).isEqualTo(UPDATED_DICT_KEY);
         assertThat(testT_dictionary.getDictVal()).isEqualTo(UPDATED_DICT_VAL);

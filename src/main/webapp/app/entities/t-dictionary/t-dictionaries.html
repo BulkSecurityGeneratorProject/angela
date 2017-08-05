@@ -19,7 +19,6 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="angelaApp.t_dictionary.dictId">Dict Id</span></th>
                     <th><span data-translate="angelaApp.t_dictionary.dictName">Dict Name</span></th>
                     <th><span data-translate="angelaApp.t_dictionary.dictKey">Dict Key</span></th>
                     <th><span data-translate="angelaApp.t_dictionary.dictVal">Dict Val</span></th>
@@ -32,7 +31,6 @@
             <tbody>
                 <tr ng-repeat="t_dictionary in vm.t_dictionaries track by t_dictionary.id">
                     <td><a ui-sref="t-dictionary-detail({id:t_dictionary.id})">{{t_dictionary.id}}</a></td>
-                    <td>{{t_dictionary.dictId}}</td>
                     <td>{{t_dictionary.dictName}}</td>
                     <td>{{t_dictionary.dictKey}}</td>
                     <td>{{t_dictionary.dictVal}}</td>

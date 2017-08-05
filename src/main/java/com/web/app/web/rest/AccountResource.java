@@ -75,7 +75,10 @@ public class AccountResource {
                         .createUser(managedUserVM.getLogin(), managedUserVM.getPassword(),
                             managedUserVM.getFirstName(), managedUserVM.getLastName(),
                             managedUserVM.getEmail().toLowerCase(), managedUserVM.getImageUrl(),
-                            managedUserVM.getLangKey());
+                            managedUserVM.getLangKey(),
+                            managedUserVM.getAsiSageNumber(),
+                            managedUserVM.getFaxNumber(),
+                            managedUserVM.getTelNumber());
 
                     mailService.sendActivationEmail(user);
                     return new ResponseEntity<>(HttpStatus.CREATED);
@@ -141,7 +144,7 @@ public class AccountResource {
             .findOneByLogin(userLogin)
             .map(u -> {
                 userService.updateUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(),
-                    userDTO.getLangKey(), userDTO.getImageUrl());
+                    userDTO.getLangKey(), userDTO.getImageUrl(),userDTO.getAsiSageNumber(), userDTO.getFaxNumber(), userDTO.getTelNumber());
                 return new ResponseEntity(HttpStatus.OK);
             })
             .orElseGet(() -> new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));

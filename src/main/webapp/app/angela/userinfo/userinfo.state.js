@@ -12,16 +12,16 @@
             abstract: true,
             parent: 'angela'
         })
-        .state('userinfo-list', {
+        .state('userinfo-detail', {
             parent: 'userinfo',
-            url: '/userinfo-list',
+            url: '/userinfo-detail',
             data: {
                 authorities: []
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/angela/userinfo/userinfo-list.html',
-                    controller: 'UserinfoListController',
+                    templateUrl: 'app/angela/userinfo/userinfo-detail.html',
+                    controller: 'UserinfoDetailController',
                     controllerAs: 'vm'
                 }
             },

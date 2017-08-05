@@ -36,22 +36,15 @@
         .state('full-login', {
             //  全屏登陆
             parent: 'app',
-            url: '/login',
+            url: '/full-login',
             data: {
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/components/full-login/login.html'
-                    // controller: 'gcExceptionController',
-                    // controllerAs: 'vm'
+                    templateUrl: 'app/components/full-login/full-login.html',
+                    controller: 'FullLoginController',
+                    controllerAs: 'vm'
                 }
-            },
-            resolve: {
-                stateParams: ['$stateParams', function($stateParams){
-
-                    // console.log('systemSingleIndex.getData',systemSingleIndex.getData());
-                    return $stateParams;
-                }]
             }
         })
     }

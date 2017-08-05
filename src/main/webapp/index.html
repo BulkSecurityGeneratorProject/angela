@@ -29,7 +29,7 @@
     <![endif]-->
     <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
-    <div >
+    <div class="clearfix">
         <div class="" ui-view="content">
             <!-- Angular views -->
         </div>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="toolbar">
-        <a href="javascript:;" class="toolbar-item" style="position: relative;">
+        <!-- <a href="javascript:;" class="toolbar-item" style="position: relative;">
             <span class="toolbar-btn">
                 <i class="toolbar-icon fa fa-qq"></i>
                 <span class="toolbar-text">QQ<br>账号</span>
@@ -57,7 +57,7 @@
                 <span class="toolbar-text"> 微信<br>平台</span>
             </span>
             <div class="toolbar-item-sub" style="top:-10px"><img src="images/er.png"></div>
-        </a>
+        </a> -->
         <a href="javascript:;" class="toolbar-item" style="position: relative;">
             <span class="toolbar-btn">
                 <i class="toolbar-icon fa fa-phone"></i>
@@ -105,7 +105,7 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/messageformat/messageformat.js"></script>
-    <script src="bower_components/side/side-toolbar.js"></script>
+    <script src="content/js/side-toolbar.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
@@ -228,6 +228,8 @@
     <script src="app/angela/mycart/mycart.state.js"></script>
     <script src="app/angela/testerminal/testerminal.controller.js"></script>
     <script src="app/angela/testerminal/testerminal.state.js"></script>
+    <script src="app/angela/userinfo/userinfo.controller.js"></script>
+    <script src="app/angela/userinfo/userinfo.state.js"></script>
 
     <script src="app/account/social/social-register.controller.js"></script>
     <script src="app/account/social/social-auth.controller.js"></script>

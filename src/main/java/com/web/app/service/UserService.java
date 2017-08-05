@@ -84,7 +84,7 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey) {
+        String imageUrl, String langKey, String asiSageNumber, String faxNumber, String telNumber) {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
@@ -98,6 +98,9 @@ public class UserService {
         newUser.setEmail(email);
         newUser.setImageUrl(imageUrl);
         newUser.setLangKey(langKey);
+        newUser.setAsiSageNumber(asiSageNumber);
+        newUser.setFaxNumber(faxNumber);
+        newUser.setTelNumber(telNumber);
         // new user is not active
         newUser.setActivated(false);
         // new user gets registration key
@@ -132,6 +135,9 @@ public class UserService {
         user.setPassword(encryptedPassword);
         user.setResetKey(RandomUtil.generateResetKey());
         user.setResetDate(Instant.now());
+        user.setAsiSageNumber(userDTO.getAsiSageNumber());
+        user.setFaxNumber(userDTO.getFaxNumber());
+        user.setTelNumber(userDTO.getTelNumber());
         user.setActivated(true);
         userRepository.save(user);
         log.debug("Created Information for User: {}", user);
@@ -147,13 +153,16 @@ public class UserService {
      * @param langKey language key
      * @param imageUrl image URL of user
      */
-    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl) {
+    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl, String asiSageNumber, String faxNumber, String telNumber) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             user.setFirstName(firstName);
             user.setLastName(lastName);
             user.setEmail(email);
             user.setLangKey(langKey);
             user.setImageUrl(imageUrl);
+            user.setAsiSageNumber(asiSageNumber);
+            user.setFaxNumber(faxNumber);
+            user.setTelNumber(telNumber);
             log.debug("Changed Information for User: {}", user);
         });
     }
@@ -175,6 +184,9 @@ public class UserService {
                 user.setImageUrl(userDTO.getImageUrl());
                 user.setActivated(userDTO.isActivated());
                 user.setLangKey(userDTO.getLangKey());
+                user.setAsiSageNumber(userDTO.getAsiSageNumber());
+                user.setFaxNumber(userDTO.getFaxNumber());
+                user.setTelNumber(userDTO.getTelNumber());
                 Set<Authority> managedAuthorities = user.getAuthorities();
                 managedAuthorities.clear();
                 userDTO.getAuthorities().stream()

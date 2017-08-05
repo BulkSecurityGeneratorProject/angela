@@ -21,28 +21,33 @@
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+							<!-- <div class="col-md-8 col-md-offset-2"> -->
+								<div class="alert alert-danger" ng-show="vm.authenticationError">
+									<strong>Failed to sign in!</strong> Please check your credentials and try again.
+								</div>
+							<!-- </div> -->
 				    		<div class="login-brand">
-						        <form action="#" class="login-form">
+						        <form action="#" class="login-form" ng-submit="vm.login($event)">
 						        	<h3>CUSTOMER LOG IN</h3>
 						        	<div class="control-group">
 										<label class="control-label">EMAIL *</label>
 										<div class="controls">
-											<input type="text" placeholder="EMAIL" class="form-control">
+											<input type="text" class="form-control" id="username"  ng-model="vm.username">
 										</div>
-										<label class="help-small">EMAIL IS REGUIRED.</label>
+										<label class="help-small" ng-show="!vm.username">NAME IS REGUIRED.</label>
 									</div>
 									<div class="control-group">
 										<label class="control-label">PASSWORD *</label>
 										<div class="controls">
-											<input type="text" placeholder="PASSWORD" class="form-control">
+											<input type="password" class="form-control" id="password" ng-model="vm.password" class="form-control">
 										</div>
-										<label class="help-small">PASSWORD IS REGUIRED.</label>
+										<label class="help-small" ng-show="!vm.password">PASSWORD IS REGUIRED.</label>
 									</div>
 									<div class="control-group">
 										<a href="#" class="forgot-psw">FORGOT PASSWORD ？</a>
 									</div>
 									<div class="login-btn">
-										<a href="index.html" class="btn-register">LOG IN</a>
+										<input type="submit" class="btn-register" value="LOG IN">
 									</div>
 						        </form>
 						    </div>

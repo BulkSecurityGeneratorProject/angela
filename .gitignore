@@ -142,5 +142,5 @@ Desktop.ini
 ######################
 .eslintcache
 # dev
-/src/main/resources/config/application-dev.yml
+src/main/resources/config/application-dev.yml
 bower_components

@@ -92,6 +92,9 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Column(name = "fax_number")
     private String faxNumber = null;
+    
+    @Column(name = "company_name")
+    private String companyName = null;
 
     @JsonIgnore
     @ManyToMany
@@ -231,7 +234,16 @@ public class User extends AbstractAuditingEntity implements Serializable {
     public String getAsiSageNumber() {
         return asiSageNumber;
     }
-    @Override
+    
+    public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

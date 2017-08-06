@@ -58,6 +58,8 @@ public class UserDTO {
 	private String asiSageNumber;
 
 	private String faxNumber;
+	
+	private String companyName;
 
 	public UserDTO() {
 		// Empty constructor needed for Jackson.
@@ -67,12 +69,14 @@ public class UserDTO {
 		this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(), user.getEmail(),
 				user.getActivated(), user.getImageUrl(), user.getLangKey(), user.getCreatedBy(), user.getCreatedDate(),
 				user.getLastModifiedBy(), user.getLastModifiedDate(),
-				user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()));
+				user.getAuthorities().stream().map(Authority::getName).collect(Collectors.toSet()),
+				user.getFaxNumber(),user.getAsiSageNumber(),user.getTelNumber(),user.getCompanyName());
 	}
 
 	public UserDTO(Long id, String login, String firstName, String lastName, String email, boolean activated,
 			String imageUrl, String langKey, String createdBy, Instant createdDate, String lastModifiedBy,
-			Instant lastModifiedDate, Set<String> authorities) {
+			Instant lastModifiedDate, Set<String> authorities,String faxNumber,
+			String asiSageNumber, String telNumber, String companyName) {
 
 		this.id = id;
 		this.login = login;
@@ -87,6 +91,12 @@ public class UserDTO {
 		this.lastModifiedBy = lastModifiedBy;
 		this.lastModifiedDate = lastModifiedDate;
 		this.authorities = authorities;
+		
+		this.asiSageNumber = asiSageNumber;
+
+		this.faxNumber = faxNumber;
+		this.telNumber = telNumber;
+		this.companyName = companyName;
 	}
 
 	public Long getId() {
@@ -173,9 +183,19 @@ public class UserDTO {
 	public String getFaxNumber() {
 		return faxNumber;
 	}
-
+	
 	public void setFaxNumber(String faxNumber) {
 		this.faxNumber = faxNumber;
+	}
+	
+	
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	@Override
@@ -184,6 +204,8 @@ public class UserDTO {
 				+ '\'' + ", email='" + email + '\'' + ", imageUrl='" + imageUrl + '\'' + ", activated=" + activated
 				+ ", langKey='" + langKey + '\'' + ", createdBy=" + createdBy + ", createdDate=" + createdDate
 				+ ", lastModifiedBy='" + lastModifiedBy + '\'' + ", lastModifiedDate=" + lastModifiedDate
+				+ ", faxNumber='" + faxNumber + '\'' + ", asiSageNumber=" + asiSageNumber
+				+ ", telNumber='" + telNumber + '\'' + ", companyName=" + companyName
 				+ ", authorities=" + authorities + "}";
 	}
 }

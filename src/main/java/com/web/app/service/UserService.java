@@ -84,7 +84,7 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey, String asiSageNumber, String faxNumber, String telNumber) {
+        String imageUrl, String langKey, String asiSageNumber, String faxNumber, String telNumber, String companyName) {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
@@ -101,8 +101,9 @@ public class UserService {
         newUser.setAsiSageNumber(asiSageNumber);
         newUser.setFaxNumber(faxNumber);
         newUser.setTelNumber(telNumber);
+        newUser.setCompanyName(companyName);
         // new user is not active
-        newUser.setActivated(false);
+        newUser.setActivated(true);
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
@@ -138,6 +139,7 @@ public class UserService {
         user.setAsiSageNumber(userDTO.getAsiSageNumber());
         user.setFaxNumber(userDTO.getFaxNumber());
         user.setTelNumber(userDTO.getTelNumber());
+        user.setCompanyName(userDTO.getCompanyName());
         user.setActivated(true);
         userRepository.save(user);
         log.debug("Created Information for User: {}", user);
@@ -153,7 +155,7 @@ public class UserService {
      * @param langKey language key
      * @param imageUrl image URL of user
      */
-    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl, String asiSageNumber, String faxNumber, String telNumber) {
+    public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl, String asiSageNumber, String faxNumber, String telNumber, String companyName) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             user.setFirstName(firstName);
             user.setLastName(lastName);
@@ -163,6 +165,7 @@ public class UserService {
             user.setAsiSageNumber(asiSageNumber);
             user.setFaxNumber(faxNumber);
             user.setTelNumber(telNumber);
+            user.setCompanyName(companyName);
             log.debug("Changed Information for User: {}", user);
         });
     }
@@ -187,6 +190,7 @@ public class UserService {
                 user.setAsiSageNumber(userDTO.getAsiSageNumber());
                 user.setFaxNumber(userDTO.getFaxNumber());
                 user.setTelNumber(userDTO.getTelNumber());
+                user.setCompanyName(userDTO.getCompanyName());
                 Set<Authority> managedAuthorities = user.getAuthorities();
                 managedAuthorities.clear();
                 userDTO.getAuthorities().stream()

@@ -5,33 +5,38 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="mycart">
                     <div class="row">
+                        <form name="form" role="form" novalidate ng-submit="vm.changePassword()" show-validation>
                         <div class="col-md-12 col-lg-12">
                             <h4>Customer info</h4>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>Company name：</label>
-                            <input type="text" class="form-control" name="" value="guangzhoujiaoye">
+                            <input type="text" ng-model="vm.account.companyName" class="form-control" name="" value="guangzhoujiaoye">
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>User name：</label>
                             <!-- <span>guangzhoujiaoye</span> -->
-                            <input type="text" class="form-control" name="" value="guangzhoujiaoye">
+                            <input type="text" ng-model="vm.account.email" class="form-control" name="" value="guangzhoujiaoye">
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>ASI Or Sage No.：</label>
-                            <input type="text" class="form-control" name="" value="guangzhoujiaoye">
+                            <input type="text" ng-model="vm.account.asiSageNumber" class="form-control" name="" value="guangzhoujiaoye">
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>Tel：</label>
-                            <input type="text" class="form-control" name="" value="guangzhoujiaoye">
+                            <input type="text" ng-model="vm.account.telNumber" class="form-control" name="" value="guangzhoujiaoye">
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>Fax：</label>
-                            <input type="text" class="form-control" name="" value="guangzhoujiaoye">
+                            <input type="text" ng-model="vm.account.faxNumber" class="form-control" name="" value="guangzhoujiaoye">
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>E-mail：</label>
-                            <input type="text" class="form-control" name="" value="guangzhoujiaoye@hotmail.com">
+                            <input type="text" ng-model="vm.account.email" class="form-control" name="" value="guangzhoujiaoye@hotmail.com">
+                        </div>
+
+                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <input type="submit" name="" value="修改">
                         </div>
                         <div class="col-md-12 col-lg-12">
                             <h4>Order Status</h4>
@@ -111,6 +116,8 @@
                                 </tbody>
                             </table>
                         </div>
+
+                    </form>
                     </div>
                 </div>
             </div>

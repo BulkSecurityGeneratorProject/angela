@@ -6,9 +6,9 @@
         .controller('RegisterController', RegisterController);
 
 
-    RegisterController.$inject = ['$translate', '$timeout', 'Auth', 'LoginService'];
+    RegisterController.$inject = ['$translate', '$timeout', '$state', 'Auth', 'LoginService'];
 
-    function RegisterController ($translate, $timeout, Auth, LoginService) {
+    function RegisterController ($translate, $timeout, $state, Auth, LoginService) {
         var vm = this;
 
         vm.doNotMatch = null;
@@ -30,9 +30,11 @@
                 vm.error = null;
                 vm.errorUserExists = null;
                 vm.errorEmailExists = null;
+                vm.registerAccount.login = vm.registerAccount.email;
 
                 Auth.createAccount(vm.registerAccount).then(function () {
                     vm.success = 'OK';
+                    $state.go("full-login");
                 }).catch(function (response) {
                     vm.success = null;
                     if (response.status === 400 && response.data === 'login already in use') {

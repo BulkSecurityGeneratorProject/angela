@@ -49,6 +49,7 @@
             <column name="tel_number" type="varchar(100)"/>
             <column name="asi_sage_number" type="varchar(100)"/>
             <column name="fax_number" type="varchar(100)"/>
+            <column name="company_name" type="varchar(100)"/>
         </createTable>
         <createIndex indexName="idx_user_login"
             tableName="jhi_user"

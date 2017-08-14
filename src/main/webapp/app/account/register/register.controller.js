@@ -22,6 +22,7 @@
         $timeout(function (){angular.element('#login').focus();});
 
         function register () {
+            console.log("registerAccount ", vm.registerAccount);
             if (vm.registerAccount.password !== vm.confirmPassword) {
                 vm.doNotMatch = 'ERROR';
             } else {

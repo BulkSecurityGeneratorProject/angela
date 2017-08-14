@@ -80,7 +80,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="product in vm.productList.products">
+                    <div class="thumbnails" ui-sref="product-detail(product['id'])">
+                        <img ng-src="{{product['pictures'][0]['imageUrl'] | trustAsUrl}}">
+                        <div class="caption">
+                            <h4><span ng-bind="product['lastUpdate']"></span ng-bind="product['productName']"></h4>
+                            <p ng-bind="product['productDetails']"></p>
+                            <p class="hot-color">
+                                Color：<span class="label-warning"></span>
+                                <span class="label-info"></span>
+                                <span class="label-primary"></span>
+                            </p>
+                            <p class="hot-r">
+                                TAGS：<a href="#" ng-bind="product['proTag']"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="thumbnails" ui-sref="product-detail">
                         <img src="content/images/mathwork.jpg">
                         <div class="caption">
@@ -164,24 +181,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="thumbnails" ui-sref="product-detail">
-                        <img src="content/images/mathwork.jpg">
-                        <div class="caption">
-                            <h4><span>2017.06.26</span>Heading</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
-                            </p>
-                            <p class="hot-r">
-                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

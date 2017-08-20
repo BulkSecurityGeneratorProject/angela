@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: #fff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333; }
 
@@ -1158,20 +1158,19 @@ body{
     margin:0 auto;
     text-align: center;
 }
-.hot-tabs > div > li{
-    display:inline-block !important;
-    float:none;
-}
-.hot-tabs> div>li>a{
-    padding:10px 20px;
-    margin-right: 0;
+.hot-tabs .nav-tabs-justified > li > a,.hot-tabs .nav-tabs.nav-justified > li > a{
+    border:none;
     border-bottom: 1px solid #ddd;
+    background:url(../images/hot-line.png) no-repeat right center;
 }
-.hot-tabs> div>li.active>a, .hot-tabs>li.active>a:focus, .hot-tabs>li.active>a:hover{
-    border:0;
+.hot-tabs .nav-tabs-justified > li:last-child > a,.hot-tabs .nav-tabs.nav-justified > li:last-child > a{
+    background:none !important;
+}
+.hot-tabs .nav-tabs-justified > .active > a, .hot-tabs .nav-tabs.nav-justified > .active > a, .hot-tabs .nav-tabs-justified > .active > a:hover, .hot-tabs .nav-tabs.nav-justified > .active > a:hover, .hot-tabs .nav-tabs-justified > .active > a:focus, .hot-tabs .nav-tabs.nav-justified > .active > a:focus{
+    border:none;
     background:none;
-    color:#c9302c;
-    border-bottom: 1px solid #c9302c;
+    background:url(../images/hot-line.png) no-repeat right center;
+    border-bottom: 1px solid #c9302c !important;
 }
 .tab-content{
     padding:10px;

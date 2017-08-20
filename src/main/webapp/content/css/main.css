@@ -820,11 +820,11 @@ body{
 }
 .cases-list p{
     margin-bottom: 30px;
-    width: 32em;
-    /* height: 15px; */
+    /* width: 32em;
+    height: 15px;
     white-space: nowrap;
     text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis; */
     -webkit-line-clamp: 3;
     overflow: hidden;
 }

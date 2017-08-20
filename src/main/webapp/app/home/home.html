@@ -42,10 +42,13 @@
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-lg-4" ng-repeat="case in vm.caseList">
                     <div class="cases-list">
-                        <h3 ng-bind="case['title']"></h3>
-                        <h4 ng-bind="case['brief']">Heading</h4>
-                        <p ng-bind="case['description']"></p>
-                        <a ui-sref="ourservice-list" class="btn-detail">Detail</a>
+                        <img src="content/images/case-img.png"/>
+                        <div class="cases-list-info">
+                            <h3 ng-bind="case['title']"></h3>
+                            <h4 ng-bind="case['brief']">Heading</h4>
+                            <p ng-bind="case['description']"></p>
+                            <a ui-sref="ourservice-list" class="btn-detail">Detail</a>
+                        </div>
                     </div>
                 </div>
             </div>

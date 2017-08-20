@@ -30,17 +30,10 @@
 <div class="main-product">
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-            <div class="panel panel-blue">
-                <div class="panel-heading">CATEGORY</div>
+            <div class="panel panel-blue" ng-repeat="categorys in vm.categoryList.Categorys" ng-show="categorys['cateName']==vm.type">
+                <div class="panel-heading" ng-bind="categorys['cateName']"></div>
                 <div class="panel-body panel-navlist">
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
-                    <p>ANIMAL & PET GIFTS<span>（12）</span></p>
+                    <p ng-repeat="category in categorys['category']" ><a href="#" ng-bind="category['cateName']"></a></p>
                 </div>
             </div>
             <div class="panel panel-red">
@@ -81,11 +74,11 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="product in vm.productList.products">
-                    <div class="thumbnails" ui-sref="product-detail(product['id'])">
-                        <img ng-src="{{product['pictures'][0]['imageUrl'] | trustAsUrl}}">
+                    <div class="thumbnails" ui-sref="product-detail({'id': product['id']})">
+                        <img ng-src="{{vm.PROD.IMAGEURL + product['pictures'][0]['imageUrl'] | trustAsUrl}}">
                         <div class="caption">
                             <h4><span ng-bind="product['lastUpdate']"></span ng-bind="product['productName']"></h4>
-                            <p ng-bind="product['productDetails']"></p>
+                            <p ng-bind-html-unsafe="product['productDetails']"></p>
                             <p class="hot-color">
                                 Color：<span class="label-warning"></span>
                                 <span class="label-info"></span>

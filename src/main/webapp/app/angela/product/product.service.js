@@ -2,41 +2,43 @@
     'use strict';
     angular
         .module('angelaApp')
-        .factory('home', home);
+        .factory('product', product);
 
-    home.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
+    product.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
 
-    function home ($resource, DateUtils, $http, PROD) {
+    function product ($resource, DateUtils, $http, PROD) {
         var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProducts';
-        var getCaseListUrl = PROD['DATAAPI'] + "/Angela/cases/getAllCases";
+        var getProductDetailUrl = PROD['DATAAPI'] + "/Angela/products/getProductsDetail";
         var getCategorysListUrl = PROD['DATAAPI'] + "/Angela/categorys/getAllCategorys";
 
         var getProductList = function(params) {
             return $http({
                    method: 'GET',
-                   url: getProductListUrl + "?OrderBy=" + params["OrderBy"] + "&Size=4",
+                   url: getProductListUrl + "?OrderBy=" + params["OrderBy"],
                    data: {}
             });
         }
 
-        var getCaseList = function(params) {
+        var getProductDetail = function(params) {
             return $http({
                    method: 'GET',
-                   url: getCaseListUrl + "?OrderBy=" + params["OrderBy"] + "&Size=3",
+                   url: getProductDetailUrl + "?productId=" + params["id"],
                    data: {}
             });
+
         }
 
-        var getCategorysList = function(params){
+        var getCategorysList = function(params) {
             return $http({
-                   method: 'GET',
-                   url: getCategorysListUrl,
-                   data: {}
-            });
+                method: 'get',
+                url: getCategorysListUrl,
+                data: {}
+            })
         }
+
         return {
             getProductList: getProductList,
-            getCaseList: getCaseList,
+            getProductDetail: getProductDetail,
             getCategorysList: getCategorysList
         };
     }

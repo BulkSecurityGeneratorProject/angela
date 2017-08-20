@@ -81,9 +81,9 @@
                             <span></span>
                         </li>
                         <li>
-                            <a href="#">Kind 2</a>
+                            <a href="#">product List</a>
                         </li>
-                        <li><span>Kind 3</span></li>
+                        <li><span ng-bind="vm.product.productName"></span></li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
@@ -117,18 +117,25 @@
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div> -->
-                    <div class="zoompic"><img src="content/images/3427.jpg" width="684" height="394" alt="美女配奥迪A4L墙纸" /></div>
+                    <div class="zoompic"><img ng-src="{{vm.PROD.IMAGEURL + vm.product['pictures'][0]['imageUrl'] | trustAsUrl}}" width="684" height="394" alt="美女配奥迪A4L墙纸" /></div>
                     <div class="sliderbox">
                         <div id="btn-left" class="arrow-btn dasabled"></div>
                         <div class="slider" id="thumbnail">
                             <ul>
-                                <li class="current"><a href="content/images/3427.jpg" target="_blank"><img src="content/images/14fd.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸01" /></a></li>
+
+                                <li ng-repeat="d in vm.product.pictures" >
+                                    <a href="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" target="_blank">
+                                        <img ng-src="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" width="115" height="74" alt="美女配奥迪A4L墙纸01" />
+                                    </a>
+                                </li>
+
+                                <!-- <li class="current"><a href="content/images/3427.jpg" target="_blank"><img src="content/images/14fd.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸01" /></a></li>
                                 <li><a href="content/images/52347.jpg" target="_blank"><img src="content/images/41a.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸02" /></a></li>
                                 <li><a href="content/images/23463.jpg" target="_blank"><img src="content/images/234fa.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸03" /></a></li>
                                 <li><a href="content/images/3247.jpg" target="_blank"><img src="content/images/412saf.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸04" /></a></li>
                                 <li><a href="content/images/26547.jpg" target="_blank"><img src="content/images/41356a.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸05" /></a></li>
                                 <li><a href="content/images/2153.jpg" target="_blank"><img src="content/images/432sadf.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸06" /></a></li>
-                                <li><a href="content/images/3427.jpg" target="_blank"><img src="content/images/14fd.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸01" /></a></li>
+                                <li><a href="content/images/3427.jpg" target="_blank"><img src="content/images/14fd.jpg" width="115" height="74" alt="美女配奥迪A4L墙纸01" /></a></li> -->
                             </ul>
                         </div>
                         <div id="btn-right" class="arrow-btn"></div>
@@ -137,11 +144,10 @@
                 <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                     <div class="panel panel-nbg">
                         <div class="panel-body panet-product">
-                            <h3>Production Name</h3>
+                            <h3 ng-bind="vm.product.productName"></h3>
                             <div class="product-desc">
                                 <h4>Production Description</h4>
-                                <p>Computer is the most famous invention now. It has many advantages and disadvantages. For the good side, first of all, it’s so convenient that we can use it to do our account. The second, as the developing of internet, computers made our world smaller and smaller. </p>
-                                <p>Third, we have a lot of fun with computers; it’s really useful for us. For the disadvantages, first, we spend more time before computers and less time on communications with others, it makes our society colder. Then, within the inventing of online games, many children trapped in the games and give up their study. It’s a serious problem. The last, now scientists have found that computers are somewhat harmful to our health. Generally speaking, computer is very important to our life though it’s not a perfect invention.</p>
+                                <p ng-bind-html-unsafe="vm.product.productDetails"></p>
                                 <h4>Categories：<span>Leather</span></h4>
                             </div>
                             <div class="question">

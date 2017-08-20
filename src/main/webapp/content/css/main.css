@@ -820,6 +820,13 @@ body{
 }
 .cases-list p{
     margin-bottom: 30px;
+    width: 32em;
+    /* height: 15px; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 .cases-list .btn-detail{
     display:line-block;
@@ -943,10 +950,17 @@ body{
 }
 .thumbnails p{
     font-size: 12px;
+    width: 24em;
+    /* height: 15px; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 .thumbnails img{
     width:100%;
-    height:auto;
+    height:300px;
 }
 .hot-r{
     padding-top: 20px;

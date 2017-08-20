@@ -40,9 +40,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-md-4 col-lg-4" ng-repeat="case in vm.caseList">
+                <div class="col-xs-12 col-md-4 col-lg-4" ng-repeat="case in vm.caseList.cases">
                     <div class="cases-list">
-                        <img src="content/images/case-img.png"/>
+                        <img ng-src="{{vm.PROD.IMAGEURL + case['pictures'][0]['imageUrl'] | trustAsUrl}}"/>
                         <div class="cases-list-info">
                             <h3 ng-bind="case['title']"></h3>
                             <h4 ng-bind="case['brief']">Heading</h4>
@@ -77,20 +77,23 @@
                         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Hot Sales</a></li>
                     </ul> -->
                     <uib-tabset class="hot-tabs" justified="true">
-                        <uib-tab heading="New Arrvial" select="vm.switchTab = 'Arrvial'"></uib-tab>
-                        <uib-tab heading="Top100" select="vm.switchTab = 'Top100'">Top100</uib-tab>
-                        <uib-tab heading="Hot Sales" select="vm.switchTab = 'Sales'">Hot Sales</uib-tab>
+                        <uib-tab heading="New Arrvial" select="vm.loadProductList('createDate')"></uib-tab>
+                        <uib-tab heading="Top100" select="vm.loadProductList('sellCount')"></uib-tab>
+                        <uib-tab heading="Hot Sales" select="vm.loadProductList('isHot')"></uib-tab>
                     </uib-tabset>
                       <!-- Tab panes -->
                       <div class="tab-content">
                           <div role="tabpanel" class="tab-pane active" id="home">
-                              <div class="row" ng-if="vm.switchTab == 'Arrvial'">
+                              <div class="row">
                                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat="product in vm.productList.products">
-                                      <div class="thumbnails" ui-sref="product-detail(product['id'])">
-                                          <img ng-src="{{'http://139.196.95.117:8082/Angela/upload/' + product['pictures'][0]['imageUrl'] | trustAsUrl}}">
+                                      <div class="thumbnails" ui-sref="product-detail({'id': product['id']})">
+                                          <img ng-src="{{vm.PROD.IMAGEURL + product['pictures'][0]['imageUrl'] | trustAsUrl}}">
                                           <div class="caption">
                                               <h4 ng-bind="product['productName']"></h4>
-                                              <p ng-bind="product['productDetails']"></p>
+                                              <p  ng-bind-html-unsafe="product['productDetails'] "></p>
+                                              <!-- <pre ng-init="d = '<p style="color: red"> 123123</p>'">
+                                                  {{d | trustAsHTML}}
+                                              </pre> -->
                                               <p class="hot-color">
                                                   Color：<span class="label-warning"></span>
                                                   <span class="label-info"></span>
@@ -102,61 +105,10 @@
                                           </div>
                                       </div>
                                   </div>
-                                  <!-- <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                      <div class="thumbnails" ui-sref="product-detail">
-                                          <img src="content/images/mathwork.jpg">
-                                          <div class="caption">
-                                              <h4>Heading</h4>
-                                              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                              <p class="hot-color">
-                                                  Color：<span class="label-warning"></span>
-                                                  <span class="label-info"></span>
-                                                  <span class="label-primary"></span>
-                                              </p>
-                                              <p class="hot-r">
-                                                  TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                                              </p>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                      <div class="thumbnails" ui-sref="product-detail">
-                                          <img src="content/images/mathwork.jpg">
-                                          <div class="caption">
-                                              <h4>Heading</h4>
-                                              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                              <p class="hot-color">
-                                                  Color：<span class="label-warning"></span>
-                                                  <span class="label-info"></span>
-                                                  <span class="label-primary"></span>
-                                              </p>
-                                              <p class="hot-r">
-                                                  TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                                              </p>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                                      <div class="thumbnails" ui-sref="product-detail">
-                                          <img src="content/images/mathwork.jpg">
-                                          <div class="caption">
-                                              <h4>Heading</h4>
-                                              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                              <p class="hot-color">
-                                                  Color：<span class="label-warning"></span>
-                                                  <span class="label-info"></span>
-                                                  <span class="label-primary"></span>
-                                              </p>
-                                              <p class="hot-r">
-                                                  TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                                              </p>
-                                          </div>
-                                      </div>
-                                  </div> -->
                               </div>
                           </div>
-                          <div role="tabpanel" class="tab-pane" id="profile">222222</div>
-                          <div role="tabpanel" class="tab-pane" id="messages">33333</div>
+                          <!-- <div role="tabpanel" class="tab-pane" id="profile">222222</div>
+                          <div role="tabpanel" class="tab-pane" id="messages">33333</div> -->
                       </div>
 
 
@@ -165,7 +117,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <a ui-sref="product-list" class="btn-see">See More</a>
+                    <a ui-sref="product-list({'orderby': vm.orderby})" class="btn-see">See More</a>
                 </div>
             </div>
         </div>
@@ -177,18 +129,18 @@
                         <img src="content/images/industry_manufacture.svg">
                         <h3>By Industy</h3>
                         <div class="event-cover">
-                            <p><a ui-sref="product-list">Educational</a></p>
-                            <p><a ui-sref="product-list">Financial</a></p>
-                            <p><a ui-sref="product-list">Healthcare</a></p>
-                            <p><a ui-sref="product-list">Electronic</a> </p>
-                            <p><a ui-sref="product-list">Not-for-profit</a></p>
-                            <p><a ui-sref="product-list">Casino</a></p>
-                            <p><a ui-sref="product-list">Hospitality</a></p>
-                            <p><a ui-sref="product-list">Real Estate</a></p>
-                            <p><a ui-sref="product-list">Restaurant</a></p>
-                            <p><a ui-sref="product-list">Auto Industry</a></p>
-                            <p><a ui-sref="product-list">Bar</a></p>
-                            <p><a ui-sref="product-list">Super Market</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Educational</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Financial</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Healthcare</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Electronic</a> </p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Not-for-profit</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Casino</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Hospitality</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Real Estate</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Restaurant</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Auto Industry</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Bar</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Industry'})">Super Market</a></p>
                         </div>
                     </div>
                 </div>
@@ -197,9 +149,9 @@
                         <img src="content/images/events.svg">
                         <h3>By Event</h3>
                         <div class="event-cover">
-                            <p><a ui-sref="product-list">Holiday</a></p>
-                            <p><a ui-sref="product-list">Corporate events</a></p>
-                            <p><a ui-sref="product-list">Themed Event</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Events-Holiday'})">Holiday</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Event-Corporate events'})">Corporate events</a></p>
+                            <p><a ui-sref="product-list({'orderby': vm.orderby,'type': 'Events-Themed Event'})">Themed Event</a></p>
                         </div>
                     </div>
                 </div>

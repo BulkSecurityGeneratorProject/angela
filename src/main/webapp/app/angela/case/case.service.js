@@ -2,11 +2,11 @@
     'use strict';
     angular
         .module('angelaApp')
-        .factory('home', home);
+        .factory('case', case);
 
-    home.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
+    case.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
 
-    function home ($resource, DateUtils, $http, PROD) {
+    function case ($resource, DateUtils, $http, PROD) {
         var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProducts';
         var getCaseListUrl = PROD['DATAAPI'] + "/Angela/cases/getAllCases";
         var getCategorysListUrl = PROD['DATAAPI'] + "/Angela/categorys/getAllCategorys";

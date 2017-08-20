@@ -3,26 +3,14 @@
 
     angular
         .module('angelaApp')
-        .filter('trustAsHTML', trustAsHTML)
-        .filter('trustAsUrl', trustAsUrl)
-        .filter('trustAsResourceUrl', trustAsResourceUrl);
+        .filter('trustAsUrl', trustAsUrl);
 
-        trustAsHTML.$inject = ['$sce'];
         trustAsUrl.$inject = ['$sce'];
-        trustAsResourceUrl.$inject = ['$sce'];
 
-    function trustAsHTML($sce) {
 
-        return $sce.trustAsHTML;
-    }
+        function trustAsUrl($sce) {
 
-    function trustAsUrl($sce) {
+            return $sce.trustAsUrl;
+        }
 
-        return $sce.trustAsUrl;
-    }
-
-    function trustAsResourceUrl($sce) {
-
-        return $sce.trustAsResourceUrl;
-    }
 })();

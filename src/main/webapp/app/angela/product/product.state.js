@@ -14,7 +14,7 @@
         })
         .state('product-list', {
             parent: 'product',
-            url: '/product-list',
+            url: '/product-list?{orderby}&&{type}',
             data: {
                 authorities: []
             },
@@ -34,7 +34,7 @@
         })
         .state('product-detail', {
             parent: 'product',
-            url: '/product-detail',
+            url: '/product-detail?{id}',
             data: {
                 authorities: []
             },

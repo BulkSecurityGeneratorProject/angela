@@ -19,8 +19,8 @@
 
         function PROD() {
             var params = {};
-            params.DATAAPI = "http://139.196.95.117:8080";  // 远程数据接口
-            params.IMAGEURL = "http://139.196.95.117:8080/Angela/upload/"; // 远程图片路径
+            params.DATAAPI = "http://139.196.95.117:8082";  // 远程数据接口
+            params.IMAGEURL = "http://139.196.95.117:8082/Angela/upload/"; // 远程图片路径
             return params;
         }
 ;

@@ -9,7 +9,7 @@
               <div uib-slide ng-repeat="slide in vm.slides track by slide.id" index="slide.id">
                 <img ng-src="{{slide.image}}" style="margin:auto;" ui-sref="product-list">
                 <div class="carousel-caption">
-                  <h4> {{slide.id}}</h4>
+                  <h4> </h4>
                   <p>{{slide.text}}</p>
                 </div>
               </div>
@@ -90,7 +90,7 @@
                                           <img ng-src="{{vm.PROD.IMAGEURL + product['pictures'][0]['imageUrl'] | trustAsUrl}}">
                                           <div class="caption">
                                               <h4 ng-bind="product['productName']"></h4>
-                                              <p  ng-bind-html-unsafe="product['productDetails'] "></p>
+                                              <p  ng-bind-html-unsafe="product['brief'] "></p>
                                               <!-- <pre ng-init="d = '<p style="color: red"> 123123</p>'">
                                                   {{d | trustAsHTML}}
                                               </pre> -->

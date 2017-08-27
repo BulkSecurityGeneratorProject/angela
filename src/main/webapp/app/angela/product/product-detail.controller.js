@@ -15,7 +15,7 @@
         vm.addCart = addCart;
 
         Principal.identity().then(function(account) {
-            vm.quotations = angular.copy(account);
+            vm.account = account;
         });
 
         locadAll();
@@ -46,7 +46,26 @@
 
         // 添加到购物车
         function addCart() {
-            $rootScope.cartList.push(vm.quotations);
+            console.log("vm.product", vm.product);
+
+            // vm.quotation = vm.quotations || {};
+
+            if($rootScope.quotation) {
+                $rootScope.quotation.cartList.push(vm.quotation);
+            } else {
+
+                $rootScope.quotation = vm.quotation;
+                $rootScope.quotation.cartList = [];
+                $rootScope.quotation.userId = vm.account['id'];
+                $rootScope.quotation.email = vm.account['email'];
+                $rootScope.quotation.faxNumber = vm.account['faxNumber'];
+                $rootScope.quotation.login = vm.account['login'];
+                $rootScope.quotation.companyName = vm.account['companyName'];
+
+                $rootScope.quotation.cartList.push(vm.product);
+            }
+
+            console.log("$rootScope.quotation ", $rootScope.quotation);
         }
     }
 })();

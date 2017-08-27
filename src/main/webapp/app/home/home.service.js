@@ -10,6 +10,7 @@
         var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProducts';
         var getCaseListUrl = PROD['DATAAPI'] + "/Angela/cases/getAllCases";
         var getCategorysListUrl = PROD['DATAAPI'] + "/Angela/categorys/getAllCategorys";
+        var getAdPicturesUrl = PROD['DATAAPI'] + "/Angela/products/getAdPictures";
 
         var getProductList = function(params) {
             return $http({
@@ -34,10 +35,19 @@
                    data: {}
             });
         }
+
+        var getAdPicturesList = function(params){
+            return $http({
+                   method: 'GET',
+                   url: getAdPicturesUrl,
+                   data: {}
+            });
+        }
         return {
             getProductList: getProductList,
             getCaseList: getCaseList,
-            getCategorysList: getCategorysList
+            getCategorysList: getCategorysList,
+            getAdPicturesList: getAdPicturesList
         };
     }
 })();

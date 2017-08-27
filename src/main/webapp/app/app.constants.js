@@ -11,16 +11,16 @@
 
         // function PROD() {
         //     var params = {};
-        //     params.DATAAPI = "http://192.168.0.100:8080";  // 远程数据接口
-        //     params.IMAGEURL = "http://192.168.0.100:8080/Angela/upload/"; // 远程图片路径
+        //     params.DATAAPI = "http://192.168.0.106:8080";  // 远程数据接口
+        //     params.IMAGEURL = "http://192.168.0.106:8080/Angela/upload/"; // 远程图片路径
         //     return params;
         // }
 
 
         function PROD() {
             var params = {};
-            params.DATAAPI = "http://139.196.95.117:80";  // 远程数据接口
-            params.IMAGEURL = "http://139.196.95.117:80/Angela/upload/"; // 远程图片路径
+            params.DATAAPI = "http://49.51.35.217:80";  // 远程数据接口
+            params.IMAGEURL = "http://49.51.35.217:80/Angela/upload/"; // 远程图片路径
             return params;
         }
 ;

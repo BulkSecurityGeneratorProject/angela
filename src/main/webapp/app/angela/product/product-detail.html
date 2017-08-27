@@ -29,7 +29,7 @@
 <div class="main-product">
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-            <div class="panel panel-blue">
+            <!-- <div class="panel panel-blue">
                 <div class="panel-heading">CATEGORY</div>
                 <div class="panel-body panel-navlist">
                     <p>ANIMAL & PET GIFTS<span>（12）</span></p>
@@ -41,11 +41,17 @@
                     <p>ANIMAL & PET GIFTS<span>（12）</span></p>
                     <p>ANIMAL & PET GIFTS<span>（12）</span></p>
                 </div>
+            </div> -->
+            <div class="panel panel-blue" ng-repeat="categorys in vm.categoryList.Categorys" ng-show="categorys['cateName']==vm.type">
+                <div class="panel-heading" ng-bind="categorys['cateName']"></div>
+                <div class="panel-body panel-navlist">
+                    <p ng-repeat="category in categorys['category']" ><a href="#" ng-bind="category['cateName']"></a></p>
+                </div>
             </div>
             <div class="panel panel-red">
                 <div class="panel-heading">Color</div>
                 <div class="panel-body">
-                    <ul class="panel-color">
+                    <!-- <ul class="panel-color">
                         <li></li>
                         <li></li>
                         <li></li>
@@ -58,7 +64,7 @@
                         <li></li>
                         <li></li>
                         <li></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </div>
             <div class="panel panel-blue">
@@ -81,7 +87,7 @@
                             <span></span>
                         </li>
                         <li>
-                            <a href="#">product List</a>
+                            <a ui-sref="product-list">product List</a>
                         </li>
                         <li><span ng-bind="vm.product.productName"></span></li>
                     </ul>
@@ -117,15 +123,15 @@
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div> -->
-                    <div class="zoompic"><img ng-src="{{vm.PROD.IMAGEURL + vm.product['pictures'][0]['imageUrl'] | trustAsUrl}}" width="684" height="394" alt="美女配奥迪A4L墙纸" /></div>
+                    <div class="zoompic"><img ng-src="{{vm.PROD.IMAGEURL + vm.product['pictures'][0]['imageUrl'] | trustAsUrl}}" width="684" height="394" alt="loding ..." /></div>
                     <div class="sliderbox">
                         <div id="btn-left" class="arrow-btn dasabled"></div>
                         <div class="slider" id="thumbnail">
                             <ul>
 
                                 <li ng-repeat="d in vm.product.pictures" >
-                                    <a href="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" target="_blank">
-                                        <img ng-src="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" width="115" height="74" alt="美女配奥迪A4L墙纸01" />
+                                    <a href="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" target="_blank" ng-if="d['imageType']==1">
+                                        <img ng-src="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" width="115" height="74" alt="loding ..." />
                                     </a>
                                 </li>
 
@@ -170,13 +176,13 @@
                             <form action="#" class="horizontal-form">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <h4 class="get-ques-tit">GET QUESTIONS</h4>
+                                        <h4 class="get-ques-tit">GET QUOTATIONS</h4>
                                     </div>
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                                         <div class="control-group">
                                             <label class="control-label">*Company Name</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" ng-model="vm.quotations.companyName">
                                             </div>
                                         </div>
                                     </div>
@@ -192,7 +198,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*E-mail</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" ng-model="vm.quotations.email">
                                             </div>
                                         </div>
                                     </div>
@@ -200,7 +206,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*Phone No</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control"  ng-model="vm.quotations.telNumber">
                                             </div>
                                         </div>
                                     </div>
@@ -245,9 +251,9 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input class="form-control form-number" placeholder="max = 5" ng-model="f.h" ui-validate=" '$value <= 5' " required="" type="number">
-                                        <button type="submit" class="btn btn-primary">Add to Cart</button>
-                                        <button type="submit" class="btn">Cancel</button>
+                                        <input class="form-control form-number" placeholder="max = 5" ui-validate=" '$value <= 5' " required="" type="number" min="1" max="5">
+                                        <button type="button" class="btn btn-primary" ng-click="vm.addCart()">Add to Cart</button>
+                                        <button type="button" class="btn" ui-sref="product-list">Cancel</button>
                                     </div>
                                 </div>
                             </form>
@@ -259,11 +265,16 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="product-reviews">
                         <!-- Nav tabs -->
-                        <ul class="nav nav-tabs product-tabs" role="tablist">
+                        <!-- <ul class="nav nav-tabs product-tabs" role="tablist">
                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Costumers Reviews</a></li>
                             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Product Details</a></li>
                             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Pricing</a></li>
-                        </ul>
+                        </ul> -->
+                        <uib-tabset class="hot-tabs" justified="true">
+                            <uib-tab heading="New Arrvial" ></uib-tab>
+                            <uib-tab heading="Top100" ></uib-tab>
+                            <uib-tab heading="Hot Sales" ></uib-tab>
+                        </uib-tabset>
                           <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="home">

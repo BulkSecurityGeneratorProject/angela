@@ -42,9 +42,49 @@
 
             loadCaseList();
             // getCategorysList();
+            getAdPicturesList();
         }
 
 
+        // 加载广告轮播页
+        function getAdPicturesList(params) {
+
+            vm.myInterval = 5000;
+            vm.noWrapSlides = false;
+            vm.active = 0;
+            var currIndex = 0;
+            vm.slides = [];
+
+            var getAdPicturesListP = home.getAdPicturesList(params);
+
+            getAdPicturesListP.then(function(adPicturesList) {
+
+                vm.adPicturesList = adPicturesList['data'];
+
+                vm.adPicturesList.products.forEach(function(d) {
+                    vm.slides.push({
+                        image: vm.PROD.IMAGEURL + d['imageUrl'],
+                        id: currIndex++
+                    })
+                })
+
+                // 图像滚播
+                // vm.slides = [{
+                //   image: 'content/images/banner0.jpg',
+                // //   text: ['Nice image','Awesome photograph','That is so cool','I love that'],
+                //   id: currIndex++
+                //   },{
+                //     image: 'content/images/banner1.jpg',
+                //     // text: ['Nice image','Awesome photograph','That is so cool','I love that'],
+                //     id: currIndex++
+                //   },{
+                //     image: 'content/images/banner2.jpg',
+                //     // text: ['Nice image','Awesome photograph','That is so cool','I love that'],
+                //     id: currIndex++
+                //   }];
+
+            })
+        }
 
         // 加载产品
         function loadProductList(type) {
@@ -76,26 +116,6 @@
                 vm.categorysList = categorysList['data'];
             })
         }
-        vm.myInterval = 5000;
-        vm.noWrapSlides = false;
-        vm.active = 0;
-        var slides = $scope.slides = [];
-        var currIndex = 0;
-
-        // 图像滚播
-        vm.slides = [{
-          image: 'content/images/banner0.jpg',
-          text: ['Nice image','Awesome photograph','That is so cool','I love that'],
-          id: currIndex++
-          },{
-            image: 'content/images/banner1.jpg',
-            text: ['Nice image','Awesome photograph','That is so cool','I love that'],
-            id: currIndex++
-          },{
-            image: 'content/images/banner2.jpg',
-            text: ['Nice image','Awesome photograph','That is so cool','I love that'],
-            id: currIndex++
-          }];
 
     }
 })();

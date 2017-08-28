@@ -3,8 +3,7 @@
         <!--header-->
 
         <!--main-banner-->
-        <div>
-          <div style="height: 305px">
+        <div class="main-banner">
             <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
               <div uib-slide ng-repeat="slide in vm.slides track by slide.id" index="slide.id">
                 <img ng-src="{{slide.image}}" style="margin:auto;" ui-sref="product-list">
@@ -14,7 +13,6 @@
                 </div>
               </div>
             </div>
-          </div>
           <!-- <div class="row">
             <div class="col-md-6">
               <button type="button" class="btn btn-info" ng-click="addSlide()">Add Slide</button>

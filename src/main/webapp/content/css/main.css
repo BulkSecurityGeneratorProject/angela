@@ -648,10 +648,10 @@ body{
     color:#fff;
 }
 .forgot-psw{
-    color:#999;
+    color:#fff;
 }
 .forgot-psw:hover{
-    color:#666;
+    color:#999;
 }
 .page-wrapper{
 /*     padding: 0 15px; */

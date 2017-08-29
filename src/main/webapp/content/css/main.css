@@ -1883,8 +1883,8 @@ body{
 .toolbar-text {
     top: 52px;
     background-color: rgba(49,47,48,0.8);
-    padding-top: 12px;
-    font-size: 12px;
+    padding-top: 16px;
+    font-size: 15px;
     line-height: 1.2;
     color:rgb(126,211,33);
 }

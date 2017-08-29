@@ -523,6 +523,9 @@ body{
     padding:10px;
 }
 .login-images{
+   position:absolute;
+   left:0;
+   right:0;
    background:url(../images/login-bg.jpg) no-repeat center center;
 }
 .welcome{
@@ -995,6 +998,7 @@ body{
 .thumbnails .caption {
     padding: 15px;
     color: #333;
+    min-height: 175px;
 }
 .thumbnails .caption h5{
     font-weight: bold;
@@ -1194,7 +1198,7 @@ body{
 }
 /*--product--*/
 .main-product{
-    padding:15px;
+    padding:30px;
     background:#f7f7f7;
 }
 .main-perfect{
@@ -1218,6 +1222,11 @@ body{
     border-color: #005297;
     color: #fff;
     background-color: #005297;
+}
+.panel-green .panel-heading {
+    border-color: #43b5ad;
+    color: #fff;
+    background-color: #43b5ad;
 }
 .panel-red .panel-heading {
     border-color: #d9534f;

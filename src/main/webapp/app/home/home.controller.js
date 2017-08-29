@@ -13,6 +13,7 @@
 
         vm.account = null;
         vm.isAuthenticated = null;
+        vm.productsTitle =null;
         vm.login = LoginService.open;
         vm.register = register;
         vm.loadProductList = loadProductList;
@@ -91,7 +92,6 @@
 
             vm.orderby = type;
             var productListP = home.getProductList({"OrderBy": (type || 'createDate')});
-
             productListP.then(function(product) {
                  vm.productList = product['data'];
             })

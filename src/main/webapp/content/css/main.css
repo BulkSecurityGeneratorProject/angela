@@ -523,9 +523,11 @@ body{
     padding:10px;
 }
 .login-images{
-   position:absolute;
+   position:fixed;
    left:0;
    right:0;
+   top:0;
+   bottom:0;
    background:url(../images/login-bg.jpg) no-repeat center center;
 }
 .welcome{
@@ -561,6 +563,9 @@ body{
 }
 .login-form .control-group{
     margin-bottom: 20px;
+}
+.login-form .control-group small{
+    color:#fff;
 }
 .login-form .form-control{
     -moz-border-radius:2px;
@@ -606,6 +611,7 @@ body{
     line-height: 30px;
     background:#005297;
     color:#fff;
+    border:0;
 }
 .login-btn .btn-register:hover{
     background:#275b89;
@@ -656,6 +662,8 @@ body{
     background:#005297;
 }
 .navbar{
+   position:relative;
+   z-index: 100;
    margin-bottom:0;
    border:0;
 }

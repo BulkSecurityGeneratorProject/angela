@@ -11,8 +11,11 @@
         var vm = this;
         vm.PROD = PROD;
         vm.type= $stateParams['type'] || 'Category';
-
-
+        // 菜单适应小屏
+        vm.isNavbarCollapsed = true;
+        vm.isAuthenticated = Principal.isAuthenticated;
+        vm.toggleNavbar = toggleNavbar;
+        vm.collapseNavbar = collapseNavbar;
         locadAll();
 
         function locadAll() {
@@ -41,6 +44,13 @@
                 vm.categoryList = categoryList['data'];
             })
         }
+        // 菜单适应小屏
+        function toggleNavbar() {
+            vm.isNavbarCollapsed = !vm.isNavbarCollapsed;
+        }
 
+        function collapseNavbar() {
+            vm.isNavbarCollapsed = true;
+        }
     }
 })();

@@ -1976,4 +1976,10 @@ body{
         align-items:center;
         padding-left: 10px;
     }
+    .main-cases{
+        padding: 30px 10px 30px 10px;
+    }
+    .main-content,.main-events,.main-product{
+        padding: 30px 10px;
+    }
 }

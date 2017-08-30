@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -7,14 +7,16 @@
 
     ProductDetailController.$inject = ['$scope', '$rootScope', 'Principal', 'LoginService', '$state', '$stateParams', 'product', 'PROD'];
 
-    function ProductDetailController ($scope, $rootScope, Principal, LoginService, $state, $stateParams, product, PROD) {
+    function ProductDetailController($scope, $rootScope, Principal, LoginService, $state, $stateParams, product, PROD) {
         var vm = this;
         vm.PROD = PROD;
         $rootScope.cartList = []; // 购物车
-        vm.type= $stateParams['type'] || 'Category';
+        vm.type = $stateParams['type'] || 'Category';
         vm.addCart = addCart;
+        vm.selectImg = selectImg;
+        vm.imgIdx = 0;
 
-        Principal.identity().then(function(account) {
+        Principal.identity().then(function (account) {
             vm.account = account;
         });
 
@@ -28,10 +30,10 @@
         // 加载产品
         function loadProductDetail(id) {
 
-            var productDetailP = product.getProductDetail({"id": (id || '')});
+            var productDetailP = product.getProductDetail({ "id": (id || '') });
 
-            productDetailP.then(function(product) {
-                 vm.product = product['data']['products'];
+            productDetailP.then(function (product) {
+                vm.product = product['data']['products'];
             })
         }
 
@@ -39,7 +41,7 @@
         function loadCategorysList(params) {
             var categoryListP = product.getCategorysList(params);
 
-            categoryListP.then(function(categoryList) {
+            categoryListP.then(function (categoryList) {
                 vm.categoryList = categoryList['data'];
             })
         }
@@ -50,7 +52,7 @@
 
             // vm.quotation = vm.quotations || {};
 
-            if($rootScope.quotation) {
+            if ($rootScope.quotation) {
                 $rootScope.quotation.cartList.push(vm.quotation);
             } else {
 
@@ -64,8 +66,13 @@
 
                 $rootScope.quotation.cartList.push(vm.product);
             }
-
             console.log("$rootScope.quotation ", $rootScope.quotation);
+        }
+
+
+        //查看图片
+        function selectImg(idx) {
+            vm.imgIdx = idx;
         }
     }
 })();

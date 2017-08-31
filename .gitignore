@@ -151,3 +151,4 @@ src/main/resources/config/application-dev.yml
 src/main/resources/config/application-dev.yml
 
 src/main/resources/config/application-dev.yml
+/.apt_generated/

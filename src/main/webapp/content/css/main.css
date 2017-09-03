@@ -759,7 +759,7 @@ body{
 }
 .cases-list img{
     width: 100%;
-    height: auto;
+    height: 410px;
 }
 .event-list img,.event-list h3{
     opacity: 1;
@@ -973,6 +973,16 @@ body{
     -o-text-overflow: ellipsis;
     -webkit-line-clamp: 3;
     overflow: hidden;
+}
+.nowrapp, .nowrapp p{
+  font-size: 12px;
+  width: 24em;
+  /* height: 15px; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 .thumbnails img{
     width:100%;

@@ -53,24 +53,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                        <tr ng-repeat="x in vm.Product">
-                                            <td><input type="checkbox" /></td>
-                                            <td>{{x.productName}}</td>
-                                            <td>
-                                                <button ng-click="vm.reduce($index)">-</button>
-                                                <input type="text" class="num" ng-model="x.quantity" ng-change="vm.change($index)" />
-                                                <button ng-click="vm.add($index)">+</button> </td>
-                                            <td>{{x.price}}</td>
-                                            <td>{{x.price * x.quantity}}</td>
-                                            <td>{{x.asi_sage}}</td>
-                                            <td>{{x.message}}</td>
-                                            <td><button ng-click="vm.remove($index)">移除</button></td>
-                                        </tr>
-
-
+                                    <tr ng-repeat="x in vm.Product">
+                                        <td><input type="checkbox" /></td>
+                                        <td>{{x.productName}}</td>
+                                        <td>
+                                            <button ng-click="vm.reduce($index)">-</button>
+                                            <input type="text" class="num" ng-model="x.quantity" ng-change="vm.change($index)" />
+                                            <button ng-click="vm.add($index)">+</button> </td>
+                                        <td>{{x.price}}</td>
+                                        <td>{{x.price * x.quantity}}</td>
+                                        <td>{{x.asi_sage}}</td>
+                                        <td>{{x.message}}</td>
+                                        <td><button ng-click="vm.remove($index)">移除</button></td>
+                                    </tr>
                                 </tbody>
                             </table>
+                            <div class="mycart-submit"><botton class="btn btn-info btn-submit">提交</botton></div>
                         </div>
                     </div>
                 </div>

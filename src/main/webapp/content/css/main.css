@@ -1818,6 +1818,19 @@ body{
     border: 1px solid #bfd6af;
     padding: 2px 14px 3px;
 }
+.form-cmb{
+    margin-bottom: 10px;
+}
+.mycart-submit{
+    border-top: 1px solid #ddd;
+    text-align: right;
+    margin:5px 0;
+    padding:5px 0;
+}
+.btn-modify,.btn-submit{
+    padding:3px 15px;
+    border-radius: 0;
+}
 .userinfo-table tr th,.userinfo-table tr td{
     padding:5px;
     text-align: center;

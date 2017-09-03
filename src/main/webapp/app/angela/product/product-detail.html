@@ -152,7 +152,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*Phone No</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control" ng-model="vm.quotation.telNumber">
+                                                <input type="text" class="form-control" ng-model="vm.quotation.phoneNumber">
                                             </div>
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*Item</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" ng-model="vm.quotation.item">
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@
                                         <div class="control-group">
                                             <label class="control-label">Delivery Time</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control">
+                                                <input type="text" class="form-control" ng-model="vm.quotation.deliveryTime">
                                             </div>
                                         </div>
                                     </div>
@@ -176,7 +176,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*Target Price/Budget</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control" ng-model="vm.product['target_price']">
+                                                <input type="text" class="form-control" ng-model="vm.quotation['targetPrice']">
                                             </div>
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*ASI or Sage No</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control" ng-model="vm.product['asi_sage']">
+                                                <input type="text" class="form-control" ng-model="vm.quotation['asiSageNo']">
                                             </div>
                                         </div>
                                     </div>
@@ -192,12 +192,12 @@
                                         <div class="control-group">
                                             <label class="control-label">message</label>
                                             <div class="controls">
-                                                <textarea class="form-control" ng-model="vm.product['message']"></textarea>
+                                                <textarea class="form-control" ng-model="vm.quotation['message']"></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-init="vm.product['quantity']=1">
-                                        <input class="form-control form-number" placeholder="max = 5" required="" type="number" min="1" max="5" ng-model="vm.product['quantity']">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-init="vm.quotation['quantity']=1">
+                                        <input class="form-control form-number" placeholder="max = 5" required="" type="number" min="1" max="5" ng-model="vm.quotation['quantity']">
                                         <button type="button" class="btn btn-primary" ng-click="vm.addCart()">Add to Cart</button>
                                         <button type="button" class="btn" ui-sref="product-list">Cancel</button>
                                     </div>

@@ -1684,7 +1684,13 @@ body{
     margin-bottom: 10px;
     font-size: 12px;
 }
+.rating-star{
+    float:right;
+}
 .reviews-stars i{
+    color:#ffbe00;
+}
+.rating-star .glyphicon-star{
     color:#ffbe00;
 }
 .reviews-date{

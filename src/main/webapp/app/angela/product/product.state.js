@@ -64,7 +64,7 @@
                     controller: 'productDetailReviewsController',
                     controllerAs: 'vm',
                     backdrop: 'static',
-                    size: 'lg',
+                    size: 'mg',
                     resolve: {
 
                     }

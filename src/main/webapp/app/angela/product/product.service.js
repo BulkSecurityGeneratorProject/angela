@@ -10,6 +10,7 @@
         var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProducts';
         var getProductDetailUrl = PROD['DATAAPI'] + "/Angela/products/getProductsDetail";
         var getCategorysListUrl = PROD['DATAAPI'] + "/Angela/categorys/getAllCategorys";
+        var postAddReviewsUrl = PROD['DATAAPI'] + "/Angela/reviews/postAddReviews";
 
         var getProductList = function(params) {
             return $http({
@@ -36,10 +37,19 @@
             })
         }
 
+        var postAddReviews = function(params) {
+            return $http({
+                method: 'post',
+                url: postAddReviewsUrl,
+                data: params
+            })
+        }
+
         return {
             getProductList: getProductList,
             getProductDetail: getProductDetail,
-            getCategorysList: getCategorysList
+            getCategorysList: getCategorysList,
+            postAddReviews: postAddReviews
         };
     }
 })();

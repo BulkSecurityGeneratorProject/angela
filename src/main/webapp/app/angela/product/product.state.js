@@ -51,6 +51,35 @@
                     return $translate.refresh();
                 }]
             }
-        });
+        })
+        .state('product-detail-reviews', {
+            parent: 'product-detail',
+            url: '/product-detail-reviews',
+            data: {
+                authorities: []
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/angela/product/product-detail-reviews.html',
+                    controller: 'productDetailReviewsController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+
+                    }
+                }).result.then(function() {
+                    $state.go('^', {}, { reload: true });
+                }, function() {
+                    $state.go('^', {}, { reload: true });
+                });
+            }],
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                    $translatePartialLoader.addPart('home');
+                    return $translate.refresh();
+                }]
+            }
+        });;
     }
 })();

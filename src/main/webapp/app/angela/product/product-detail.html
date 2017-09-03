@@ -1,3 +1,4 @@
+ <jhi-alert></jhi-alert>
 <div class="main-nav">
     <div class="container">
         <div class="navbar-header">
@@ -57,7 +58,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                     <!-- <div class="thumbnails">
@@ -220,15 +221,11 @@
 
 
                             <uib-tab heading="Costumers Reviews">
-                                <div class="thumbreviews">
+                                <div class="thumbreviews" ng-repeat="d in vm.product['reviews']">
                                     <!-- <h4>Top customer reviews</h4> -->
                                     <h5>
                                         <span class="reviews-stars">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
+                                            <span uib-rating ng-model="vm.fsdf" max="5"  aria-labelledby="default-rating"></span>
                                         </span>
                                     </h5>
                                     <p class="reviews-date">By <span ng-bind="d['createUser']"></span> </p> on <span ng-bind="d['createDate']"></span>
@@ -267,7 +264,7 @@
                             <p>4.3 out of 4 Star</p>
                         </div>
                         <p>Share your thoughts with other customers</p>
-                        <button type="submit" class="btn btn-default">Write a Customers Reviews</button>
+                        <button class="btn btn-default" ui-sref="product-detail-reviews({id: vm.product['id']})">Write a Customers Reviews</button>
                     </div>
                 </div>
             </div>

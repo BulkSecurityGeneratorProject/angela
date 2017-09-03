@@ -1,0 +1,45 @@
+<jhi-alert-error></jhi-alert-error>
+ <jhi-alert></jhi-alert>
+<form class="" ng-submit="vm.submitComment()">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Write a Customers Reviews</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Supplier Rating:</label>
+                        <div class="rating">
+                            Overall Satisfaction:
+                            <span uib-rating ng-model="vm.fromData.satisfaction" max="5"  aria-labelledby="default-rating"></span>
+                        </div>
+                        <div class="rating">
+                            Product Quality:
+                            <span uib-rating ng-model="vm.fromData.productQuality" max="5"  aria-labelledby="default-rating"></span>
+                        </div>
+                        <div class="rating">
+                            Communication Responsiveness:
+                            <span uib-rating ng-model="vm.fromData.responsiveness" max="5"  aria-labelledby="default-rating"></span>
+                        </div>
+                        <div class="rating">
+                            Delivery:
+                            <span uib-rating ng-model="vm.fromData.delivery" max="5"  aria-labelledby="default-rating"></span>
+                        </div>
+                        <div class="rating">
+                            Problem Resolution:
+                            <span uib-rating ng-model="vm.fromData.problemResolution" max="5"  aria-labelledby="default-rating"></span>
+                        </div>
+                        <div class="rating">
+                            Imprinting/Personalization:
+                            <span uib-rating ng-model="vm.fromData.imprinting" max="5"  aria-labelledby="default-rating"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="control-label">comment:</label>
+                        <textarea class="form-control" id="message-text" ng-model="vm.fromData.comment"></textarea>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-default" value="Cancel" ng-click="vm.close()"/>
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+            </div>
+</form>

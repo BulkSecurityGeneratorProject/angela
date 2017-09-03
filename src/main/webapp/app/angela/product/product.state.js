@@ -14,7 +14,7 @@
         })
         .state('product-list', {
             parent: 'product',
-            url: '/product-list?{orderby}&&{type}',
+            url: '/product-list?{orderby}&&{type}&&{title}',
             data: {
                 authorities: []
             },
@@ -64,7 +64,7 @@
                     controller: 'productDetailReviewsController',
                     controllerAs: 'vm',
                     backdrop: 'static',
-                    size: 'lg',
+                    size: 'mg',
                     resolve: {
 
                     }

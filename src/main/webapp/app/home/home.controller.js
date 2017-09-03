@@ -14,9 +14,12 @@
         vm.account = null;
         vm.isAuthenticated = null;
         vm.productsTitle =null;
+        vm.getShowImg = getShowImg;
         vm.login = LoginService.open;
+        vm.categorysList = [];
         vm.register = register;
         vm.loadProductList = loadProductList;
+        vm.baseProductList = {"New Arrvial": "createDate" ,"Top 100": "sellCount", "Hot Sales": "isHot"};
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });
@@ -37,13 +40,13 @@
         loadAll();
         // jzh
 
-
-
         function loadAll() {
 
             loadCaseList();
             // getCategorysList();
             getAdPicturesList();
+
+            loadCategorysList();
         }
 
 
@@ -69,26 +72,14 @@
                     })
                 })
 
-                // 图像滚播
-                // vm.slides = [{
-                //   image: 'content/images/banner0.jpg',
-                // //   text: ['Nice image','Awesome photograph','That is so cool','I love that'],
-                //   id: currIndex++
-                //   },{
-                //     image: 'content/images/banner1.jpg',
-                //     // text: ['Nice image','Awesome photograph','That is so cool','I love that'],
-                //     id: currIndex++
-                //   },{
-                //     image: 'content/images/banner2.jpg',
-                //     // text: ['Nice image','Awesome photograph','That is so cool','I love that'],
-                //     id: currIndex++
-                //   }];
-
             })
         }
 
         // 加载产品
-        function loadProductList(type) {
+        function loadProductList(type, name) {
+            console.log(type, name);
+
+            vm.productTitle = name;
 
             vm.orderby = type;
             var productListP = home.getProductList({"OrderBy": (type || 'createDate')});
@@ -97,9 +88,22 @@
             })
         }
 
+        // 加载类别
+        function loadCategorysList() {
+
+            var getCategorysListP = home.getCategorysList();
+            getCategorysListP.then(function(categorys) {
+
+                vm.categorysList = (categorys['data']['Categorys'] || []).find(function(d) {
+                    return d['cateName'] == "Category";
+                })['category'];
+            })
+        }
+
         // 加载case
         // 加载产品
-        function loadCaseList(type) {
+        function loadCaseList(type, name) {
+
             var caseListP = home.getCaseList({"OrderBy": (type || 'createDate')});
 
             caseListP.then(function(casees) {
@@ -115,6 +119,14 @@
                 console.log("categorysList", categorysList);
                 vm.categorysList = categorysList['data'];
             })
+        }
+
+        // 需要显示的图片
+        function getShowImg(data) {
+            var url = (data || []).find(function(d) {
+                return d['imageType'] == 1;
+            })
+            return url['imageUrl'];
         }
 
     }

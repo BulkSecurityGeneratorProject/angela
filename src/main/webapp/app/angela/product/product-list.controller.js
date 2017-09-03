@@ -10,12 +10,16 @@
     function ProductListController ($scope, $stateParams, Principal, LoginService, $state, $sce,product, PROD) {
         var vm = this;
         vm.PROD = PROD;
+        vm.getShowImg = getShowImg;
+        vm.stateParams = $stateParams;
         vm.type= $stateParams['type'] || 'Category';
         // 菜单适应小屏
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
+        vm.loadProductList = loadProductList;
+        vm.baseProductList = {"New Arrvial": "createDate" ,"Top 100": "sellCount", "Hot Sales": "isHot"};
         locadAll();
 
         function locadAll() {
@@ -51,6 +55,28 @@
 
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
+        }
+
+
+        // 需要显示的图片
+        function getShowImg(data) {
+            var url = (data || []).find(function(d) {
+                return d['imageType'] == 1;
+            })
+            return url['imageUrl'];
+        }
+
+        // 加载产品
+        function loadProductList(type, name) {
+            console.log(type, name);
+
+            vm.productTitle = name;
+
+            vm.orderby = type;
+            var productListP = product.getProductList({"OrderBy": (type || 'createDate')});
+            productListP.then(function(product) {
+                 vm.productList = product['data'];
+            })
         }
     }
 })();

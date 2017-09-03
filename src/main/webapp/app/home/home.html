@@ -43,8 +43,8 @@
                         <img ng-src="{{vm.PROD.IMAGEURL + case['pictures'][0]['imageUrl'] | trustAsUrl}}"/>
                         <div class="cases-list-info">
                             <h3 ng-bind="case['title']"></h3>
-                            <h4 ng-bind="case['brief']">Heading</h4>
-                            <p ng-bind="case['description']"></p>
+                            <h4 ng-bind-html-unsafe="case['brief']">Heading</h4>
+                            <p ng-bind-html-unsafe="case['description']"></p>
                             <a ui-sref="ourservice-list" class="btn-detail">Detail</a>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="row">
-                
+
             </div>
             <div class="row">
                 <div class="col-lg-12">
@@ -78,9 +78,9 @@
                         <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Hot Sales</a></li>
                     </ul> -->
                     <uib-tabset class="hot-tabs" justified="true">
-                        <uib-tab heading="New Arrvial" select="vm.loadProductList('createDate')"></uib-tab>
-                        <uib-tab heading="Top100" select="vm.loadProductList('sellCount')"></uib-tab>
-                        <uib-tab heading="Hot Sales" select="vm.loadProductList('isHot')"></uib-tab>
+
+                        <uib-tab ng-repeat="(k,v) in vm.baseProductList" heading="{{k}}" select="vm.loadProductList(v, k)"></uib-tab>
+
                     </uib-tabset>
                       <!-- Tab panes -->
                       <div class="tab-content">
@@ -88,7 +88,7 @@
                               <div class="row">
                                   <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" ng-repeat="product in vm.productList.products">
                                       <div class="thumbnails" ui-sref="product-detail({'id': product['id']})">
-                                          <img ng-src="{{vm.PROD.IMAGEURL + product['pictures'][0]['imageUrl'] | trustAsUrl}}">
+                                          <img ng-src="{{vm.PROD.IMAGEURL + vm.getShowImg(product['pictures']) | trustAsUrl}}">
                                           <div class="caption">
                                               <h4 ng-bind="product['productName']" title="{{product['productName']}}"></h4>
                                               <p  ng-bind-html-unsafe="product['brief'] "></p>
@@ -96,12 +96,10 @@
                                                   {{d | trustAsHTML}}
                                               </pre> -->
                                               <p class="hot-color">
-                                                  Color：<span class="label-warning"></span>
-                                                  <span class="label-info"></span>
-                                                  <span class="label-primary"></span>
+                                                  Color：<span class="label-warning" ng-style="{'background-color': product['productColor']}"></span>
                                               </p>
                                               <p class="hot-r">
-                                                  TAGS：<a href="#" ng-bind="product['proTag']"></a>
+                                                  TAGS：<a href="#" ng-bind="product['proTagName']"></a>
                                               </p>
                                           </div>
                                       </div>
@@ -118,7 +116,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <a ui-sref="product-list({'orderby': vm.orderby})" class="btn-see">See More</a>
+                    <a ui-sref="product-list({'orderby': vm.orderby, 'title': vm.productTitle})" class="btn-see">See More</a>
                 </div>
             </div>
         </div>
@@ -160,8 +158,11 @@
                     <div class="event-list event-hover">
                         <img src="content/images/Business_Catalogue.svg">
                         <h3>By Catalog</h3>
-                        <div class="event-cover">
-                            <p><a ui-sref="product-list"></a></p>
+                        <div class="event-cover" ng-repeat="d in vm.categorysList">
+                            <p><a ui-sref="product-list()" ng-bind="d['cateName']"></a></p>
+
+
+
                         </div>
                     </div>
                 </div>

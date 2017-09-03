@@ -1805,6 +1805,19 @@ body{
     text-align: center;
     padding:2px 5px;
 }
+.mycart-total{
+    margin-bottom: 10px;
+}
+.mycart-total span{
+    margin-right: 10px;
+}
+.mycart-total .mycart-total-tit{
+    margin-right: 5px;
+}
+.mycart-total .btn-empty{
+    border: 1px solid #bfd6af;
+    padding: 2px 14px 3px;
+}
 .userinfo-table tr th,.userinfo-table tr td{
     padding:5px;
     text-align: center;

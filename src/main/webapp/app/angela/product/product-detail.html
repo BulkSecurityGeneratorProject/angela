@@ -1,4 +1,4 @@
- <jhi-alert></jhi-alert>
+<jhi-alert></jhi-alert>
 <div class="main-nav">
     <div class="container">
         <div class="navbar-header">
@@ -41,19 +41,19 @@
                             <a href="#"><i class="fa fa-vk"></i></a>
                         </div> -->
                         <ul class="social-icons">
-                            <li><a  data-original-title="Feed" class="rss"></a></li>
-                            <li><a  data-original-title="Facebook" socialshare socialshare-provider="facebook" socialshare-text="{{vm.product.productName}}" socialshare-hashtags=""
-                socialshare-url="" class="facebook"></a></li>
-                            <li><a  data-original-title="Twitter"  socialshare socialshare-provider="twitter" socialshare-text="{{vm.product.productName}}" socialshare-hashtags=""
-                socialshare-url="" class="twitter"></a></li>
-                            <li><a data-original-title="Goole Plus"  socialshare socialshare-provider="google" socialshare-text="{{vm.product.productName}}" socialshare-hashtags=""
-                socialshare-url="" class="googleplus"></a></li>
-                            <li><a data-original-title="Pinterest"  socialshare socialshare-provider="pinterest" socialshare-text="{{vm.product.productName}}" socialshare-hashtags=""
-                socialshare-url="" class="pintrest"></a></li>
-                            <li><a data-original-title="Linkedin"  socialshare socialshare-provider="linkedin" socialshare-text="{{vm.product.productName}}" socialshare-hashtags=""
-                socialshare-url="" class="linkedin"></a></li>
-                            <li><a data-original-title="Vimeo"  socialshare socialshare-provider="vk" socialshare-text="{{vm.product.productName}}" socialshare-hashtags=""
-                socialshare-url="" class="vimeo"></a></li>
+                            <li><a data-original-title="Feed" class="rss"></a></li>
+                            <li><a data-original-title="Facebook" socialshare socialshare-provider="facebook" socialshare-text="{{vm.product.productName}}"
+                                    socialshare-hashtags="" socialshare-url="" class="facebook"></a></li>
+                            <li><a data-original-title="Twitter" socialshare socialshare-provider="twitter" socialshare-text="{{vm.product.productName}}"
+                                    socialshare-hashtags="" socialshare-url="" class="twitter"></a></li>
+                            <li><a data-original-title="Goole Plus" socialshare socialshare-provider="google" socialshare-text="{{vm.product.productName}}"
+                                    socialshare-hashtags="" socialshare-url="" class="googleplus"></a></li>
+                            <li><a data-original-title="Pinterest" socialshare socialshare-provider="pinterest" socialshare-text="{{vm.product.productName}}"
+                                    socialshare-hashtags="" socialshare-url="" class="pintrest"></a></li>
+                            <li><a data-original-title="Linkedin" socialshare socialshare-provider="linkedin" socialshare-text="{{vm.product.productName}}"
+                                    socialshare-hashtags="" socialshare-url="" class="linkedin"></a></li>
+                            <li><a data-original-title="Vimeo" socialshare socialshare-provider="vk" socialshare-text="{{vm.product.productName}}"
+                                    socialshare-hashtags="" socialshare-url="" class="vimeo"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,16 +68,23 @@
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div> -->
-                    <div class="zoompic"><img ng-src="{{vm.PROD.IMAGEURL + vm.product['pictures'][vm.imgIdx]['imageUrl'] | trustAsUrl}}" width="684"
-                            height="394" alt="loding ..." /></div>
+                    <style>
+                        .hoverImg {
+                            border: 1px solid red;
+                        }
+                    </style>
+
+
+
+                    <div class="zoompic"><img ng-src="{{vm.PROD.IMAGEURL + vm.product['pictures'][vm.imgIdx]['imageUrl'] | trustAsUrl}}"
+                            width="684" height="394" alt="loding ..." /></div>
                     <div class="sliderbox">
                         <div id="btn-left" class="arrow-btn dasabled"></div>
                         <div class="slider" id="thumbnail">
                             <ul>
-
-                                <li ng-repeat="d in vm.product.pictures">
-                                    <a href="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" ng-click="vm.selectImg($index)" target="_blank" ng-if="d['imageType']==1">
-                                        <img ng-src="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" width="115" height="74" alt="loding ..." />
+                                <li ng-repeat="d in vm.product.pictures" ng-class="{'hoverImg':hovering}" ng-mouseenter="hovering=true" ng-mouseleave="hovering=false">
+                                    <a ng-if="d['imageType']==1">
+                                        <img ng-mouseover="vm.selectImg($index)" ng-src="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" width="115" height="74" alt="loding ..." />
                                     </a>
                                 </li>
 
@@ -144,7 +151,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*E-mail</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control" ng-model="vm.quotation.email">
+                                                <input type="number" class="form-control" ng-model="vm.quotation.email">
                                             </div>
                                         </div>
                                     </div>
@@ -152,7 +159,7 @@
                                         <div class="control-group">
                                             <label class="control-label">*Phone No</label>
                                             <div class="controls">
-                                                <input type="text" class="form-control" ng-model="vm.quotation.phoneNumber">
+                                                <input type="number" class="form-control" ng-model="vm.quotation.phoneNumber">
                                             </div>
                                         </div>
                                     </div>
@@ -272,3 +279,8 @@
 
     </div>
 </div>
+<!-- <div class="bigImg" ng-if="vm.showimg">
+    <div class="img_box" ng-click="vm.showImg()">
+        <img ng-src="{{vm.PROD.IMAGEURL + vm.product['pictures'][vm.imgIdx]['imageUrl'] | trustAsUrl}}" alt="loding ...">
+    </div>
+</div> -->

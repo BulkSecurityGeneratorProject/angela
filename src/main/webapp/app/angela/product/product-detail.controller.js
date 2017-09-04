@@ -10,9 +10,6 @@
     function ProductDetailController($scope, $rootScope, $cookies, $cookieStore, Principal, LoginService, $state, $stateParams, product, PROD) {
         var vm = this;
         vm.PROD = PROD;
-        // $cookieStore.put("cartList", []);
-        // var cartList = [];
-        // $rootScope.cartList = []; // 购物车
         vm.type = $stateParams['type'] || 'Category';
         vm.addCart = addCart;
         vm.selectImg = selectImg;
@@ -21,23 +18,15 @@
 
         Principal.identity().then(function (account) {
             vm.account = account;
-
-            console.log(account);
-
             vm.quotation.companyName = account['companyName'];
             vm.quotation.clientName = account['login'];
             vm.quotation.email = account['email'];
             vm.quotation.phoneNumber = account['telNumber'];
-            // vm.quotation.deliverTime = account['deliverTime'];
-            // vm.quotation.targetPrice = account['targetPrice'];
             vm.quotation.asiSageNo = account['asiSageNumber'];
             vm.quotation.message = account['message'];
             vm.quotation.fox = account['faxNumber'];
-
             vm.quotation.userid = account['id'];
             vm.quotation.customName = account['login'];
-
-            console.log('account', vm.account)
         });
 
         locadAll();
@@ -54,15 +43,12 @@
 
             productDetailP.then(function (product) {
                 vm.product = product['data']['products'];
-                console.log(vm.product);
-
             })
         }
 
         // 加载类别
         function loadCategorysList(params) {
             var categoryListP = product.getCategorysList(params);
-
             categoryListP.then(function (categoryList) {
                 vm.categoryList = categoryList['data'];
             })
@@ -70,8 +56,12 @@
 
         // 添加到购物车
         function addCart() {
-
             // 把产品id 加入quotation
+            console.log(vm.account)
+            if(vm.account == null){
+                alert("You are not logged in yet!");
+                $state.go('full-login');
+            }else{
             vm.quotation.productId = vm.product['id'];
             vm.quotation.productName = vm.product['productName'];
             console.log("quotation", vm.quotation);
@@ -107,61 +97,18 @@
                 _quotation.phoneNumber = quotation['phoneNumber'];
                 _quotation.fox = quotation['fox'];
                 _quotation.asi = quotation['asiSageNo'];
-                 _quotation.customName = quotation['customName'];
+                _quotation.customName = quotation['customName'];
                 _quotation.email = quotation['email'];
                 _quotation.productName = quotation['productName'];
-                // vm.quotation.deliverTime = account['deliverTime'];
-                // vm.quotation.targetPrice = account['targetPrice'];
                 _quotation.orderProduct.push(catList[0]);
 
                 $cookieStore.put("quotation", _quotation);
             }
-
+            alert('submit successfully!');
             console.log("$cookieStore.get('quotation')", $cookieStore.get('quotation'));
+            }
 
-
-
-
-            // vm.quotation = {
-            //         id: vm.product['id'],
-            //         clientName: vm.account['clientName'] || s['clientName'],
-            //         companyName: vm.account['companyName'] || s['companyName'],
-            //         email: vm.account['login'] || s['login'],
-            //         telNumber: vm.account['telNumber'] || s['telNumber'], 
-            //         name: vm.product['productName'],
-            //         quantity: m['quantity'],
-            //         price: m['taprrget_price'],
-            //         asi_sage: m['asi_sage'],
-            //         message: m['message']
-            //     }
-            //     console.log(vm.quotation)
-            // console.log("vm.oduct", m,s);
-            // if ($cookieStore.get('quotation')) {
-            //     // $cookieStore.get('quotation').cartList.push(vm.quotation);
-            //     // $cookieStore.put('quotation',{'cartList': []});
-            //     console.log("init: ", $cookieStore.get('quotation'));
-            //     var cart = $cookieStore.get('quotation');
-            //     console.log(cart.cartList)
-            //     cart.cartList.push(vm.quotation);
-            //     console.log(cart.cartList)
-            //     $cookieStore.put('quotation', cart)
-
-            // } else {
-            //     // cartList = cartList.push('vm.product');
-
-            //     var data = {
-            //         'cartList': [],
-            //         'userId': vm.account['id'],
-            //         'email': vm.account['email'],
-            //         'faxNumber': vm.account['faxNumber'],
-            //         'login': vm.account['login'],
-            //         'companyName': vm.account['companyName']
-            //     }
-            //     $cookieStore.put('quotation', data);
-            // }
-            // console.log("$rootScope.quotation ", $cookieStore.get('quotation'));
         }
-
 
         //查看图片
         function selectImg(idx) {

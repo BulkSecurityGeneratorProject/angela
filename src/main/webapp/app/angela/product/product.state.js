@@ -14,7 +14,7 @@
         })
         .state('product-list', {
             parent: 'product',
-            url: '/product-list?{orderby}&&{type}',
+            url: '/product-list?{orderby}&&{type}&&{title}',
             data: {
                 authorities: []
             },

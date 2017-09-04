@@ -10,18 +10,15 @@
             <!-- <a href="../" class="navbar-brand">Corporate</a> -->
         </div>
         <nav id="bs-navbar" class="navbar-collapse special-collapse collapse" uib-collapse="vm.isNavbarCollapsed" ng-switch="vm.isAuthenticated()" style="height: 1px;">
-            <ul class="nav navbar-nav navbar-special">
+            <ul class="nav navbar-nav navbar-special" ng-repeat="(k,v) in vm.baseProductList">
                 <!-- <li><a href="#">Price High to Low</a></li>
                 <li class="line"><span>|</span></li>
                 <li><a href="#">Price Low to High</a></li>
                 <li class="line"><span>|</span></li> -->
-                <li><a href="#">View All</a></li>
+
                 <li class="line"><span>|</span></li>
-                <li><a href="#">Hot sales</a></li>
-                <li class="line"><span>|</span></li>
-                <li><a href="#">New Arrivals</a></li>
-                <li class="line"><span>|</span></li>
-                <li><a href="#">Top 100</a></li>
+                <li><a ui-sref="product-list({ 'title': k})">{{k}}</a></li>
+
             </ul>
         </nav>
     </div>
@@ -36,7 +33,7 @@
                     <p ng-repeat="category in categorys['category']" ><a href="#" ng-bind="category['cateName']"></a></p>
                 </div>
             </div>
-            <div class="panel panel-red">
+            <!-- <div class="panel panel-red">
                 <div class="panel-heading">Color</div>
                 <div class="panel-body">
                     <ul class="panel-color">
@@ -54,8 +51,8 @@
                         <li></li>
                     </ul>
                 </div>
-            </div>
-            <div class="panel panel-blue">
+            </div> -->
+            <!-- <div class="panel panel-blue">
                 <div class="panel-heading">Material</div>
                 <div class="panel-body panel-navlist">
                     <a href="product-detail.html">KIND 1</a>
@@ -63,36 +60,47 @@
                     <a href="product-detail.html">KIND 3</a>
                     <a href="product-detail.html">KIND 4</a>
                 </div>
-            </div>
-            <div class="panel panel-green">
+            </div> -->
+            <!-- <div class="panel panel-green">
                 <div class="panel-heading">Price</div>
                 <div class="panel-body panel-navlist">
                     <a href="#">price low to high</a>
                     <a href="#">price high to low</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12">
                     <h2> Hot Recommend</h2>
                     <p class="hot-text">NEWEST TRENDS FROM TOP BRANDS</p>
                 </div>
+            </div> -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="glyphicon glyphicon-home"></i>
+                        <a href="index.html">Home</a>
+                        <span></span>
+                    </li>
+                    <li>
+                        <a ui-sref="product-list" ng-bind="vm.stateParams['title'] || vm.stateParams['type'] || 'product List'"></a>
+                    </li>
+                    <li><span ng-bind="vm.product.productName"></span></li>
+                </ul>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4" ng-repeat="product in vm.productList.products">
                     <div class="thumbnails" ui-sref="product-detail({'id': product['id']})">
-                        <img ng-src="{{vm.PROD.IMAGEURL + product['pictures'][0]['imageUrl'] | trustAsUrl}}">
+                        <img ng-src="{{vm.PROD.IMAGEURL + vm.getShowImg(product['pictures']) | trustAsUrl}}">
                         <div class="caption">
                             <h4><span ng-bind="product['lastUpdate']"></span ng-bind="product['productName']"></h4>
                             <p ng-bind-html-unsafe="product['productDetails']"></p>
                             <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
+                                Color：<span class="label-warning" ng-style="{'background-color': product['productColor']}"></span>
                             </p>
                             <p class="hot-r">
-                                TAGS：<a href="#" ng-bind="product['proTag']"></a>
+                                TAGS：<a href="#" ng-bind="product['proTagName']"></a>
                             </p>
                         </div>
                     </div>

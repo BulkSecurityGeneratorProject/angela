@@ -29,17 +29,18 @@
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>Phone no：</label>
-                            <span ng-bind="vm.quotation.telNumber"></span>
+                            <span ng-bind="vm.quotation.phoneNumber"></span>
                         </div>
                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                             <label>FAX：</label>
-                            <span ng-bind="vm.quotation.faxNumber"></span>
+                            <span ng-bind="vm.quotation.fox"></span>
                         </div>
                         <div class="col-md-12 col-lg-12">
                             <h4>Shop cart</h4>
                         </div>
-                        <div class="col-md-12 col-lg-12">
-                            <table class="mycart-table">
+                        <div class="col-md-12 col-lg-12" ng-switch="vm.isShow()">
+                            <div ng-switch-when="false" class="text-center"><p><b> Shopping cart is empty! </b><a class="btn btn-xs btn-success" href="#">Go Shopping</a></p> </div>
+                            <table  ng-switch-when="true" class="mycart-table">
                                 <thead>
                                     <tr>
                                         <th><input type="checkbox" /></th>
@@ -68,7 +69,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="mycart-submit"><botton class="btn btn-info btn-submit" ng-click="vm.subCart()">提交</botton></div>
+                            <div class="mycart-submit"><botton class="btn btn-info btn-submit"  ng-switch-when="true" ng-click="vm.subCart()">提交</botton></div>
                         </div>
                     </div>
                 </div>

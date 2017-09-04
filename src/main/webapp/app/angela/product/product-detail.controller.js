@@ -25,12 +25,14 @@
             console.log(account);
 
             vm.quotation.companyName = account['companyName'];
+            vm.quotation.clientName = account['login'];
             vm.quotation.email = account['email'];
             vm.quotation.phoneNumber = account['telNumber'];
             // vm.quotation.deliverTime = account['deliverTime'];
             // vm.quotation.targetPrice = account['targetPrice'];
             vm.quotation.asiSageNo = account['asiSageNumber'];
             vm.quotation.message = account['message'];
+            vm.quotation.fox = account['faxNumber'];
 
             vm.quotation.userid = account['id'];
             vm.quotation.customName = account['login'];
@@ -100,10 +102,12 @@
                 var _quotation = $cookieStore.get('quotation');
                 _quotation.userid = quotation['userid'];
                 _quotation.companyName = quotation['companyName'];
+                _quotation.clientName = quotation['clientName'];
                 _quotation.customName = quotation['customName'];
                 _quotation.phoneNumber = quotation['phoneNumber'];
-                _quotation.targetPrice = quotation['targetPrice'];
+                _quotation.fox = quotation['fox'];
                 _quotation.asi = quotation['asiSageNo'];
+                 _quotation.customName = quotation['customName'];
                 _quotation.email = quotation['email'];
                 _quotation.productName = quotation['productName'];
                 // vm.quotation.deliverTime = account['deliverTime'];

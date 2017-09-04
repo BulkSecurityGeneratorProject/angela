@@ -110,16 +110,12 @@
                                 <!-- <h4>Categories：<span>Leather</span></h4> -->
                             </div>
                             <div class="question">
-                                <div class="re-star ques-star">
-                                    <a href="javascript:void(0);"><i class="fa fa-star-o fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fa fa-star-o fa-star"></i></a>
-                                    <a href="javascript:void(0);"><i class="fa fa-star-o"></i></a>
-                                    <a href="javascript:void(0);"><i class="fa fa-star-o"></i></a>
-                                    <a href="javascript:void(0);"><i class="fa fa-star-o"></i></a>
+                                <div class="re-star ques-star reviews-stars">
+                                    <span class="rating-star" uib-rating ng-model="vm.product['avgScore']" max="5"  aria-labelledby="default-rating" read-only="true"></span>
                                 </div>
-                                <p><span>470</span> customers reviews</p>
+                                <p><span ng-bind="vm.product['totalReview']"></span> customers reviews</p>
                                 <span>|</span>
-                                <p><span>39</span> answered questions</p>
+                                <p><span ng-bind="vm.product['totalReview']"></span> answered questions</p>
                             </div>
                         </div>
                     </div>
@@ -232,7 +228,7 @@
                                     <!-- <h4>Top customer reviews</h4> -->
                                     <h5>
                                         <span class="reviews-stars">
-                                            <span uib-rating ng-model="vm.fsdf" max="5"  aria-labelledby="default-rating"></span>
+                                            <span uib-rating ng-model="vm.fsdf" max="5"  aria-labelledby="default-rating" read-only="true"></span>
                                         </span>
                                     </h5>
                                     <p class="reviews-date">By <span ng-bind="d['createUser']"></span> </p> on <span ng-bind="d['createDate']"></span>
@@ -261,11 +257,7 @@
                         <div class="reviews-txt">
                             <h4>Reviews</h4>
                             <div class="re-star">
-                                <a href="javascript:void(0);"><i class="fa fa-star-o fa-star"></i></a>
-                                <a href="javascript:void(0);"><i class="fa fa-star-o fa-star"></i></a>
-                                <a href="javascript:void(0);"><i class="fa fa-star-o"></i></a>
-                                <a href="javascript:void(0);"><i class="fa fa-star-o"></i></a>
-                                <a href="javascript:void(0);"><i class="fa fa-star-o"></i></a>
+                                <span class="rating-star" uib-rating ng-model="vm.product['avgScore']" max="5"  aria-labelledby="default-rating" read-only="true"></span>
                                 <span>470</span>
                             </div>
                             <p>4.3 out of 4 Star</p>

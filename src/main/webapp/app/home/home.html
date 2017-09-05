@@ -42,10 +42,10 @@
                     <div class="cases-list">
                         <img ng-src="{{vm.PROD.IMAGEURL + case['pictures'][0]['imageUrl'] | trustAsUrl}}"/>
                         <div class="cases-list-info">
-                            <h3 class="nowrapp" ng-bind="case['title']"></h3>
-                            <h4 class="nowrapp" ng-bind-html-unsafe="case['brief']">Heading</h4>
-                            <p class="nowrapp" ng-bind-html-unsafe="case['description']"></p>
-                            <a class="nowrapp" ui-sref="ourservice-list" class="btn-detail">Detail</a>
+                            <h3 ng-bind="case['title']"></h3>
+                            <h4 ng-bind-html-unsafe="case['brief']">Heading</h4>
+                            <p ng-bind-html-unsafe="case['description']"></p>
+                            <a class="btn-detail" ui-sref="ourservice-list">Detail</a>
                         </div>
                     </div>
                 </div>

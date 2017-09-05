@@ -747,6 +747,7 @@ body{
     margin-bottom: 15px;
     background:#ccc;
     position:relative;
+    cursor: pointer;
 }
 .event-list{
     display:block;
@@ -760,6 +761,17 @@ body{
 .cases-list img{
     width: 100%;
     height: 410px;
+}
+.cases-list:hover img{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+    filter:alpha(Opacity=95);
+    -moz-opacity:0.95;
+    opacity: 0.95;
 }
 .event-list img,.event-list h3{
     opacity: 1;
@@ -842,7 +854,7 @@ body{
     overflow: hidden;
 }
 .cases-list .btn-detail{
-    display:line-block;
+    display:line-block!important;
     padding:9px 40px;
     background:#005297;
     color:#fff;

@@ -14,8 +14,6 @@
             $uibModalInstance.dismiss('cancel');
         }
         vm.data = Data;
-
-
          vm.updateBaseInfo = updateBaseInfo;
             vm.doNotMatch = null;
             vm.error = null;

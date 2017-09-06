@@ -14,6 +14,12 @@
             vm.doNotMatch = null;
             vm.error = null;
             vm.success = null;
+
+            Principal.identity().then(function(account) {
+
+                vm.account = account;
+            });
+
             function changePassword () {
                 if (vm.password !== vm.confirmPassword) {
                     vm.error = null;

@@ -9,7 +9,6 @@
     function mycart ($resource, DateUtils, $http, PROD) {
         var postAddOrdersUrl = PROD['DATAAPI'] + "/Angela/orders/postAddOrders"
         var postAddOrdersList = function(params){
-            console.log(params)
             return $http({
                 method: 'post',
                 url: postAddOrdersUrl,

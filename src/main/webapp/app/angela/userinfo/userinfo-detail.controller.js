@@ -14,12 +14,6 @@
             vm.doNotMatch = null;
             vm.error = null;
             vm.success = null;
-
-            Principal.identity().then(function(account) {
-                console.log(account);
-                vm.account = account;
-            });
-
             function changePassword () {
                 if (vm.password !== vm.confirmPassword) {
                     vm.error = null;
@@ -37,7 +31,6 @@
                 }
             }
             vm.updateInfo = function (i) {
-            console.log(i)
             $uibModal.open({
                 //backdrop:false,  
                 size: 'lg',

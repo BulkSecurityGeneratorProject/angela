@@ -10,7 +10,6 @@
     function MycartListController($scope, $rootScope, $cookies, $cookieStore, Principal, LoginService, $state, mycart) {
         var vm = this;
         Principal.identity().then(function (account) {
-            console.log(account);
             vm.account = account;
         });
         // vm.Product = [{
@@ -41,8 +40,6 @@
 
         if (quotation){
             (quotation.orderProduct || []).forEach(function (d) {
-
-                console.log("d", d[0]);
                 vm.Product.push({
                     id: d['id'],
                     name: d['productName'],
@@ -51,8 +48,6 @@
                     asi_sage: d['asiSageNo'],
                     message: d['message']
                 });
-
-                console.log("Product", vm.Product);
             })
             }
 
@@ -68,7 +63,6 @@
            function saveCookis(){
             vm.saveCookie = [];
             (vm.Product || []).forEach(function (d) {
-                console.log("d", d[0]);
                 vm.saveCookie.push({
                     id: d['id'],
                     productName: d['name'],
@@ -79,7 +73,6 @@
                 });
                 quotation.orderProduct = vm.saveCookie;
                 $cookieStore.put('quotation', quotation)
-                console.log( $cookieStore.get('quotation'))
             })
            }
             
@@ -119,7 +112,6 @@
         //删除当前商品
         vm.remove = function (index) {
             if (confirm("Are you sure you want to empty data? ")) {
-                console.log(vm.Product)
                 vm.Product.splice(index, 1)
                 if(vm.Product.length==0){
                     vm.removeAll();
@@ -147,8 +139,6 @@
             }
         }
         $scope.$watch('vm.Product', function (oldvalue, newvalue) {
-            console.log(oldvalue);
-            console.log(newvalue);
         })
         //提交购物信息
         vm.subCart = function () {
@@ -164,11 +154,13 @@
                 "remarks": "",
                 "orderProduct": vm.Product
             };
-            console.log(params)
             var postMycart = mycart.postAddOrdersList(params);
 
             postMycart.then(function (res) {
                 alert('Submit successfully')
+                vm.Product = [];
+                quotation.orderProduct = vm.Product;
+                $cookieStore.put('quotation', quotation)
             })
 
         }

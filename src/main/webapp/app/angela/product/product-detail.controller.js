@@ -22,7 +22,7 @@
             vm.quotation.clientName = account['login'];
             vm.quotation.email = account['email'];
             vm.quotation.phoneNumber = account['telNumber'];
-            vm.quotation.asiSageNo = account['asiSageNumber'];
+            vm.quotation.asi = account['asiSageNumber'];
             vm.quotation.message = account['message'];
             vm.quotation.fox = account['faxNumber'];
             vm.quotation.userid = account['id'];
@@ -57,14 +57,12 @@
         // 添加到购物车
         function addCart() {
             // 把产品id 加入quotation
-            console.log(vm.account)
             if(vm.account == null){
                 alert("You are not logged in yet!");
                 $state.go('full-login');
             }else{
             vm.quotation.productId = vm.product['id'];
             vm.quotation.productName = vm.product['productName'];
-            console.log("quotation", vm.quotation);
 
             var quotation = angular.copy(vm.quotation);
 
@@ -83,9 +81,6 @@
             });
             quotation.orderProduct = catList;
 
-            console.log(quotation);
-
-
             if (!$cookieStore.get('quotation')) {
                 $cookieStore.put("quotation", quotation);
             } else {
@@ -96,7 +91,7 @@
                 _quotation.customName = quotation['customName'];
                 _quotation.phoneNumber = quotation['phoneNumber'];
                 _quotation.fox = quotation['fox'];
-                _quotation.asi = quotation['asiSageNo'];
+                _quotation.asi = quotation['asi'];
                 _quotation.customName = quotation['customName'];
                 _quotation.email = quotation['email'];
                 _quotation.productName = quotation['productName'];
@@ -105,7 +100,6 @@
                 $cookieStore.put("quotation", _quotation);
             }
             alert('submit successfully!');
-            console.log("$cookieStore.get('quotation')", $cookieStore.get('quotation'));
             }
 
         }

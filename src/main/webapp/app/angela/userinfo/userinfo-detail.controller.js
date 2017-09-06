@@ -5,9 +5,9 @@
         .module('angelaApp')
         .controller('UserinfoDetailController', UserinfoDetailController);
 
-    UserinfoDetailController.$inject = ['Auth', 'Principal'];
+    UserinfoDetailController.$inject = ['Auth', 'Principal', '$uibModal'];
 
-    function UserinfoDetailController (Auth, Principal) {
+    function UserinfoDetailController (Auth, Principal, $uibModal) {
             var vm = this;
 
             vm.changePassword = changePassword;
@@ -36,6 +36,23 @@
                     });
                 }
             }
+            vm.updateInfo = function (i) {
+            console.log(i)
+            $uibModal.open({
+                //backdrop:false,  
+                size: 'lg',
+                animation: true,
+                templateUrl: 'app/angela/userinfo/userinfo-update.html',
+                controller: 'UserInfoUpdateController',
+                controllerAs: 'vm',
+                backdrop: 'static',
+                resolve: {
+                    Data: function () {
+                        return i;
+                    }
+                }
+            })
+        }
 
     }
 })();

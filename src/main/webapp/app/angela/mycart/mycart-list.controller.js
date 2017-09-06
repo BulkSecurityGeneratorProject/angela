@@ -118,7 +118,7 @@
         }
         //删除当前商品
         vm.remove = function (index) {
-            if (confirm("确定要清空数据吗")) {
+            if (confirm("Are you sure you want to empty data? ")) {
                 console.log(vm.Product)
                 vm.Product.splice(index, 1)
                 if(vm.Product.length==0){
@@ -131,11 +131,11 @@
         }
         //清空购物车
         vm.removeAll = function () {
-            if (confirm("你确定套清空购物车所有商品吗?")) {
+            if (confirm("Are you sure to empty the shopping cart?")) {
                 vm.Product = [];
                 quotation.orderProduct = vm.Product;
                  $cookieStore.put('quotation', quotation)
-                alert("购物车为空！")
+                alert("Shopping cart is empty!")
                  
             }
         }
@@ -168,7 +168,7 @@
             var postMycart = mycart.postAddOrdersList(params);
 
             postMycart.then(function (res) {
-                alert('提交成功')
+                alert('Submit successfully')
             })
 
         }

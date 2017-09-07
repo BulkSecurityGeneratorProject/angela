@@ -36,22 +36,22 @@
                     });
                 }
             }
-            vm.updateInfo = function (i) {
-            $uibModal.open({
-                //backdrop:false,  
-                size: 'lg',
-                animation: true,
-                templateUrl: 'app/angela/userinfo/userinfo-update.html',
-                controller: 'UserInfoUpdateController',
-                controllerAs: 'vm',
-                backdrop: 'static',
-                resolve: {
-                    Data: function () {
-                        return i;
-                    }
-                }
-            })
-        }
+        //     vm.updateInfo = function (i) {
+        //     $uibModal.open({
+        //         //backdrop:false,  
+        //         size: 'lg',
+        //         animation: true,
+        //         templateUrl: 'app/angela/userinfo/userinfo-update.html',
+        //         controller: 'UserInfoUpdateController',
+        //         controllerAs: 'vm',
+        //         backdrop: 'static',
+        //         resolve: {
+        //             Data: function () {
+        //                 return i;
+        //             }
+        //         }
+        //     })
+        // }
 
     }
 })();

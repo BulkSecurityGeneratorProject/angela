@@ -35,6 +35,7 @@
 
                 Auth.createAccount(vm.registerAccount).then(function () {
                     vm.success = 'OK';
+                    alert("Register successfully, go to login.")
                     $state.go("full-login");
                 }).catch(function (response) {
                     vm.success = null;

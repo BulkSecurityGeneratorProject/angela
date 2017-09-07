@@ -27,7 +27,24 @@
             vm.quotation.fox = account['faxNumber'];
             vm.quotation.userid = account['id'];
             vm.quotation.customName = account['login'];
+            var keepGoing = true;
+            angular.forEach(vm.quotation, function (d) {
+
+                if (keepGoing) {
+                    if (d === null) {
+                        if (confirm('Your personal information is not perfect, whether to perfect your personal information first?')) {
+                            keepGoing = false;
+                            $state.go('userinfo-detail.edit');
+                        } else {
+                            keepGoing = false;
+                            return;
+                        }
+                    }
+                }
+
+            })
         });
+
 
         locadAll();
         function locadAll() {
@@ -57,49 +74,49 @@
         // 添加到购物车
         function addCart() {
             // 把产品id 加入quotation
-            if(vm.account == null){
+            if (vm.account == null) {
                 alert("You are not logged in yet!");
                 $state.go('full-login');
-            }else{
-            vm.quotation.productId = vm.product['id'];
-            vm.quotation.productName = vm.product['productName'];
-
-            var quotation = angular.copy(vm.quotation);
-
-            var catList = [];
-
-            catList.push({
-                "productId": quotation.productId,
-                "quantity": quotation.quantity,
-                "deliveryTime": quotation.deliveryTime,
-                "targetPrice": quotation.targetPrice,
-                "asiSageNo": quotation.asiSageNo,
-                "message": quotation.message,
-
-                "productName": quotation.productName
-
-            });
-            quotation.orderProduct = catList;
-
-            if (!$cookieStore.get('quotation')) {
-                $cookieStore.put("quotation", quotation);
             } else {
-                var _quotation = $cookieStore.get('quotation');
-                _quotation.userid = quotation['userid'];
-                _quotation.companyName = quotation['companyName'];
-                _quotation.clientName = quotation['clientName'];
-                _quotation.customName = quotation['customName'];
-                _quotation.phoneNumber = quotation['phoneNumber'];
-                _quotation.fox = quotation['fox'];
-                _quotation.asi = quotation['asi'];
-                _quotation.customName = quotation['customName'];
-                _quotation.email = quotation['email'];
-                _quotation.productName = quotation['productName'];
-                _quotation.orderProduct.push(catList[0]);
+                vm.quotation.productId = vm.product['id'];
+                vm.quotation.productName = vm.product['productName'];
 
-                $cookieStore.put("quotation", _quotation);
-            }
-            alert('submit successfully!');
+                var quotation = angular.copy(vm.quotation);
+
+                var catList = [];
+
+                catList.push({
+                    "productId": quotation.productId,
+                    "quantity": quotation.quantity,
+                    "deliveryTime": quotation.deliveryTime,
+                    "targetPrice": quotation.targetPrice,
+                    "asiSageNo": quotation.asiSageNo,
+                    "message": quotation.message,
+
+                    "productName": quotation.productName
+
+                });
+                quotation.orderProduct = catList;
+
+                if (!$cookieStore.get('quotation')) {
+                    $cookieStore.put("quotation", quotation);
+                } else {
+                    var _quotation = $cookieStore.get('quotation');
+                    _quotation.userid = quotation['userid'];
+                    _quotation.companyName = quotation['companyName'];
+                    _quotation.clientName = quotation['clientName'];
+                    _quotation.customName = quotation['customName'];
+                    _quotation.phoneNumber = quotation['phoneNumber'];
+                    _quotation.fox = quotation['fox'];
+                    _quotation.asi = quotation['asi'];
+                    _quotation.customName = quotation['customName'];
+                    _quotation.email = quotation['email'];
+                    _quotation.productName = quotation['productName'];
+                    _quotation.orderProduct.push(catList[0]);
+
+                    $cookieStore.put("quotation", _quotation);
+                }
+                alert('submit successfully!');
             }
 
         }

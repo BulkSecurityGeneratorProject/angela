@@ -19,7 +19,7 @@
         vm.categorysList = [];
         vm.register = register;
         vm.loadProductList = loadProductList;
-        vm.baseProductList = {"New Arrvial": "createDate" ,"Top 100": "sellCount", "Hot Sales": "isHot"};
+        vm.baseProductList = {"New Arrival": "createDate" ,"Top Seller": "sellCount", "Weekly Discount": "isHot"};
         $scope.$on('authenticationSuccess', function() {
             getAccount();
         });

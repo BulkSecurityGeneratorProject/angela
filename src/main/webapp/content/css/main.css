@@ -513,7 +513,6 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legen
 body{
     font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
     font-size: 12px;
-    padding-bottom: 40px;
 }
 .body-pad{
     padding-bottom: 40px;
@@ -1101,12 +1100,12 @@ body{
     display:inline-block;
     height: 45px;
     line-height: 45px;
-    padding:0 20px;
+    padding:0 15px;
     position: relative;
 }
-.nav-service > li:first-child a{
+/* .nav-service > li:first-child a{
     padding:0 40px 0 25px;
-}
+} */
 .nav-service li a p{
     color: #333;
 }
@@ -1207,7 +1206,7 @@ body{
     font-size: 12px;
 }
 .hot-tabs{
-    width:315px;
+    width:350px;
     margin:0 auto;
     text-align: center;
 }
@@ -1906,7 +1905,7 @@ body{
 }
 .toolbar {
     position: fixed;
-    top:40%;
+    bottom:10%;
     right: 20px;
     z-index: 1000;
 }

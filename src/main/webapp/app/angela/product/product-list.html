@@ -50,8 +50,8 @@
          <div class="panel panel-green">
                 <div class="panel-heading">Price</div>
                 <div class="panel-body panel-navlist">
-                    <a href="#">price low to high</a>
-                    <a href="#">price high to low</a>
+                    <a ng-click="vm.loadProductList({orderBy: 'priceDown'})">price low to high</a>
+                    <a ng-click="vm.loadProductList({orderBy: 'priceUp'})">price high to low</a>
                 </div>
             </div>
         </div>

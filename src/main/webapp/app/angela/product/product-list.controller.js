@@ -19,19 +19,23 @@
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.loadProductList = loadProductList;
-        vm.baseProductList = {"New Arrvial": "createDate" ,"Top 100": "sellCount", "Hot Sales": "isHot"};
+        vm.baseProductList = {"New Arrvial": "createDate" ,"Top Seller": "sellCount", "Weekly Discount": "isHot"};
         locadAll();
 
         function locadAll() {
 
             console.log("$stateParams", $stateParams);
-            loadProductList($stateParams['orderby']);
+            loadProductList({OrderBy: $stateParams['orderby']});
             loadCategorysList({});
+            getAllDictionarysList({});
         }
         // 加载产品
-        function loadProductList(type) {
+        function loadProductList(params) {
 
-            var productListP = product.getProductList({"OrderBy": (type || 'createDate')});
+            if(!params['OrderBy']) {
+                params['OrderBy'] = 'createDate';
+            }
+            var productListP = product.getProductList(params);
 
             productListP.then(function(product) {
                 console.log(product);
@@ -66,16 +70,18 @@
             return url['imageUrl'];
         }
 
-        // 加载产品
-        function loadProductList(type, name) {
-            console.log(type, name);
+        // 加载颜色列表
+        function getAllDictionarysList(params) {
+            var getAllDictionarysP = product.getAllDictionarys(params);
 
-            vm.productTitle = name;
-
-            vm.orderby = type;
-            var productListP = product.getProductList({"OrderBy": (type || 'createDate')});
-            productListP.then(function(product) {
-                 vm.productList = product['data'];
+            getAllDictionarysP.then(function(dictionarysList) {
+                vm.dictionarysList = dictionarysList['data'] || [];
+                vm.dictionarysColor = (vm.dictionarysList['Dictionary'] || []).filter(function(_d) {
+                    return _d['dicKey'] == "product_color";
+                })
+                vm.dictionarysMaterial = (vm.dictionarysList['Dictionary'] || []).filter(function(_d) {
+                    return _d['dicKey'] == "product_material";
+                })
             })
         }
     }

@@ -17,7 +17,7 @@
                 <li class="line"><span>|</span></li> -->
 
                 <li class="line"><span>|</span></li>
-                <li><a ui-sref="product-list({ 'title': k})">{{k}}</a></li>
+                <li><a ui-sref="product-list({ 'orderby': v})">{{k}}</a></li>
 
             </ul>
         </nav>
@@ -33,41 +33,27 @@
                     <p ng-repeat="category in categorys['category']" ><a href="#" ng-bind="category['cateName']"></a></p>
                 </div>
             </div>
-            <!-- <div class="panel panel-red">
+            <div class="panel panel-red">
                 <div class="panel-heading">Color</div>
                 <div class="panel-body">
                     <ul class="panel-color">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li ng-repeat="colorList in vm.dictionarysColor" ng-style="{'background': colorList['dicId']}" ng-click="vm.loadProductList({productColor: colorList['dicId']})"></li>
                     </ul>
                 </div>
-            </div> -->
-            <!-- <div class="panel panel-blue">
+            </div>
+            <div class="panel panel-blue">
                 <div class="panel-heading">Material</div>
                 <div class="panel-body panel-navlist">
-                    <a href="product-detail.html">KIND 1</a>
-                    <a href="product-detail.html">KIND 2</a>
-                    <a href="product-detail.html">KIND 3</a>
-                    <a href="product-detail.html">KIND 4</a>
+                    <a ng-repeat="d in vm.dictionarysMaterial" ng-click="vm.loadProductList({material: d['dicId']})" ng-bind="d['dicDes']"></a>
                 </div>
-            </div> -->
-            <!-- <div class="panel panel-green">
+            </div>
+         <div class="panel panel-green">
                 <div class="panel-heading">Price</div>
                 <div class="panel-body panel-navlist">
                     <a href="#">price low to high</a>
                     <a href="#">price high to low</a>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
             <!-- <div class="row">
@@ -105,91 +91,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="thumbnails" ui-sref="product-detail">
-                        <img src="content/images/mathwork.jpg">
-                        <div class="caption">
-                            <h4><span>2017.06.26</span>Heading</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
-                            </p>
-                            <p class="hot-r">
-                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="thumbnails" ui-sref="product-detail">
-                        <img src="content/images/mathwork.jpg">
-                        <div class="caption">
-                            <h4><span>2017.06.26</span>Heading</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
-                            </p>
-                            <p class="hot-r">
-                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="thumbnails" ui-sref="product-detail">
-                        <img src="content/images/mathwork.jpg">
-                        <div class="caption">
-                            <h4><span>2017.06.26</span>Heading</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
-                            </p>
-                            <p class="hot-r">
-                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="thumbnails" ui-sref="product-detail">
-                        <img src="content/images/mathwork.jpg">
-                        <div class="caption">
-                            <h4><span>2017.06.26</span>Heading</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
-                            </p>
-                            <p class="hot-r">
-                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-                    <div class="thumbnails" ui-sref="product-detail">
-                        <img src="content/images/mathwork.jpg">
-                        <div class="caption">
-                            <h4><span>2017.06.26</span>Heading</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                            <p class="hot-color">
-                                Color：<span class="label-warning"></span>
-                                <span class="label-info"></span>
-                                <span class="label-primary"></span>
-                            </p>
-                            <p class="hot-r">
-                                TAGS：<a href="#">Fashion</a> | <a href="#">Lifestyle</a>
-                            </p>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>

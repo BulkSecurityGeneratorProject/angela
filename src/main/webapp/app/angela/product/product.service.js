@@ -7,16 +7,17 @@
     product.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
 
     function product ($resource, DateUtils, $http, PROD) {
-        var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProducts';
+        var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProductsByParms';
         var getProductDetailUrl = PROD['DATAAPI'] + "/Angela/products/getProductsDetail";
         var getCategorysListUrl = PROD['DATAAPI'] + "/Angela/categorys/getAllCategorys";
         var postAddReviewsUrl = PROD['DATAAPI'] + "/Angela/reviews/postAddReviews";
+        var getAllDictionarysUrl = PROD['DATAAPI'] + "/Angela/dictionarys/getAllDictionarys";
 
         var getProductList = function(params) {
             return $http({
-                   method: 'GET',
+                   method: 'POST',
                    url: getProductListUrl + "?OrderBy=" + params["OrderBy"],
-                   data: {}
+                   data: params
             });
         }
 
@@ -45,11 +46,20 @@
             })
         }
 
+        var getAllDictionarys = function(params) {
+            return $http({
+                method: 'get',
+                url: getAllDictionarysUrl,
+                data: params
+            })
+        }
+
         return {
             getProductList: getProductList,
             getProductDetail: getProductDetail,
             getCategorysList: getCategorysList,
-            postAddReviews: postAddReviews
+            postAddReviews: postAddReviews,
+            getAllDictionarys: getAllDictionarys
         };
     }
 })();

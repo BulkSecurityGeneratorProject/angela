@@ -679,6 +679,9 @@ body{
     float:none;
     vertical-align:middle;
 }
+.navbar-special:first-child span{
+  display:none;
+}
 .navbar-special>li>a{
     color:#fff;
     padding-left: 30px;
@@ -729,6 +732,34 @@ body{
 .main-events{
     padding:50px 30px;
     background:#f1f1f1;
+}
+.main-search{
+    padding:20px 30px;
+    background:#005297;
+}
+.yourneed-tit{
+    text-align: center;
+    color:#fff;
+    margin-bottom: 10px;
+}
+.yourneed{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content:center;
+    flex-wrap:center;
+    align-content:center;
+}
+.needSearch{
+    border:1px solid #ddd;
+    width:200px;
+    padding:2px;
+}
+.btn-search{
+    padding:0 10px;
+    background:#2d2d2d;
+    border:0;
+    color:#fff;
+    margin-left: 5px;
 }
 /* .main-cases .col-xs-4:first-child,.main-cases .col-sm-4:first-child,.main-cases .col-md-4:first-child,.main-cases .col-lg-4:first-child,.main-event .col-xs-4:first-child,.main-event .col-sm-4:first-child,.main-event .col-md-4:first-child,.main-event .col-lg-4:first-child{
     padding-left: 0;

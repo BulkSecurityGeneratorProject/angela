@@ -734,8 +734,10 @@ body{
     background:#f1f1f1;
 }
 .main-search{
-    padding:20px 30px;
+    padding:15px 30px;
     background:#005297;
+    margin-bottom: 10px;
+    border-bottom: 10px solid #f1f1f1;
 }
 .yourneed-tit{
     text-align: center;
@@ -751,7 +753,7 @@ body{
 }
 .needSearch{
     border:1px solid #ddd;
-    width:200px;
+    width:250px;
     padding:2px;
 }
 .btn-search{

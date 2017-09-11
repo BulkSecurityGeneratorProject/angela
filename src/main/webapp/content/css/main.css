@@ -1917,7 +1917,7 @@ body{
 .userinfo-table tr th{
     padding:10px 5px;
 }
-.mycart-table tr th:first-child,.mycart-table tr th:nth-child(2),.mycart-table tr:last-child td{
+.mycart-table tr th:first-child,.mycart-table tr th:nth-child(2),.mycart-table tbody tr td:first-child,.mycart-table tbody tr td:nth-child(2){
     text-align: left;
 }
 .mycart-action{

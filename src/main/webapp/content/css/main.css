@@ -1908,7 +1908,7 @@ body{
 .mycart-submit{
     border-top: 1px solid #ddd;
     text-align: right;
-    margin:5px 0;
+    margin:10px 0;
     padding:5px 0;
 }
 .btn-modify,.btn-submit{
@@ -1932,7 +1932,7 @@ body{
 .mycart-action{
     display:inline-block;
 }
-.mycart-action .btn,.btn-remove{
+.mycart-action .btn{
     display:block;
     width:80px;
     margin:5px 0;
@@ -1944,7 +1944,17 @@ body{
     border-radius:2px;
 }
 .btn-remove{
+    display:inline-block;
+    width:80px;
+    margin:5px 0;
+    font-size: 12px;
+    text-align: center;
+    padding:2px 12px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
     background:#c9302c;
+    color:#fff;
 }
 .btn-test{
     -moz-border-radius:2px;

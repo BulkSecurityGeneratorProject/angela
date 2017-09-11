@@ -1936,6 +1936,7 @@ body{
 }
 .btn-remove{
     background:#c9302c;
+    margin-left: 5px;
 }
 .btn-test{
     -moz-border-radius:2px;

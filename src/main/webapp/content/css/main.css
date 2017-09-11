@@ -1843,6 +1843,9 @@ body{
 .form-testerminal .group-padd15{
     padding:0 15px;
 }
+.i-right{
+    float:right;
+}
 /*--modal--*/
 .rating {
     margin-bottom: 4px;
@@ -1892,6 +1895,7 @@ body{
 .mycart-total .btn-empty{
     border: 1px solid #bfd6af;
     padding: 2px 14px 3px;
+    margin-left: 5px;
 }
 .form-cmb{
     margin-bottom: 10px;
@@ -1936,7 +1940,6 @@ body{
 }
 .btn-remove{
     background:#c9302c;
-    margin-left: 5px;
 }
 .btn-test{
     -moz-border-radius:2px;

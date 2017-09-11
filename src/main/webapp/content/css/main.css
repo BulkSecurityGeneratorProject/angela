@@ -1897,6 +1897,11 @@ body{
     padding: 2px 14px 3px;
     margin-left: 5px;
 }
+.btn-empty{
+    border: 1px solid #bfd6af;
+    padding: 2px 14px 3px;
+    margin-left: 5px;
+}
 .form-cmb{
     margin-bottom: 10px;
 }

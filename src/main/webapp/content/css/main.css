@@ -1807,6 +1807,9 @@ body{
     padding:20px;
     background:#fff;
 }
+.mycart{
+    min-height: 500px;
+}
 .testerminalviews h1{
     padding:15px 0;
     margin:0 15px;

@@ -2049,6 +2049,33 @@ body{
     height: 85px;
     vertical-align: bottom;
 }
+.attributesContainer{
+    height:400px;
+    border-top: 1px solid #e5e5e5;
+}
+.attributesContainer h3{
+    padding:10px 0;
+}
+.contentContainer{
+    padding-bottom: 10px;
+}
+.contentContainer p{
+    margin:10px 0;
+}
+.priceGridTop{
+    text-align: right;
+    padding:5px 0;
+}
+.priceGridTable{
+    width:100%;
+}
+.priceGridTable tr th,.priceGridTable tr td{
+    border:1px solid #ddd;
+    padding:10px;
+}
+.priceGridTable tr th{
+    background:#f2f2f2;
+}
 @media ( max-width : 767px){
     .main-cases .col-xs-4:first-child,.main-cases .col-sm-4:first-child,.main-cases .col-md-4:first-child,.main-cases .col-lg-4:first-child,.main-event .col-xs-4:first-child,.main-event .col-sm-4:first-child,.main-event .col-md-4:first-child,.main-event .col-lg-4:first-child{
         padding-left: 15px;

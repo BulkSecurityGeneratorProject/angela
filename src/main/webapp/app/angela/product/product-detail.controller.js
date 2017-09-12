@@ -62,7 +62,6 @@
                 vm.product = product['data']['products'];
             })
         }
-
         // 加载类别
         function loadCategorysList(params) {
             var categoryListP = product.getCategorysList(params);

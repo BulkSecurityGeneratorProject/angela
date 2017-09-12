@@ -4,7 +4,7 @@
 
 
         <div id="foot" class="mycart-total"><span class="mycart-total-tit">总价:</span><span ng-bind="vm.totalQuantity()"></span><span class="mycart-total-tit">购买数量</span>
-            <span>{{vm.numAll()}}</span> <button ng-click="vm.removeAll()" class="btn-empty">清空购物车</button> 
+            <span>{{vm.numAll()}}</span> 
         </div>
 
         <div class="row">
@@ -43,7 +43,7 @@
                             <h4>Shop cart</h4>
                         </div>
                         <div class="col-md-12 col-lg-12" ng-switch="vm.isShow()">
-                            <div ng-switch-when="false" class="text-center"><p><b> Shopping cart is empty! </b><a class="btn btn-xs btn-success" href="#">Go Shopping</a></p> </div>
+                            <div ng-switch-when="false" class="text-center"><p><b> Shopping cart is empty! </b><a ng-click="vm.removeAll()" class="btn btn-empty btn-fr">Empty cart</a><a class="btn btn-xs btn-success btn-fr" href="#">Go Shopping</a></p> </div>
                             <table  ng-switch-when="true" class="mycart-table">
                                 <thead>
                                     <tr>
@@ -69,7 +69,7 @@
                                         <td>{{x.price * x.quantity}}</td>
                                         <!-- <td>{{x.asi_sage}}</td> -->
                                         <td>{{x.message}}  </td>
-                                        <td><button ng-click="vm.remove($index)">Remove</button></td>
+                                        <td><button ng-click="vm.remove($index)" class="btn btn-remove">Remove</button></td>
                                     </tr>
                                 </tbody>
                             </table>

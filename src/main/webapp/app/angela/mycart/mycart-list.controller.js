@@ -12,40 +12,19 @@
         Principal.identity().then(function (account) {
             vm.account = account;
         });
-        // vm.Product = [{
-        //     id: 1000,
-        //     name: "iPhone8",
-        //     quantity: 1,
-        //     price: 8888
-        // }, {
-        //     id: 1001,
-        //     name: "iPhone9",
-        //     quantity: 1,
-        //     price: 9888
-        // }, {
-        //     id: 1002,
-        //     name: "iPhone 2s",
-        //     quantity: 1,
-        //     price: 3888
-        // }, {
-        //     id: 1003,
-        //     name: "iPhone 7P+",
-        //     quantity: 1,
-        //     price: 10088
-        // }];
         vm.Product = [];
         vm.quotation = $cookieStore.get('quotation');
         vm.saveCookie = [];
         var quotation = angular.copy(vm.quotation);
-
+            console.log(quotation)
         if (quotation){
             (quotation.orderProduct || []).forEach(function (d) {
                 vm.Product.push({
-                    id: d['id'],
+                    productId: d['productId'],
                     name: d['productName'],
                     quantity: d['quantity'],
                     price: d['targetPrice'],
-                    asi_sage: d['asiSageNo'],
+                    asiSageNo: d['asi'],
                     message: d['message']
                 });
             })
@@ -64,11 +43,11 @@
             vm.saveCookie = [];
             (vm.Product || []).forEach(function (d) {
                 vm.saveCookie.push({
-                    id: d['id'],
+                    productId: d['productId'],
                     productName: d['name'],
                     quantity: d['quantity'],
                     targetPrice: d['price'],
-                    asiSageNo: d['asi_sage'],
+                    asi: d['asiSageNo'],
                     message: d['message']
                 });
                 quotation.orderProduct = vm.saveCookie;
@@ -142,6 +121,7 @@
         })
         //提交购物信息
         vm.subCart = function () {
+            console.log('vm.rrrrrr', vm.quotation)
             var params = {
                 "userId": vm.quotation['userid'],
                 "companyName": vm.quotation['companyName'],
@@ -149,13 +129,13 @@
                 "phoneNumber": vm.quotation['telNumber'],
                 "targetPrice": vm.totalQuantity(),
                 "asi": vm.quotation['asi'],
-                "fax": vm.quotation['fax'],
+                "fox": vm.quotation['fox'],
                 "email": vm.quotation['email'],
                 "remarks": "",
                 "orderProduct": vm.Product
             };
             var postMycart = mycart.postAddOrdersList(params);
-
+            console.log(params)
             postMycart.then(function (res) {
                 alert('Submit successfully')
                 vm.Product = [];

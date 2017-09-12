@@ -7,124 +7,126 @@
                     <div class="row">
                         <!-- <form name="form" role="form" novalidate ng-submit="vm.changePassword()" show-validation> -->
                         <form name="form" role="form" novalidate ng-submit="vm.changePassword()" show-validation>
-                        <div class="col-md-12 col-lg-12">
-                            <h4>Customer info</h4>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <label>Company name：</label>
-                            <span ng-bind="vm.account.companyName"></span>
-                           
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <label>User name：</label>
-                            <!-- <span>guangzhoujiaoye</span> -->
-                            <span ng-bind="vm.account.email"></span>
-                            <!-- <input type="text" ng-model="vm.account.email" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <label>ASI Or Sage No.：</label>
-                            <span ng-bind="vm.account.asiSageNumber"></span>
-                            <!-- <input type="text" ng-model="vm.account.asiSageNumber" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <label>Tel：</label>
-                            <span ng-bind="vm.account.telNumber"></span>
-                            <!-- <input type="text" ng-model="vm.account.telNumber" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <label>Fax：</label>
-                            <span ng-bind="vm.account.faxNumber"></span>
-                            <!-- <input type="text" ng-model="vm.account.faxNumber" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <label>E-mail：</label>
-                            <span ng-bind="vm.account.email"></span>
-                            <!-- <input type="text" ng-model="vm.account.email" class="form-control form-cmb" name="" value="guangzhoujiaoye@hotmail.com"> -->
-                        </div>
+                            <div class="col-md-12 col-lg-12">
+                                <h4>Customer info</h4>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label>Company name：</label>
+                                <span ng-bind="vm.account.companyName"></span>
 
-                        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <input  name="" value="Edit" class="btn btn-info btn-modify"  ui-sref="userinfo-detail.edit">
-                        </div>
-                        <div class="col-md-12 col-lg-12">
-                            <h4>Order Status</h4>
-                        </div>
-                        <div class="col-md-12 col-lg-12">
-                            <!-- <table class="userinfo-table">
-                                <thead>
-                                    <tr>
-                                        <th>Order details</th>
-                                        <th>Consignee</th>
-                                        <th>Amount of money</th>
-                                        <th>All States</th>
-                                        <th>operation</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td colspan="5">
-                                        <div class="ordernumber">
-                                            <p>Order number：<pan>88999992933</pan></p>
-                                            <p>jingdong <i class="fa fa-recycle"></i></p>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td data-label="Quantity">
-                                        <div class="userinfo-list">
-                                            <div class="mycartthumb-xs">
-                                                <img src="content/images/product-th2.png">
-                                                <div class="caption">
-                                                    <h5>OPP R11 双卡双待手机</h5>
-                                                    <p>Cras justo odio.</p>
-                                                </div>
-                                            </div>
-                                            <span>X1</span>
-                                            <a href="#">卖了换钱</a>
-                                        </div>
-                                        <div class="userinfo-list">
-                                            <div class="mycartthumb-xs">
-                                                <img src="content/images/product-th2.png">
-                                                <div class="caption">
-                                                    <h5>OPP R11 双卡双待手机</h5>
-                                                    <p>Cras justo odio.</p>
-                                                </div>
-                                            </div>
-                                            <span>X1</span>
-                                            <a href="#">卖了换钱</a>
-                                        </div>
-                                        <div class="userinfo-list">
-                                            <div class="mycartthumb-xs">
-                                                <img src="content/images/product-th2.png">
-                                                <div class="caption">
-                                                    <h5>OPP R11 双卡双待手机</h5>
-                                                    <p>Cras justo odio.</p>
-                                                </div>
-                                            </div>
-                                            <span>X1</span>
-                                            <a href="#">卖了换钱</a>
-                                        </div>
-                                    </td>
-                                    <td data-label="Delivery time">wangkaijie <i class="glyphicon glyphicon-user"></i></td>
-                                    <td data-label="ASI or Sage No">
-                                        <p class="user-total">Total：$12345.00</p>
-                                        <p class="user-total">Online payment/Ious</p>
-                                    </td>
-                                    <td data-label="Target price/Budget">
-                                        <p>已取消</p>
-                                        <a href="#">Detailed order</a>
-                                    </td>
-                                    <td data-label="Action">
-                                        <div class="mycart-action">
-                                            <button class="btn btn-info">Edit</button>
-                                            <button class="btn btn-danger">Delect</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table> -->
-                        </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label>User name：</label>
+                                <!-- <span>guangzhoujiaoye</span> -->
+                                <span ng-bind="vm.account.email"></span>
+                                <!-- <input type="text" ng-model="vm.account.email" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label>ASI Or Sage No.：</label>
+                                <span ng-bind="vm.account.asiSageNumber"></span>
+                                <!-- <input type="text" ng-model="vm.account.asiSageNumber" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label>Tel：</label>
+                                <span ng-bind="vm.account.telNumber"></span>
+                                <!-- <input type="text" ng-model="vm.account.telNumber" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label>Fax：</label>
+                                <span ng-bind="vm.account.faxNumber"></span>
+                                <!-- <input type="text" ng-model="vm.account.faxNumber" class="form-control form-cmb" name="" value="guangzhoujiaoye"> -->
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <label>E-mail：</label>
+                                <span ng-bind="vm.account.email"></span>
+                                <!-- <input type="text" ng-model="vm.account.email" class="form-control form-cmb" name="" value="guangzhoujiaoye@hotmail.com"> -->
+                            </div>
 
-                    </form>
+                            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                                <input name="" value="Edit" class="btn btn-info btn-modify" ui-sref="userinfo-detail.edit">
+                            </div>
+                            <div class="col-md-12 col-lg-12">
+                                <h4>Order Status</h4>
+                            </div>
+                            <div class="col-md-12 col-lg-12">
+                                <table class="userinfo-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Order details</th>
+                                            <th>Consignee</th>
+                                            <th>Amount of money</th>
+                                            <th>All States</th>
+                                            <th>operation</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody ng-repeat="order in vm.orderList track by order.id">
+                                        <tr>
+                                            <td colspan="5">
+                                                <div class="ordernumber">
+                                                    <p>Order number：
+                                                        <pan>{{order.id}}</pan>
+                                                    </p>
+                                                    <!-- <p>jingdong <i class="fa fa-recycle"></i></p> -->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td data-label="Quantity">
+                                                <div class="userinfo-list" ng-repeat="product in order.orderProduct">
+                                                    <div class="mycartthumb-xs">
+                                                        <!-- <img src="content/images/product-th2.png"> -->
+                                                        <div class="caption">
+                                                            <h5>{{product.product.productName}}</h5>
+                                                            <!-- <p>Cras justo odio.</p> -->
+                                                        </div>
+                                                    </div>
+                                                    <span>×{{product.quantity}}</span>
+                                                    <!-- <a href="#">卖了换钱</a> -->
+                                                </div>
+                                                <!-- <div class="userinfo-list">
+                                            <div class="mycartthumb-xs">
+                                                <img src="content/images/product-th2.png">
+                                                <div class="caption">
+                                                    <h5>OPP R11 双卡双待手机</h5>
+                                                    <p>Cras justo odio.</p>
+                                                </div>
+                                            </div>
+                                            <span>X1</span>
+                                            <a href="#">卖了换钱</a>
+                                        </div>
+                                        <div class="userinfo-list">
+                                            <div class="mycartthumb-xs">
+                                                <img src="content/images/product-th2.png">
+                                                <div class="caption">
+                                                    <h5>OPP R11 双卡双待手机</h5>
+                                                    <p>Cras justo odio.</p>
+                                                </div>
+                                            </div>
+                                            <span>X1</span>
+                                            <a href="#">卖了换钱</a>
+                                        </div> -->
+                                            </td>
+                                            <td data-label="Delivery time">{{order.customName}} <i class="glyphicon glyphicon-user"></i></td>
+                                            <td data-label="ASI or Sage No">
+                                                <p class="user-total">Total：￥{{order.targetPrice}}</p>
+                                                <p class="user-total">Online payment/Ious</p>
+                                            </td>
+                                            <td data-label="Target price/Budget">
+                                                <p>{{{'0':'正常', '1':'取消'}[order.status]}}</p>
+                                                <a href="#">Detailed order</a>
+                                            </td>
+                                            <td data-label="Action">
+                                                <div class="mycart-action">
+                                                    <!-- <button class="btn btn-info">Edit</button> -->
+                                                    <button class="btn btn-danger">Cancel</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>

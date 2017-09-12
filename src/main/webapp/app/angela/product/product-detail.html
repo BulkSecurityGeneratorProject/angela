@@ -234,13 +234,133 @@
                                     <p class="reviews-date">By <span ng-bind="d['createUser']"></span> </p> on <span ng-bind="d['createDate']"></span>
                                     <p ng-bind="d['comment']">loading ...</p>
                                 </div>
-
-
                             </uib-tab>
                             <uib-tab heading="Product Details">
-                                <li ng-repeat="d in vm.product.pictures" ng-if="d['imageType']==4">
+                                <div ng-repeat="d in vm.product.pictures" ng-if="d['imageType']==4">
                                     <img ng-src="{{vm.PROD.IMAGEURL + d['imageUrl'] | trustAsUrl}}" width="100%" height="auth" alt="loding ..." />
-                                </li>
+                                </div>
+                                <uib-accordion close-others="oneAtATime">
+                                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                                        <uib-accordion-heading>
+                                        Pricing <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                        </uib-accordion-heading>
+                                        <div class="contentContainer">
+                                            <div class="priceGridTop"><strong>CSU0307</strong></div>
+                                            <div class="table-responsive">
+                                                <table class="priceGridTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Quantity</th>
+                                                            <th>500</th>
+                                                            <th>1,000</th>
+                                                            <th>2,000</th>
+                                                            <th>3,000</th>
+                                                            <th>5,000</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Price</td>
+                                                            <td>$2.60</td>
+                                                            <td>$2.40</td>
+                                                            <td>$2.10</td>
+                                                            <td>$2.00</td>
+                                                            <td>$1.90</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <p><strong>Price Includes:</strong> Including Freight&Duty</p>
+                                            <p>To purchase this product or for more information, please contact your local Promotional Products Distributor.</p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
+                                <uib-accordion close-others="oneAtATime">
+                                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                                        <uib-accordion-heading>
+                                        Product Detail <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                        </uib-accordion-heading>
+                                        <div class="contentContainer">
+                                            <h4>Category</h4>
+                                            <p>Tops & Spinners-Fidget Spinners</p>
+                                            <h4>Material</h4>
+                                            <p>ABS</p>
+                                            <h4>Size</h4>
+                                            <p>3 " x 3 " x 0.5 "</p>
+                                            <h4>Color</h4>
+                                            <p>custome-made</p>
+                                            <h4>Shipping Estimate</h4>
+                                            <p>200 per Case</p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
+                                <uib-accordion close-others="oneAtATime">
+                                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                                        <uib-accordion-heading>
+                                        Imprint <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                        </uib-accordion-heading>
+                                        <div class="contentContainer">
+                                            <h4>Imprint Information</h4>
+                                            <p><strong>Imprint Method：</strong>screenprint, Unimprinted</p>
+                                            <p><strong>Imprint Color：</strong>assorted</p>
+                                            <p><strong>Full Color Process：</strong>No</p>
+                                            <p><strong>Personalization：</strong>No</p>No
+                                            <p><strong>Sold Unimprinted：</strong>Yes</p>
+                                            <h4>Imprint Color</h4>
+                                            <p>assorted</p>
+                                            <h5>Imprint Color : assorted</h5>
+                                            <p>Imprint Color Charge (Other)</p>
+                                            <div class="table-responsive">
+                                                <table class="priceGridTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Quantity</th>
+                                                            <th>1</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Price</td>
+                                                            <td>$50.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <p><strong>Price Includes：</strong>N/A</p> 
+                                            <h4>Artwork & Proofs</h4>
+                                            <p>Art Services, Paper Proof, Pre-production Proof, Virtual Proof</p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
+                                <uib-accordion close-others="oneAtATime">
+                                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                                        <uib-accordion-heading>
+                                        Production and Shopping <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                        </uib-accordion-heading>
+                                        <div class="contentContainer">
+                                            <h4>Production Information</h4>
+                                            <p><strong>Production Time：</strong>25 - 30 business days</p>
+                                            <p><strong>Rush Service：</strong>No</p>
+                                            <p><strong>FOB Point：</strong></p>
+                                            <p><strong>Shipping Weight：</strong>12kg</p>
+                                            <h4>Country of Origin</h4>
+                                            <p>CHINA</p>
+                                            <h4>Packaging</h4>
+                                            <p>Case</p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
+                                <uib-accordion close-others="oneAtATime">
+                                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                                        <uib-accordion-heading>
+                                        Safety and Compliance <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                        </uib-accordion-heading>
+                                        <div class="contentContainer">
+                                            <p>All prices and descriptions are subject to change without notice. If the price listed is different from the actual price, we will notify you before processing your order. Prices will be calculated using end of day exchange rates if orders contain products with different currencies. Total price is for merchandise only. Prices may be exclusive of any setup charges, art changes, shipping charges, state / provincial required taxes, rush charges or any other additional charges, which will be communicated prior to processing the order.</p>
+                                            <p>Information, data and/or screens (the "Material") from this site may not be copied, duplicated, saved, archived, or captured by any means except that the Material may be used as part of normal browser caching and printing performed in the course of using the site for its intended purpose.</p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
                             </uib-tab>
                             <uib-tab heading="Pricing">
 

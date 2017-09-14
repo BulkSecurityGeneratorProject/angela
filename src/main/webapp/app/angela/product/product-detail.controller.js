@@ -52,6 +52,7 @@
             loadProductDetail($stateParams['id']);
 
             loadCategorysList();
+            getAllDictionarysList();
         }
         // 加载产品
         function loadProductDetail(id) {
@@ -67,6 +68,34 @@
             var categoryListP = product.getCategorysList(params);
             categoryListP.then(function (categoryList) {
                 vm.categoryList = categoryList['data'];
+                vm.cateName = _.filter(vm.categoryList.Categorys, { 'id': vm.product.categoryId })[0].cateName;
+            })
+        }
+        // 
+        function getAllDictionarysList(params) {
+            var getAllDictionarysP = product.getAllDictionarys(params);
+
+            getAllDictionarysP.then(function (dictionarysList) {
+                vm.dictionarysList = dictionarysList['data'] || [];
+                vm.dictionarysMaterial = (vm.dictionarysList['Dictionary'] || []).filter(function (_d) {
+                    return _d['dicKey'] == "product_material";
+                })
+                vm.materialName = _.filter(vm.dictionarysMaterial, { 'dicId': vm.product.material})[0].dicVal;
+                vm.dictionarysArea = (vm.dictionarysList['Dictionary'] || []).filter(function (_d) {
+                    return _d['dicKey'] == "product_area";
+                })
+                vm.areaName =  _.filter(vm.dictionarysArea, { 'dicId': vm.product.productArea})[0].dicVal;
+
+                vm.dictionarysProofs = (vm.dictionarysList['Dictionary'] || []).filter(function (_d) {
+                    return _d['dicKey'] == "product_proofs";
+                })
+                var _proofs = vm.product.productProofs.split(',');
+                var proofsNames = [];
+                angular.forEach(_proofs, function(d){
+                     var proof=  _.filter(vm.dictionarysProofs, { 'dicId': d})[0].dicVal;
+                     proofsNames.push(proof);
+                })
+                vm.proofsNames = proofsNames.join();
             })
         }
 

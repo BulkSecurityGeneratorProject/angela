@@ -245,32 +245,32 @@
                                         Pricing <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                         </uib-accordion-heading>
                                         <div class="contentContainer">
-                                            <div class="priceGridTop"><strong>CSU0307</strong></div>
+                                            <div class="priceGridTop"><strong>{{vm.product.productSn}}</strong></div>
                                             <div class="table-responsive">
                                                 <table class="priceGridTable">
                                                     <thead>
                                                         <tr>
                                                             <th>Quantity</th>
-                                                            <th>500</th>
-                                                            <th>1,000</th>
-                                                            <th>2,000</th>
-                                                            <th>3,000</th>
-                                                            <th>5,000</th>
+                                                            <th ng-bind="vm.product.countA"></th>
+                                                            <th ng-bind="vm.product.countB"></th>
+                                                            <th ng-bind="vm.product.countC"></th>
+                                                            <th ng-bind="vm.product.countD"></th>
+                                                            <th ng-bind="vm.product.countE"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>Price</td>
-                                                            <td>$2.60</td>
-                                                            <td>$2.40</td>
-                                                            <td>$2.10</td>
-                                                            <td>$2.00</td>
-                                                            <td>$1.90</td>
+                                                            <td ng-bind="vm.product.priceA"></td>
+                                                            <td ng-bind="vm.product.priceB"></td>
+                                                            <td ng-bind="vm.product.priceC"></td>
+                                                            <td ng-bind="vm.product.priceD"></td>
+                                                            <td ng-bind="vm.product.priceE"></td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <p><strong>Price Includes:</strong> Including Freight&Duty</p>
+                                            <p><strong>Price Includes:</strong> {{vm.product.priceIncludes}}</p>
                                             <p>To purchase this product or for more information, please contact your local Promotional Products Distributor.</p>
                                         </div>
                                     </div>
@@ -282,15 +282,15 @@
                                         </uib-accordion-heading>
                                         <div class="contentContainer">
                                             <h4>Category</h4>
-                                            <p>Tops & Spinners-Fidget Spinners</p>
+                                            <p>{{vm.cateName}}</p>
                                             <h4>Material</h4>
-                                            <p>ABS</p>
+                                            <p>{{vm.materialName}}</p>
                                             <h4>Size</h4>
-                                            <p>3 " x 3 " x 0.5 "</p>
+                                            <p>{{vm.product.sizeL}}" x{{vm.product.sizeW}} " x {{vm.product.sizeH}} "</p>
                                             <h4>Color</h4>
-                                            <p>custome-made</p>
+                                            <p class="hot-color"><span class="label-warning" ng-style="{'background-color': vm.product.productColor}"></span></p>
                                             <h4>Shipping Estimate</h4>
-                                            <p>200 per Case</p>
+                                            <p>{{vm.product.shippingEstimate}}</p>
                                         </div>
                                     </div>
                                 </uib-accordion>
@@ -301,14 +301,14 @@
                                         </uib-accordion-heading>
                                         <div class="contentContainer">
                                             <h4>Imprint Information</h4>
-                                            <p><strong>Imprint Method：</strong>screenprint, Unimprinted</p>
-                                            <p><strong>Imprint Color：</strong>assorted</p>
-                                            <p><strong>Full Color Process：</strong>No</p>
-                                            <p><strong>Personalization：</strong>No</p>No
-                                            <p><strong>Sold Unimprinted：</strong>Yes</p>
+                                            <p><strong>Imprint Method：</strong>{{vm.product.imprintMethod}}</p>
+                                            <p><strong>Imprint Color：</strong>{{vm.product.imprintColor}}</p>
+                                            <p><strong>Full Color Process：</strong>{{vm.product.fullColorProcess}}</p>
+                                            <p><strong>Personalization：</strong>{{vm.product.personalization}}</p>
+                                            <p><strong>Sold Unimprinted：</strong>{{vm.product.soldUnimprinted}}</p>
                                             <h4>Imprint Color</h4>
-                                            <p>assorted</p>
-                                            <h5>Imprint Color : assorted</h5>
+                                            <p>{{vm.product.imprintColor}}</p>
+                                            <h5>Imprint Color : {{vm.product.imprintColor}}</h5>
                                             <p>Imprint Color Charge (Other)</p>
                                             <div class="table-responsive">
                                                 <table class="priceGridTable">
@@ -321,14 +321,14 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>Price</td>
-                                                            <td>$50.00</td>
+                                                            <td>${{vm.product.productPrice}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <p><strong>Price Includes：</strong>N/A</p> 
+                                            <p><strong>Price Includes：</strong>{{vm.product.priceIncludes}}</p> 
                                             <h4>Artwork & Proofs</h4>
-                                            <p>Art Services, Paper Proof, Pre-production Proof, Virtual Proof</p>
+                                            <p>{{vm.proofsNames}}</p>
                                         </div>
                                     </div>
                                 </uib-accordion>
@@ -339,14 +339,14 @@
                                         </uib-accordion-heading>
                                         <div class="contentContainer">
                                             <h4>Production Information</h4>
-                                            <p><strong>Production Time：</strong>25 - 30 business days</p>
-                                            <p><strong>Rush Service：</strong>No</p>
-                                            <p><strong>FOB Point：</strong></p>
-                                            <p><strong>Shipping Weight：</strong>12kg</p>
+                                            <p><strong>Production Time：</strong>{{vm.product.productionTime}}</p>
+                                            <p><strong>Rush Service：</strong>{{vm.product.rushService}}</p>
+                                            <p><strong>FOB Point：</strong>{{vm.product.fobPoint}}</p>
+                                            <p><strong>Shipping Weight：</strong>{{vm.product.productWeight}}</p>
                                             <h4>Country of Origin</h4>
-                                            <p>CHINA</p>
+                                            <p>{{vm.areaName}}</p>
                                             <h4>Packaging</h4>
-                                            <p>Case</p>
+                                            <p>{{vm.product.packaging}}</p>
                                         </div>
                                     </div>
                                 </uib-accordion>

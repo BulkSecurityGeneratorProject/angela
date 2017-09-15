@@ -261,11 +261,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td>Price</td>
-                                                            <td ng-bind="vm.product.priceA"></td>
-                                                            <td ng-bind="vm.product.priceB"></td>
-                                                            <td ng-bind="vm.product.priceC"></td>
-                                                            <td ng-bind="vm.product.priceD"></td>
-                                                            <td ng-bind="vm.product.priceE"></td>
+                                                            <td>${{vm.product.priceA}}</td>
+                                                            <td>${{vm.product.priceB}}</td>
+                                                            <td>${{vm.product.priceC}}</td>
+                                                            <td>${{vm.product.priceD}}</td>
+                                                            <td>${{vm.product.priceE}}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -288,28 +288,11 @@
                                             <h4>Size</h4>
                                             <p>{{vm.product.sizeL}}" x{{vm.product.sizeW}} " x {{vm.product.sizeH}} "</p>
                                             <h4>Color</h4>
-                                            <p class="hot-color"><span class="label-warning" ng-style="{'background-color': vm.product.productColor}"></span></p>
-                                            <h4>Shipping Estimate</h4>
-                                            <p>{{vm.product.shippingEstimate}}</p>
-                                        </div>
-                                    </div>
-                                </uib-accordion>
-                                <uib-accordion close-others="oneAtATime">
-                                    <div uib-accordion-group class="panel-default" is-open="status.open">
-                                        <uib-accordion-heading>
-                                        Imprint <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                                        </uib-accordion-heading>
-                                        <div class="contentContainer">
-                                            <h4>Imprint Information</h4>
-                                            <p><strong>Imprint Method：</strong>{{vm.product.imprintMethod}}</p>
-                                            <p><strong>Imprint Color：</strong>{{vm.product.imprintColor}}</p>
-                                            <p><strong>Full Color Process：</strong>{{vm.product.fullColorProcess}}</p>
-                                            <p><strong>Personalization：</strong>{{vm.product.personalization}}</p>
-                                            <p><strong>Sold Unimprinted：</strong>{{vm.product.soldUnimprinted}}</p>
-                                            <h4>Imprint Color</h4>
-                                            <p>{{vm.product.imprintColor}}</p>
-                                            <h5>Imprint Color : {{vm.product.imprintColor}}</h5>
-                                            <p>Imprint Color Charge (Other)</p>
+                                            <p>{{vm.product.detailColor}}</p>
+                                            <h4>Samples</h4>
+                                            <p>Product Sample</p>
+                                            <p><strong>Sample: Product Sample</strong> </p>
+                                            <p>Sample Charge(Other)</p>
                                             <div class="table-responsive">
                                                 <table class="priceGridTable">
                                                     <thead>
@@ -327,6 +310,46 @@
                                                 </table>
                                             </div>
                                             <p><strong>Price Includes：</strong>{{vm.product.priceIncludes}}</p> 
+                                            <h4>Shipping Estimate</h4>
+                                            <p>{{vm.product.shippingEstimate}}</p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
+                                <uib-accordion close-others="oneAtATime">
+                                    <div uib-accordion-group class="panel-default" is-open="status.open">
+                                        <uib-accordion-heading>
+                                        Imprint <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                        </uib-accordion-heading>
+                                        <div class="contentContainer">
+                                            <h4>Imprint Information</h4>
+                                            <p><strong>Imprint Method：</strong>{{vm.product.imprintMethod}}</p>
+                                            <p><strong>Imprint Color：</strong>{{vm.product.imprintColor}}</p>
+                                            <p><strong>Imprint Size: </strong>{{vm.product.imprintSize}}</p>
+                                            <p><strong>Full Color Process：</strong>{{vm.product.fullColorProcess}}</p>
+                                            <p><strong>Personalization：</strong>{{vm.product.personalization}}</p>
+                                            <p><strong>Sold Unimprinted：</strong>{{vm.product.soldUnimprinted}}</p>
+                                            <!-- <h4>Imprint Color</h4>
+                                            <p>{{vm.product.imprintColor}}</p>
+                                            <h5>Imprint Color : {{vm.product.imprintColor}}</h5>
+                                            <p>Imprint Color Charge (Other)</p>
+                                            <div class="table-responsive ">
+                                                <table class="priceGridTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Quantity</th>
+                                                            <th>1</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Price</td>
+                                                            <td>${{vm.product.productPrice}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <p><strong>Price Includes：</strong>{{vm.product.priceIncludes}}</p> 
+                                            <p><strong>Price Includes：</strong>{{vm.product.priceIncludes}}</p>  -->
                                             <h4>Artwork & Proofs</h4>
                                             <p>{{vm.proofsNames}}</p>
                                         </div>
@@ -355,15 +378,13 @@
                                         <uib-accordion-heading>
                                         Safety and Compliance <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                         </uib-accordion-heading>
-                                        <div class="contentContainer">
-                                            <p>All prices and descriptions are subject to change without notice. If the price listed is different from the actual price, we will notify you before processing your order. Prices will be calculated using end of day exchange rates if orders contain products with different currencies. Total price is for merchandise only. Prices may be exclusive of any setup charges, art changes, shipping charges, state / provincial required taxes, rush charges or any other additional charges, which will be communicated prior to processing the order.</p>
-                                            <p>Information, data and/or screens (the "Material") from this site may not be copied, duplicated, saved, archived, or captured by any means except that the Material may be used as part of normal browser caching and printing performed in the course of using the site for its intended purpose.</p>
-                                        </div>
+                                        <p><strong>Safety Warningst：</strong>No safety warnings for this product</p>
                                     </div>
                                 </uib-accordion>
-                            </uib-tab>
-                            <uib-tab heading="Pricing">
-
+                                <div class="contentContainer">
+                                    <p>All prices and descriptions are subject to change without notice. If the price listed is different from the actual price, we will notify you before processing your order. Prices will be calculated using end of day exchange rates if orders contain products with different currencies. Total price is for merchandise only. Prices may be exclusive of any setup charges, art changes, shipping charges, state / provincial required taxes, rush charges or any other additional charges, which will be communicated prior to processing the order.</p>
+                                    <p>Information, data and/or screens (the "Material") from this site may not be copied, duplicated, saved, archived, or captured by any means except that the Material may be used as part of normal browser caching and printing performed in the course of using the site for its intended purpose.</p>
+                                </div>
                             </uib-tab>
                         </uib-tabset>
                         <!-- Tab panes -->

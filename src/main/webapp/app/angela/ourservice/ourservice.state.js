@@ -117,9 +117,9 @@
             }
         })
 
-        .state('financialSupport-list', {
+        .state('finicalSupport-list', {
             parent: 'ourservice',
-            url: '/financialSupport-list',
+            url: '/finicalSupport-list',
             data: {
                 authorities: []
             },

@@ -1108,6 +1108,7 @@ body{
 .hint-service{
     position:relative;
     z-index: 1000;
+    overflow:hidden;
 }
 .hint-search{
     position:relative;
@@ -1137,7 +1138,7 @@ body{
     display:inline-block;
     height: 45px;
     line-height: 45px;
-    padding:0 15px;
+    padding:0 10px;
     position: relative;
 }
 /* .nav-service > li:first-child a{
@@ -2075,6 +2076,22 @@ body{
 }
 .priceGridTable tr th{
     background:#f2f2f2;
+}
+.main-service{
+    padding:100px 15px;
+}
+.ourservice{
+    min-height: 500px;
+}
+.ourservice h4,.ourservice h5{
+    padding:10px 0;
+}
+.ourservice p{
+    text-align: left;
+    line-height: 25px;
+}
+.service-pic{
+    padding:10px 0;
 }
 @media ( max-width : 767px){
     .main-cases .col-xs-4:first-child,.main-cases .col-sm-4:first-child,.main-cases .col-md-4:first-child,.main-cases .col-lg-4:first-child,.main-event .col-xs-4:first-child,.main-event .col-sm-4:first-child,.main-event .col-md-4:first-child,.main-event .col-lg-4:first-child{

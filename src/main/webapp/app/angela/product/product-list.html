@@ -30,7 +30,7 @@
             <div class="panel panel-blue" ng-repeat="categorys in vm.categoryList.Categorys" ng-show="categorys['cateName']==vm.type">
                 <div class="panel-heading" ng-bind="categorys['cateName']"></div>
                 <div class="panel-body panel-navlist">
-                    <p ng-repeat="category in categorys['category']" ><a href="#" ng-bind="category['cateName']"></a></p>
+                    <p ng-repeat="category in categorys['category']" ><a ng-click="vm.loadProductList({categoryId: category['id']})" ng-bind="category['cateName']"></a></p>
                 </div>
             </div>
             <div class="panel panel-red">
@@ -44,7 +44,7 @@
             <div class="panel panel-blue">
                 <div class="panel-heading">Material</div>
                 <div class="panel-body panel-navlist">
-                    <a ng-repeat="d in vm.dictionarysMaterial" ng-click="vm.loadProductList({material: d['dicId']})" ng-bind="d['dicDes']"></a>
+                    <a ng-repeat="d in vm.dictionarysMaterial" ng-click="vm.loadProductList({material: d['dicId']})" ng-bind="d['dicVal']"></a>
                 </div>
             </div>
          <div class="panel panel-green">

@@ -2078,17 +2078,55 @@ body{
     background:#f2f2f2;
 }
 .main-service{
-    padding:100px 15px;
+    padding:30px 15px;
 }
 .ourservice{
+    width: 767px;
+    margin: 0 auto;
     min-height: 500px;
+    padding:30px;
 }
 .ourservice h4,.ourservice h5{
     padding:10px 0;
 }
+.ourservice h2{
+    padding:10px 0;
+    text-align: center;
+}
 .ourservice p{
     text-align: left;
     line-height: 25px;
+    font-size: 15px;
+    color:#333;
+}
+.servicePic{
+    margin:10px 0;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap:wrap-reverse;
+}
+.servicePic li{
+    width:100%;
+    height:auto;
+    border:5px solid #f5f5f5;
+    list-style: none;
+}
+.servicePic2{
+    display: -webkit-flex;
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap-reverse;
+    margin:10px 0;
+}
+.servicePic2 li{
+    width:50%;
+    height:200px;
+    border:5px solid #f5f5f5;
+    list-style: none;
+}
+.servicePic2 li img,.servicePic li img{
+    width:100%;
+    height: 100%;
 }
 .service-pic{
     padding:10px 0;
@@ -2151,5 +2189,14 @@ body{
     }
     .main-content,.main-events,.main-product{
         padding: 30px 10px;
+    }
+    .ourservice{
+        width:auto;
+    }
+    .servicePic2{
+        flex-wrap:wrap-reverse;
+    }
+    .servicePic2 li{
+        width:100%;
     }
 }

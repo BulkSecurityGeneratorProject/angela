@@ -2079,12 +2079,24 @@ body{
 }
 .main-service{
     padding:30px 15px;
+    background:#f5f5f5;
 }
 .ourservice{
-    width: 767px;
+    max-width: 1012px;
+    margin: 0 auto;
+    padding: 30px 0;
+    position: relative;
     margin: 0 auto;
     min-height: 500px;
-    padding:30px;
+}
+.service-con{
+    position:relative;
+    padding:10px;
+    background:#fff;
+}
+.service-conshow{
+    margin:0 auto;
+    padding:30px 70px;
 }
 .ourservice h4,.ourservice h5{
     padding:10px 0;
@@ -2254,6 +2266,11 @@ body{
     }
     .ourservice{
         width:auto;
+        padding:0;
+    }
+    .service-conshow{
+        width:auto;
+        padding:30px 0;
     }
     .servicePic2{
         flex-wrap:wrap-reverse;

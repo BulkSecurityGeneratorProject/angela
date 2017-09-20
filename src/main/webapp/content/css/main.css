@@ -1073,12 +1073,13 @@ body{
     font-size: 12px;
 }
 .header-logo{
-    height: 80px;
+    height: 70px;
+    padding-top: 10px;
     text-align: center;
 }
 .header-logo a{
     display: block;
-    height: 80px;
+    height: 70px;
     text-align;
 }
 .header-logo a img{

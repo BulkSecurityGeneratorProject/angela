@@ -68,7 +68,19 @@
             var categoryListP = product.getCategorysList(params);
             categoryListP.then(function (categoryList) {
                 vm.categoryList = categoryList['data'];
-                vm.cateName = _.filter(vm.categoryList.Categorys, { 'id': vm.product.categoryId })[0].cateName;
+                var _cateName = [];
+                _cateName = _.filter(vm.categoryList.Categorys, { 'id': vm.product.categoryId })
+                if (_cateName.length > 0) {
+                    vm.cateName = _cateName[0].cateName;
+                } else {
+                    angular.forEach(vm.categoryList.Categorys, function (c) {
+                        _cateName = _.filter(c.category, { 'id': vm.product.categoryId });
+                        if (_cateName.length > 0) {
+                            vm.cateName = _cateName[0].cateName;
+                        }
+                    })
+                }
+
             })
         }
         // 
@@ -80,22 +92,39 @@
                 vm.dictionarysMaterial = (vm.dictionarysList['Dictionary'] || []).filter(function (_d) {
                     return _d['dicKey'] == "product_material";
                 })
-                vm.materialName = _.filter(vm.dictionarysMaterial, { 'dicId': vm.product.material})[0].dicVal;
+
+                var _materials = vm.product.material.split(',') || vm.product.material;
+                if (Array.isArray(_materials)) {
+                    var materialName = [];
+                    angular.forEach(_materials, function (d) {
+                        var material = _.filter(vm.dictionarysMaterial, { 'dicId': d })[0].dicVal;
+                        materialName.push(material);
+                    })
+                    vm.materialName = materialName.join();
+                } else {
+                    vm.materialName = _.filter(vm.dictionarysMaterial, { 'dicId': _materials })[0].dicVal;
+                }
+
                 vm.dictionarysArea = (vm.dictionarysList['Dictionary'] || []).filter(function (_d) {
                     return _d['dicKey'] == "product_area";
                 })
-                vm.areaName =  _.filter(vm.dictionarysArea, { 'dicId': vm.product.productArea})[0].dicVal;
+                vm.areaName = _.filter(vm.dictionarysArea, { 'dicId': vm.product.productArea })[0].dicVal;
 
                 vm.dictionarysProofs = (vm.dictionarysList['Dictionary'] || []).filter(function (_d) {
                     return _d['dicKey'] == "product_proofs";
                 })
-                var _proofs = vm.product.productProofs.split(',');
-                var proofsNames = [];
-                angular.forEach(_proofs, function(d){
-                     var proof=  _.filter(vm.dictionarysProofs, { 'dicId': d})[0].dicVal;
-                     proofsNames.push(proof);
-                })
-                vm.proofsNames = proofsNames.join();
+                var _proofs = vm.product.productProofs.split(',') || vm.product.productProofs;
+                if (Array.isArray(_proofs)) {
+                    var proofsNames = [];
+                    angular.forEach(_proofs, function (d) {
+                        var proof = _.filter(vm.dictionarysProofs, { 'dicId': d })[0].dicVal;
+                        proofsNames.push(proof);
+                    })
+                    vm.proofsNames = proofsNames.join();
+                } else {
+                    vm.proofsNames = _.filter(vm.dictionarysProofs, { 'dicId': _proofs })[0].dicVal;
+                }
+
             })
         }
 

@@ -1,89 +1,24 @@
 <!--main-cases-->
+<div class="main-cases">
+<div class="row">
+    <div class="col-lg-12">
+        <h2> Case Study</h2>
+    </div>
+</div>
+</div>
 <div class="main-cases-list">
     <div class="row">
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <div class="cases-list">
-                <img src="content/images/case-img.png" />
-                <div class="cases-list-info">
-                    <h3>Cases 1</h3>
-                    <h4>Heading</h4>
-                    <p>They have learned the lessons of business management theory, and put them into action</p>
-                    <a href="#" class="btn-detail">Detail</a>
-                </div>
+        <div class="col-xs-12 col-md-4 col-lg-4" ng-repeat="case in vm.caseList.cases">
+            <div class="cases-list" ui-sref="case-detail({id:case.id})">
+                <img ng-src="{{vm.PROD.IMAGEURL + case['pictures'][0]['imageUrl'] | trustAsUrl}}"/>
+                <!-- <div class="cases-list-info">
+                    <h3 ng-bind="case['title']"></h3>
+                    <h4 ng-bind-html-unsafe="case['brief']">Heading</h4>
+                    <p ng-bind-html-unsafe="case['description']"></p>
+                </div> -->
             </div>
         </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <div class="cases-list">
-                <img src="content/images/case-img.png"/>
-                <div class="cases-list-info">
-                    <h3>Cases 2</h3>
-                    <h4>Heading</h4>
-                    <p>They have learned the lessons of business management theory, and put them into action</p>
-                    <a href="#" class="btn-detail">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">           
-            <div class="cases-list">
-                <img src="content/images/case-img.png"/>
-                <div class="cases-list-info">
-                    <h3>Cases 3</h3>
-                    <h4>Heading</h4>
-                    <p>They have learned the lessons of business management theory, and put them into action</p>
-                    <a href="#" class="btn-detail">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <div class="cases-list">
-                <img src="content/images/case-img.png"/>
-                <div class="cases-list-info">
-                    <h3>Cases 4</h3>
-                    <h4>Heading</h4>
-                    <p>They have learned the lessons of business management theory, and put them into action</p>
-                    <a href="#" class="btn-detail">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <div class="cases-list">
-                <img src="content/images/case-img.png"/>
-                <div class="cases-list-info">
-                    <h3>Cases 5</h3>
-                    <h4>Heading</h4>
-                    <p>They have learned the lessons of business management theory, and put them into action</p>
-                    <a href="#" class="btn-detail">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <div class="cases-list">
-                <img src="content/images/case-img.png"/>
-                <div class="cases-list-info">
-                    <h3>Cases 6</h3>
-                    <h4>Heading</h4>
-                    <p>They have learned the lessons of business management theory, and put them into action</p>
-                    <a href="#" class="btn-detail">Detail</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-12">
-            <div class="pagebox">
-                <ul class="pagelist">
-                    <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#" class="selected">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">6</a></li>
-                    <li><a href="#">7</a></li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                </ul>
-            </div>
-        </div>
+
     </div>
 </div>
 <!--main-rollImg-->

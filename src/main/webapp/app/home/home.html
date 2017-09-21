@@ -39,12 +39,12 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 col-md-4 col-lg-4" ng-repeat="case in vm.caseList.cases">
-                    <div class="cases-list">
+                    <div class="cases-list" ui-sref="case-detail({id:case['id']})">
                         <img ng-src="{{vm.PROD.IMAGEURL + case['pictures'][0]['imageUrl'] | trustAsUrl}}"/>
                         <div class="cases-list-info">
                             <h3 ng-bind="case['title']"></h3>
-                            <h4 ng-bind-html-unsafe="case['brief']">Heading</h4>
-                            <p ng-bind-html-unsafe="case['description']"></p>
+                            <!-- <h4 ng-bind-html-unsafe="case['brief']">Heading</h4>
+                            <p ng-bind-html-unsafe="case['description']"></p> -->
                             <!-- <a class="btn-detail" ui-sref="ourservice-list">Detail</a> -->
                         </div>
                     </div>
@@ -52,7 +52,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <!-- <a ui-sref="case-list" class="btn-see">See More</a> -->
+                    <a ui-sref="case-list" class="btn-see">See More</a>
                 </div>
             </div>
         </div>

@@ -2,42 +2,33 @@
     'use strict';
     angular
         .module('angelaApp')
-        .factory('case', case);
+        .factory('cases', cases);
 
-    case.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
+    cases.$inject = ['$resource', 'DateUtils', '$http', 'PROD'];
 
-    function case ($resource, DateUtils, $http, PROD) {
-        var getProductListUrl =  PROD['DATAAPI'] + '/Angela/products/getAllProducts';
+    function cases ($resource, DateUtils, $http, PROD) {
         var getCaseListUrl = PROD['DATAAPI'] + "/Angela/cases/getAllCases";
-        var getCategorysListUrl = PROD['DATAAPI'] + "/Angela/categorys/getAllCategorys";
-
-        var getProductList = function(params) {
-            return $http({
-                   method: 'GET',
-                   url: getProductListUrl + "?OrderBy=" + params["OrderBy"] + "&Size=4",
-                   data: {}
-            });
-        }
+        var getCaseListDetailUrl = PROD['DATAAPI'] + "/Angela/cases/getCasesById";
 
         var getCaseList = function(params) {
             return $http({
                    method: 'GET',
-                   url: getCaseListUrl + "?OrderBy=" + params["OrderBy"] + "&Size=3",
+                   url: getCaseListUrl + "?OrderBy=" + params["OrderBy"],
                    data: {}
             });
         }
-
-        var getCategorysList = function(params){
+        var getCaseDeatil = function(params) {
+            console.log(params)
             return $http({
                    method: 'GET',
-                   url: getCategorysListUrl,
+                   url: getCaseListDetailUrl + "?caseId=" + params["id"],
                    data: {}
             });
+
         }
         return {
-            getProductList: getProductList,
             getCaseList: getCaseList,
-            getCategorysList: getCategorysList
+            getCaseDeatil: getCaseDeatil
         };
     }
 })();

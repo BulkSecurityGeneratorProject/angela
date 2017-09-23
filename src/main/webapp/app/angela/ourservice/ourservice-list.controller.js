@@ -9,5 +9,11 @@
 
     function OurserviceListController ($scope, Principal, LoginService, $state) {
 
+    	var vm = this;
+
+        vm.windowHeight = window.innerHeight;
+		vm.headerHeight = 80;
+		vm.footerHeight = 40;
+
     }
 })();

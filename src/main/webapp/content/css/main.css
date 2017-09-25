@@ -2279,4 +2279,7 @@ body{
     .servicePic2 li{
         width:100%;
     }
+    .img-wrap>img{
+        width: 100%;
+    }
 }

@@ -5,7 +5,7 @@ $(function(){
     $(this).css({
         position: "relative"
     }).find(".toolbar-item-sub").css({
-        width: "150px",
+        width: "180px",
         position: "absolute",
         top: "0px",
         right: "52px",

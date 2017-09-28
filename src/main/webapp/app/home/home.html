@@ -161,8 +161,8 @@
                     <div class="event-list event-hover">
                         <img src="content/images/Business_Catalogue.svg">
                         <h3>By Catalog</h3>
-                        <div class="event-cover" ng-repeat="d in vm.categorysList">
-                            <p><a ui-sref="product-list()" ng-bind="d['cateName']"></a></p>
+                        <div class="event-cover" >
+                            <p ng-repeat="d in vm.categorysList"><a ui-sref="product-list()" ng-bind="d['cateName']"></a></p>
 
 
 

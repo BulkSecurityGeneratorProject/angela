@@ -2103,6 +2103,9 @@ body{
     padding:10px 0 20px 0;
     color:#245fab;
 }
+.service-conshow .aboutp{
+    margin-bottom: 20px;
+}
 .ourservice h4,.ourservice h5{
     padding:10px 0;
 }

@@ -2212,6 +2212,9 @@ body{
 .roll_lt:hover, .roll_rt:hover {
     color:#000;
 }
+.carousel-control.left,.carousel-control.right{
+    background-image:none;
+}
 @media ( max-width : 767px){
     .main-cases .col-xs-4:first-child,.main-cases .col-sm-4:first-child,.main-cases .col-md-4:first-child,.main-cases .col-lg-4:first-child,.main-event .col-xs-4:first-child,.main-event .col-sm-4:first-child,.main-event .col-md-4:first-child,.main-event .col-lg-4:first-child{
         padding-left: 15px;
